@@ -1,8 +1,8 @@
 数据使用整年的{Month, DayType, Time, Incident} e.g. {July, Monday, 12:00:00, Held by}
 
-数据处理1:{int(unique encode), int(unique encode), int(minutes count),int(unique encode)}
+数据处理1:{int(label encode), int(label encode), int(minutes count),int(label encode)}
 
-数据处理2:{float(unique encode normalized), float(unique encode normalized), int(minutes count),int(unique encode)}
+数据处理2:{float(label encode normalized), float(label encode normalized), int(minutes count),int(label encode)}
 
 数据处理3:{vector(one-hot encode), vector(one-hot encode), int(minutes count),vector(one-hot encode)}
 
@@ -19,7 +19,7 @@
 
 由于数据标签非常不平衡（1：10），因此二分类模型训练不使用Sampler时，先验信息将导致结果不可信
 
-使用特值编码特征时，全连接网络几乎无法提取任何特征，LSTM在某些情况下可以给出一定正确的答案，但AUC仍非常低
+使用标签值编码特征时，全连接网络几乎无法提取任何特征，LSTM在某些情况下可以给出一定正确的答案，但AUC仍非常低
 
 使用one-hot编码时，全连接网络可以产生一定表现，但开始时loss收敛很慢，且后续不断震荡不收敛
 
