@@ -8,7 +8,8 @@ from torch.utils.data import WeightedRandomSampler
 
 # no shuffle for the DataLoader
 class DataModule(pl.LightningDataModule):
-    def __init__(self, name, year, batch_size, split_ratio=0.8, seq_len=10, pre_len=1, label_encode=False):
+    def __init__(self, name, year, batch_size, split_ratio=0.8, seq_len=10, pre_len=1, label_encode=False,
+                 with_station_id=False):
         super(DataModule, self).__init__()
         self.test_dataset = None
         self.train_dataset = None
@@ -16,6 +17,7 @@ class DataModule(pl.LightningDataModule):
         self.year = year
         self.batch_size = batch_size
         self.split_ratio = split_ratio
+        self.with_station_id = with_station_id
         self.seq_len = seq_len
         self.pre_len = pre_len
         self.sampler = None
@@ -27,6 +29,9 @@ class DataModule(pl.LightningDataModule):
         self.data = self.load_data()
         assert self.data is not None
         self.generate_dataset()
+        self.node_num = 0
+        self.adj_mat = None
+        self.node_mapper = None
 
     def setup(self, stage: str = None):
         (
@@ -41,7 +46,8 @@ class DataModule(pl.LightningDataModule):
             xls = pd.ExcelFile(file_path)
             sheet_names = xls.sheet_names
             dat = None
-            target_cols = ['Report Date', 'Time', 'Day', 'Incident', 'Min Delay', 'Route', 'Line', 'Date', 'Station ID', 'Delay']
+            target_cols = ['Report Date', 'Time', 'Day', 'Incident', 'Min Delay', 'Route', 'Line', 'Date', 'Station ID',
+                           'Delay']
             for sheet_name in sheet_names:
                 df = pd.read_excel(file_path, sheet_name)
                 # remove cols that not in target_cols
@@ -67,11 +73,55 @@ class DataModule(pl.LightningDataModule):
             return dat
         return None
 
+    def load_adj(self):
+        routes = ['501', '503', '504', '505', '506', '507', '508', '509', '510', '511', '512']
+        file_path = 'data/routes info/stops/'
+        self.node_num = 0
+        self.node_mapper = dict()
+        for route in routes:
+            csv_file = file_path + route + '.csv'
+            with open(csv_file, 'r', encoding='utf-8') as f:
+                for line in f:
+                    if not line.strip():
+                        continue
+                    name, num = line.strip().split(',')
+                    # convert num to int
+                    num = int(num)
+                    if num not in self.node_mapper:
+                        self.node_mapper[num] = self.node_num
+                        self.node_num += 1
+        self.adj_mat = np.zeros((self.node_num, self.node_num))
+        # conjunct the stops in the same route
+        for route in routes:
+            csv_file = file_path + route + '.csv'
+            stations = []
+            nums = []
+            with open(csv_file, 'r', encoding='utf-8') as f:
+                for line in f:
+                    if not line.strip():
+                        continue
+                    name, num = line.strip().split(',')
+                    stations.append(name)
+                    nums.append(int(num))
+            for i in range(len(nums) - 1):
+                self.adj_mat[self.node_mapper[nums[i]], self.node_mapper[nums[i + 1]]] = 1
+                self.adj_mat[self.node_mapper[nums[i + 1]], self.node_mapper[nums[i]]] = 1
+
+    def node_map(self, data):
+        data['Station ID'] = data['Station ID'].map(self.node_mapper)
+        assert data['Station ID'].isnull().sum() == 0
+        return data
+
     @staticmethod
     def data_encode(self, data):
         for col in ['Day', 'Incident', 'Route']:
             data[col] = data[col].astype('category').cat.codes.astype('int') + 1
-        # data = data.drop(columns=['Station ID'])
+        if not self.with_station_id:
+            data = data.drop(columns=['Station ID'])
+        else:
+            self.load_adj()
+            data = self.node_map(data)
+        # data = pd.get_dummies(data, columns=['Station ID'])
         # 'Time' column //15
         data['Time'] = data['Time'] // 15
 
@@ -94,8 +144,9 @@ class DataModule(pl.LightningDataModule):
         # move 'Station ID' to the second column from the bottom
         cols = list(data.columns)
         cols.remove('Min Delay')
-        cols.remove('Station ID')
-        cols.append('Station ID')
+        if 'Station ID' in cols:
+            cols.remove('Station ID')
+            cols.append('Station ID')
         cols.append('Min Delay')
         data = data[cols]
 
