@@ -34,7 +34,7 @@ def calculate_metrics(y_hat: Tensor, y: Tensor) -> dict:
 
 
 class ModelModule(pl.LightningModule):
-    def __init__(self, model, seq_len, pre_len, batch_size, loss_function, max_delay=0, lr=0.001, weight_decay=1e-4):
+    def __init__(self, model, seq_len, pre_len, batch_size, loss_function, max_delay=0, lr=0.001, weight_decay=3e-5):
         super(ModelModule, self).__init__()
         self.model = model
         self.seq_len = seq_len
@@ -44,6 +44,11 @@ class ModelModule(pl.LightningModule):
         self.max_delay = max_delay
         self.lr = lr
         self.weight_decay = weight_decay
+        self.train_step_outputs = []
+        self.train_step_targets = []
+        self.val_step_outputs = []
+        self.val_step_targets = []
+        self.cnt = 0
 
     def forward(self, x):
         return self.model(x)
@@ -73,7 +78,9 @@ class ModelModule(pl.LightningModule):
         # exit if loss == nan
         # assert loss.item() != loss.item()
         # calculate_metrics(y_hat, y)
-        self.log("train_loss", loss)
+        self.log("train_loss", loss, on_step=False, on_epoch=True, batch_size=self.batch_size)
+        # self.train_step_outputs.extend(y_hat.argmax(dim=1).cpu().numpy())
+        # self.train_step_targets.extend(y.cpu().numpy())
         return loss
 
     def validation_step(self, batch, batch_idx):
@@ -83,23 +90,50 @@ class ModelModule(pl.LightningModule):
         y_hat = y_hat.reshape((-1, 1))
         loss = self.loss(y_hat, y)
         metrics = calculate_metrics(y_hat.clone(), y.clone())
-        self.log_dict(metrics)
+        # add loss to metrics
+        metrics["val_loss"] = loss
+        metrics["step"] = self.current_epoch
+        self.log_dict(metrics, on_step=False, on_epoch=True, batch_size=self.batch_size)
+        # attach y_hat to self.val_step_outputs and y to self.val_step_targets with 1D tensor
+        # self.val_step_outputs.extend(y_hat.clone().argmax(dim=1).cpu().numpy())
+        # self.val_step_targets.extend(y.clone().cpu().numpy())
         return loss
 
+    # def train_epoch_end(self, outputs):
+    #     tensorboard_logs = {'ttt': 9, 'ssss': 33, 'step': self.current_epoch}
+    #     self.logger.agg_and_log_metrics(tensorboard_logs, step=self.current_epoch)
+    #     return {'loss': 0, 'log': tensorboard_logs}
+        # print(self.training_step_outputs)
+        # train_step_outputs = torch.Tensor(self.train_step_outputs).reshape((-1, 1))
+        # train_step_targets = torch.Tensor(self.train_step_targets).reshape((-1, 1))
+        # metrics = calculate_metrics(train_step_outputs, train_step_targets)
+        # self.log_dict(metrics)
+        # self.train_step_outputs.clear()
+        # self.train_step_targets.clear()
+
+    # def on_validation_epoch_end(self):
+    #     val_all_outputs = torch.Tensor(self.val_step_outputs).reshape((-1, 1))
+    #     val_all_targets = torch.Tensor(self.val_step_targets).reshape((-1, 1))
+    #     metrics = calculate_metrics(val_all_outputs, val_all_targets)
+    #     self.log_dict(metrics)
+    #     print(metrics)
+    #     self.val_step_outputs.clear()
+    #     self.val_step_targets.clear()
+
     def configure_optimizers(self):
-        # optimizer = optim.Adam(
-        #     self.parameters(),
-        #     lr=self.lr,
-        #     weight_decay=self.weight_decay,
-        # )
-        optimizer = optim.SGD(
+        optimizer = optim.Adam(
             self.parameters(),
             lr=self.lr,
             weight_decay=self.weight_decay,
-            momentum=0.7
         )
+        # optimizer = optim.SGD(
+        #     self.parameters(),
+        #     lr=self.lr,
+        #     weight_decay=self.weight_decay,
+        #     momentum=0.7
+        # )
 
-        lr_scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.9)
+        lr_scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.85)
         return {"optimizer": optimizer, "lr_scheduler": lr_scheduler}
         # return optimizer
 

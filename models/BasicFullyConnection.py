@@ -3,18 +3,21 @@ from torch import nn
 
 
 class BasicFullyConnection(torch.nn.Module):
-    def __init__(self, input_size):
+    def __init__(self, input_size, hidden_size=128):
         super(BasicFullyConnection, self).__init__()
         self.input_size = input_size
         self.fc = nn.Sequential(
-            nn.Linear(input_size, 1024),
-            nn.BatchNorm1d(1024),
+            nn.Linear(input_size, hidden_size),
+            nn.BatchNorm1d(hidden_size),
             nn.LeakyReLU(),
-            nn.Linear(1024, 1),
+            nn.Linear(hidden_size, 1),
             nn.Sigmoid()
         )
 
     def forward(self, x):
+        # if x is 3D tensor, catch the last day's feature
+        if len(x.shape) == 3:
+            x = x[:, -1, :-1]
         x = x.reshape(-1, self.input_size)
         out = self.fc(x)
         # print(out)

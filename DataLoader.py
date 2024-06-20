@@ -41,10 +41,21 @@ class DataModule(pl.LightningDataModule):
             xls = pd.ExcelFile(file_path)
             sheet_names = xls.sheet_names
             dat = None
+            target_cols = ['Report Date', 'Time', 'Day', 'Location', 'Incident', 'Min Delay', 'Route', 'Line', 'Station', 'Date']
             for sheet_name in sheet_names:
                 df = pd.read_excel(file_path, sheet_name)
-                # extract the first 7 columns
-                df = df.iloc[:, :7]
+                # remove cols that not in target_cols
+                for col in df.columns:
+                    if col not in target_cols:
+                        df = df.drop(columns=[col])
+                # check if the column 'Delay' is in the DataFrame and change it to 'Min Delay'
+                if 'Delay' in df.columns:
+                    df = df.rename(columns={'Delay': 'Min Delay'})
+                # check if the column 'Route' is in the DataFrame and change it to 'Line'
+                if 'Line' in df.columns:
+                    df = df.rename(columns={'Line': 'Route'})
+                if 'Report Date' in df.columns:
+                    df = df.rename(columns={'Report Date': 'Date'})
                 # convert the 'Time' column to minutes in the month
                 # with day info in the column 'Report Date'
                 df = self.preprocess_time(self, df)
@@ -60,26 +71,15 @@ class DataModule(pl.LightningDataModule):
     def data_encode(self, data):
         for col in ['Day', 'Location', 'Incident', 'Route']:
             data[col] = data[col].astype('category').cat.codes.astype('int') + 1
-        # test code
-        data = data.drop(columns=['Location'])
+        # data = data.drop(columns=['Location'])
         data = data.drop(columns=['Route'])
-        data = data.drop(columns=['Line'])
-        # end test code
-        # normalize the 'Time' column
-        # if max time <= 24 * 60, then divide by 24 * 60
-        # else divide by max time
-        # normalize the 'Time' column
-        # data['Time'] = (data['Time'] - data['Time'].mean()) / (data['Time'].max() - data['Time'].min())
-        # classify the 'Time' column to morning-peek, evening-peek, non-peek by: 6-10, 16-20, other * 60
         for i in range(len(data)):
-            time = data.iloc[i, 2]
-            if 6 * 60 <= time < 10 * 60:
-                data.iloc[i, 2] = 1
-            elif 16 * 60 <= time < 20 * 60:
-                data.iloc[i, 2] = 2
-            else:
-                data.iloc[i, 2] = 3
+            time = data.iloc[i, 1]
+            data.iloc[i, 1] = time // 15
         data = pd.get_dummies(data, columns=['Time'])
+        #
+        # print(data.columns)
+        # print(data.head())
         # data['Time'] = pd.cut(data['Time'], bins=[0, 6 * 60, 12 * 60, 18 * 60, 24 * 60], labels=[1, 2, 3, 4])
         # normalize the 'Month' column
         # data['Month'] = data['Month'] / 12
@@ -102,6 +102,8 @@ class DataModule(pl.LightningDataModule):
         cols.append('Min Delay')
         data = data[cols]
         self.feature_num = len(data.columns) - 1
+        print(data.columns)
+        print(data.head())
         return data
 
     @staticmethod
@@ -113,7 +115,7 @@ class DataModule(pl.LightningDataModule):
             if len(str(df.iloc[i, 2])) == 5:
                 df.iloc[i, 2] = pd.to_datetime(df.iloc[i, 2], format='%H:%M').time()
             time = df.iloc[i, 2]
-            day = df.iloc[i, 0]
+            day = pd.to_datetime(df.iloc[i, 0])
             day_min = (day.day - 1) * 24 * 60
             month_min = day_min + time.hour * 60 + time.minute
             # normalize
@@ -125,7 +127,7 @@ class DataModule(pl.LightningDataModule):
         elif 'Date' in cols:
             df = df.rename(columns={'Date': 'Month'})
         # set the column 'Month' to int type
-        df['Month'] = df['Month'].dt.month
+        df['Month'] = pd.to_datetime(df['Month']).dt.month
         return df
 
     def generate_batch_data(self, data, using_sample=False):
@@ -139,16 +141,16 @@ class DataModule(pl.LightningDataModule):
         # exit(0)
         x, y = list(), list()
         for i in range(data_len - self.seq_len - self.pre_len + 1):
-            x.append(data[i:i + self.seq_len, : -1])
+            x.append(data[i:i + self.seq_len, :])
             y.append(data[i + self.seq_len - 1 + self.pre_len, -1])
+            # mask the last day's delay info to -1
+            x[-1][-1, -1] = -1
         # conversion path: list -> numpy -> tensor (float32) 'maybe faster'
         #x = np.array(x)
         x = torch.tensor(x, dtype=torch.float32)
         y = torch.tensor(y, dtype=torch.float32)
         # x = x[0:400]
         # y = torch.tensor(y[0:400], dtype=torch.float32)
-        # print(x.shape, y.shape)
-        # exit(123)
         # check all nan in x and y, fill nan with 0
         if torch.isnan(x).sum() > 0:
             x[torch.isnan(x)] = 0
