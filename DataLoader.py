@@ -41,7 +41,7 @@ class DataModule(pl.LightningDataModule):
             xls = pd.ExcelFile(file_path)
             sheet_names = xls.sheet_names
             dat = None
-            target_cols = ['Report Date', 'Time', 'Day', 'Location', 'Incident', 'Min Delay', 'Route', 'Line', 'Station', 'Date']
+            target_cols = ['Report Date', 'Time', 'Day', 'Incident', 'Min Delay', 'Route', 'Line', 'Date', 'Station ID', 'Delay']
             for sheet_name in sheet_names:
                 df = pd.read_excel(file_path, sheet_name)
                 # remove cols that not in target_cols
@@ -69,28 +69,17 @@ class DataModule(pl.LightningDataModule):
 
     @staticmethod
     def data_encode(self, data):
-        for col in ['Day', 'Location', 'Incident', 'Route']:
+        for col in ['Day', 'Incident', 'Route']:
             data[col] = data[col].astype('category').cat.codes.astype('int') + 1
-        # data = data.drop(columns=['Location'])
-        data = data.drop(columns=['Route'])
-        for i in range(len(data)):
-            time = data.iloc[i, 1]
-            data.iloc[i, 1] = time // 15
+        # data = data.drop(columns=['Station ID'])
+        # 'Time' column //15
+        data['Time'] = data['Time'] // 15
+
         data = pd.get_dummies(data, columns=['Time'])
-        #
-        # print(data.columns)
-        # print(data.head())
-        # data['Time'] = pd.cut(data['Time'], bins=[0, 6 * 60, 12 * 60, 18 * 60, 24 * 60], labels=[1, 2, 3, 4])
-        # normalize the 'Month' column
-        # data['Month'] = data['Month'] / 12
-        # normalize the 'Day' column
-        # data['Day'] = data['Day'] / 7
-        # normalize the 'Incident' column
-        # data['Incident'] = data['Incident'] / data['Incident'].max()
-        # use one-hot encoding for the 'Incident' and 'Day' columns
         data = pd.get_dummies(data, columns=['Day'])
         data = pd.get_dummies(data, columns=['Incident'])
         data = pd.get_dummies(data, columns=['Month'])
+        data = pd.get_dummies(data, columns=['Route'])
         # change the column 'Min Delay' to 0/1 by the limit 30
         if self.label_encode:
             data['Min Delay'] = (data['Min Delay'] >= 30).astype(int)
@@ -102,6 +91,14 @@ class DataModule(pl.LightningDataModule):
         cols.append('Min Delay')
         data = data[cols]
         self.feature_num = len(data.columns) - 1
+        # move 'Station ID' to the second column from the bottom
+        cols = list(data.columns)
+        cols.remove('Min Delay')
+        cols.remove('Station ID')
+        cols.append('Station ID')
+        cols.append('Min Delay')
+        data = data[cols]
+
         print(data.columns)
         print(data.head())
         return data
