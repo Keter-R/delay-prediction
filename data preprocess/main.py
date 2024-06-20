@@ -23,17 +23,21 @@ output_file = './data/ttc-streetcar-delay-data-2020-with-stations.xlsx'
 
 routes = ['501', '503', '504', '505', '506', '509', '510', '511', '512']
 stops = dict()
+stops_num = dict()
 for route in routes:
     csv_file = os.path.join(stops_path, route + '.csv')
     stations = []
+    nums = []
     with open(csv_file, 'r', encoding='utf-8') as f:
         for line in f:
             # if line is empty, skip
             if not line.strip():
                 continue
-            stations.append(line.strip())
+            name, num = line.strip().split(',')
+            stations.append(name)
+            nums.append(num)
     stops[route] = stations
-print(stops['501'])
+    stops_num[route] = nums
 
 if input_file is not None and output_file is not None:
     # read each sheet from the Excel file
@@ -55,7 +59,8 @@ if input_file is not None and output_file is not None:
             df = df[df['Route'].isin(routes)]
             # print row count
             print(df.shape[0])
-
+            # add 'Station ID' column for line
+            df['Station ID'] = df['Location']
             # add 'Station' column for line
             df['Station'] = df['Location']
             # set 'Date' format to 'yyyy-mm-dd'
@@ -69,8 +74,12 @@ if input_file is not None and output_file is not None:
                 station = utils.match_station_with_stop(stops[route], location, confidence=80)
                 if station is None:
                     print('No station matched for:', location)
+                    # remove this row
+                    df = df.drop(row[0])
                     continue
                 df.at[row[0], 'Station'] = station
+                station_id = stops[route].index(station)
+                df.at[row[0], 'Station ID'] = stops_num[route][station_id]
             # save the DataFrame to a new Excel file
             df.to_excel(writer, sheet_name=sheet_name, index=False)
             print('Sheet:', sheet_name, 'saved to', output_file)
