@@ -23,13 +23,13 @@ class FCLstm(nn.Module):
     def forward(self, x):
         pre_day_info = None
         seq_day_info = None
-        assert x.shape[1] == self.seq_len
+        # assert x.shape[1] == self.seq_len
         # remove the last day's delay info (that's mask info)
         # pre_day_info (batch_size, feature_num - 1)
-        pre_day_info = x[:, -1, :-1]
+        pre_day_info = x[:, -1, :-2]
         pre_day_info = pre_day_info.reshape(-1, self.feature_num - 1)
-        # seq_day_info (batch_size, seq_len - 1, feature_num)
-        seq_day_info = x[:, :-1, :]
+        # seq_day_info (batch_size, seq_len - 1, 0-feature_num-2&feature_num-1)
+        seq_day_info = torch.cat((x[:, :-1, :-2], x[:, :-1, -1].reshape(x.shape[0], -1, 1)), 2)
         seq_feature = self.lstm(seq_day_info)
         # join the pre_day_info and seq_feature together
         # pre_feature (batch_size, feature_num - 1 + seq_feature_num)

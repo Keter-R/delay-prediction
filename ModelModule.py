@@ -8,8 +8,8 @@ from torcheval.metrics.aggregation.auc import AUC
 
 
 def calculate_metrics(y_hat: Tensor, y: Tensor) -> dict:
-    print(f"\ny_hat_max: {y_hat.max()}, y_hat_min: {y_hat.min()}")
-    print(f"y_max: {y.max()}, y_min: {y.min()}")
+    # print(f"\ny_hat_max: {y_hat.max()}, y_hat_min: {y_hat.min()}")
+    # print(f"y_max: {y.max()}, y_min: {y.min()}")
     # y_hat = (y_hat > 30).float()
     # y = (y > 30).float()
     acc = tm.classification.BinaryAccuracy().to("cuda")
@@ -23,13 +23,13 @@ def calculate_metrics(y_hat: Tensor, y: Tensor) -> dict:
     ground_negatives = len(y) - ground_positives
     # print(f"y_hat: {y_hat}")
     # print(f"y: {y}")
-    print(f"\npred_positives: {pred_positives}, pred_negatives: {pred_negatives}")
-    print(f"ground_positives: {ground_positives}, ground_negatives: {ground_negatives}")
+    # print(f"\npred_positives: {pred_positives}, pred_negatives: {pred_negatives}")
+    # print(f"ground_positives: {ground_positives}, ground_negatives: {ground_negatives}")
     Accuracy = acc(y_hat, y).item()
     Sensitivity = 0 #recall(y_hat, y)
     Specificity = spec(y_hat, y).item()
     AUC = auc(y_hat, y).item()
-    print("Accuracy: ", Accuracy)
+    # print("Accuracy: ", Accuracy)
     return {"Accuracy": Accuracy, "Sensitivity": Sensitivity, "Specificity": Specificity, "AUC": AUC}
 
 
@@ -78,7 +78,8 @@ class ModelModule(pl.LightningModule):
         # exit if loss == nan
         # assert loss.item() != loss.item()
         # calculate_metrics(y_hat, y)
-        self.log("train_loss", loss, on_step=False, on_epoch=True, batch_size=self.batch_size)
+        self.log("train_loss", loss, batch_size=self.batch_size)
+        # print(f"train_loss: {loss}")
         # self.train_step_outputs.extend(y_hat.argmax(dim=1).cpu().numpy())
         # self.train_step_targets.extend(y.cpu().numpy())
         return loss
@@ -133,7 +134,7 @@ class ModelModule(pl.LightningModule):
         #     momentum=0.7
         # )
 
-        lr_scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.85)
+        lr_scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.997)
         return {"optimizer": optimizer, "lr_scheduler": lr_scheduler}
         # return optimizer
 
