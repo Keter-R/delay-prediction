@@ -25,13 +25,13 @@ class DataModule(pl.LightningDataModule):
         # if not label_encode, then using sample
         self.using_sample = label_encode
         self.feature_num = 6
+        self.node_num = 0
+        self.adj_mat = None
+        self.node_mapper = None
         # data format: (month, route, month_minute, day_type, location, incident, delay)
         self.data = self.load_data()
         assert self.data is not None
         self.generate_dataset()
-        self.node_num = 0
-        self.adj_mat = None
-        self.node_mapper = None
 
     def setup(self, stage: str = None):
         (
@@ -69,7 +69,7 @@ class DataModule(pl.LightningDataModule):
                     dat = df
                 else:
                     dat = pd.concat([dat, df], ignore_index=True)
-            dat = self.data_encode(self, dat)
+            dat = self.data_encode(dat)
             return dat
         return None
 
@@ -112,7 +112,6 @@ class DataModule(pl.LightningDataModule):
         assert data['Station ID'].isnull().sum() == 0
         return data
 
-    @staticmethod
     def data_encode(self, data):
         for col in ['Day', 'Incident', 'Route']:
             data[col] = data[col].astype('category').cat.codes.astype('int') + 1
@@ -241,3 +240,4 @@ class DataModule(pl.LightningDataModule):
 
     def val_dataloader(self):
         return DataLoader(self.val_dataset, batch_size=len(self.val_dataset), num_workers=0)
+

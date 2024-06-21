@@ -17,8 +17,9 @@ class BasicFullyConnection(torch.nn.Module):
     def forward(self, x):
         # if x is 3D tensor, catch the last day's feature
         if len(x.shape) == 3:
-            x = x[:, -1, :-1]
+            x = x[:, -1, :-2]
         x = x.reshape(-1, self.input_size)
+        # print(x.shape)
         out = self.fc(x)
         # print(out)
         # exit(1)
