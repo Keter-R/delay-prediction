@@ -27,17 +27,17 @@ data_with_station = DataModule(name, year, batch_size, seq_len=seq_len, pre_len=
 feature_num = data_with_station.feature_num
 
 model1 = FCLstm.FCLstm(feature_num, seq_len, seq_feature_num=1024, hidden_size=1024)
-task1 = ModelModule(model1, seq_len, pre_len, batch_size, nn.BCELoss(), max_delay=0, lr=0.003)
+task1 = ModelModule(model1, seq_len, pre_len, batch_size, nn.BCELoss(), max_delay=0, lr=0.001)
 torch.set_float32_matmul_precision('high')
 
 model_GCN = GCN.GCN(node_num=data_with_station.node_num, feature_num=data_with_station.feature_num
                     , hidden_size=hidden_size, seq_len=seq_len, adj_mat=data_with_station.adj_mat)
-task_GCN = ModelModule(model_GCN, seq_len, pre_len, batch_size, nn.BCELoss(), max_delay=0, lr=0.003)
+task_GCN = ModelModule(model_GCN, seq_len, pre_len, batch_size, nn.BCELoss(), max_delay=0, lr=0.001)
 model_GCN2 = GCN.GCN2(node_num=data_with_station.node_num, feature_num=data_with_station.feature_num
                       , hidden_size=hidden_size, seq_len=seq_len, adj_mat=data_with_station.adj_mat)
-task_GCN2 = ModelModule(model_GCN2, seq_len, pre_len, batch_size, nn.BCELoss(), max_delay=0, lr=0.003)
+task_GCN2 = ModelModule(model_GCN2, seq_len, pre_len, batch_size, nn.BCELoss(), max_delay=0, lr=0.001)
 model = BasicFullyConnection.BasicFullyConnection(data_with_station.feature_num - 1, hidden_size=hidden_size)
-task = ModelModule(model, seq_len, pre_len, batch_size, nn.BCELoss(), max_delay=0, lr=0.003)
+task = ModelModule(model, seq_len, pre_len, batch_size, nn.BCELoss(), max_delay=0, lr=0.001)
 if __name__ == '__main__':
     trainer1 = pl.Trainer(accelerator="gpu", devices="1", max_epochs=epoch)
     trainer1.fit(task, data_with_station)

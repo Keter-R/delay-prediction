@@ -134,7 +134,7 @@ class ModelModule(pl.LightningModule):
         #     momentum=0.7
         # )
 
-        lr_scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.997)
+        lr_scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.991)
         return {"optimizer": optimizer, "lr_scheduler": lr_scheduler}
         # return optimizer
 
