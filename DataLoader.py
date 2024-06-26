@@ -1,3 +1,5 @@
+import random
+
 import numpy as np
 import pandas as pd
 import torch
@@ -8,10 +10,10 @@ from torch.utils.data import WeightedRandomSampler
 
 # no shuffle for the DataLoader
 class DataModule(pl.LightningDataModule):
-    def __init__(self, name, year, batch_size, split_ratio=0.8, seq_len=10, pre_len=1, label_encode=False,
-                 with_station_id=False):
+    def __init__(self, name, year, batch_size, split_ratio=0.8, seq_len=10, label_encode=False,
+                 with_station_id=False, delt_t=60, graph=False):
         super(DataModule, self).__init__()
-        self.test_dataset = None
+        self.val_dataset = None
         self.train_dataset = None
         self.name = name
         self.year = year
@@ -19,8 +21,11 @@ class DataModule(pl.LightningDataModule):
         self.split_ratio = split_ratio
         self.with_station_id = with_station_id
         self.seq_len = seq_len
-        self.pre_len = pre_len
         self.sampler = None
+        self.graph_feature_num = 0
+        self.graph = graph
+        self.delt_t = delt_t
+        self.intervals = 24 * 60 // delt_t
         self.label_encode = label_encode
         # if not label_encode, then using sample
         self.using_sample = label_encode
@@ -29,6 +34,7 @@ class DataModule(pl.LightningDataModule):
         self.adj_mat = None
         self.node_mapper = None
         # data format: (month, route, month_minute, day_type, location, incident, delay)
+        self.raw_data = None
         self.data = self.load_data()
         assert self.data is not None
         self.generate_dataset()
@@ -122,8 +128,8 @@ class DataModule(pl.LightningDataModule):
             data = self.node_map(data)
         # data = pd.get_dummies(data, columns=['Station ID'])
         # 'Time' column //15
-        data['Time'] = data['Time'] // 15
-
+        data['Time'] = data['Time'] // 60
+        self.raw_data = data
         data = pd.get_dummies(data, columns=['Time'])
         data = pd.get_dummies(data, columns=['Day'])
         data = pd.get_dummies(data, columns=['Incident'])
@@ -178,6 +184,7 @@ class DataModule(pl.LightningDataModule):
         return df
 
     def generate_batch_data(self, data, using_sample=False):
+        r_data = data
         data = data.values
         data_len = len(data)
         # check if str in data
@@ -186,23 +193,59 @@ class DataModule(pl.LightningDataModule):
         #         if type(data[i][j]) is str:
         #             print(data[i])
         # exit(0)
-        x, y = list(), list()
-        for i in range(data_len - self.seq_len - self.pre_len + 1):
-            x.append(data[i:i + self.seq_len, :])
-            y.append(data[i + self.seq_len - 1 + self.pre_len, -1])
-            # mask the last day's delay info to -1
-            x[-1][-1, -1] = -1
-        # conversion path: list -> numpy -> tensor (float32) 'maybe faster'
-        #x = np.array(x)
-        x = torch.tensor(x, dtype=torch.float32)
-        y = torch.tensor(y, dtype=torch.float32)
-        # x = x[0:400]
-        # y = torch.tensor(y[0:400], dtype=torch.float32)
-        # check all nan in x and y, fill nan with 0
-        if torch.isnan(x).sum() > 0:
-            x[torch.isnan(x)] = 0
-        if torch.isnan(y).sum() > 0:
-            y[torch.isnan(y)] = 0
+        if not self.graph:
+            x, y = list(), list()
+            for i in range(data_len - self.seq_len):
+                x.append(data[i:i + self.seq_len, :])
+                y.append(data[i + self.seq_len - 1, -1])
+                # mask the last day's delay info to -1
+                x[-1][-1, -1] = -1
+            # conversion path: list -> numpy -> tensor (float32) 'maybe faster'
+            #x = np.array(x)
+            x = torch.tensor(x, dtype=torch.float32)
+            y = torch.tensor(y, dtype=torch.float32)
+            # x = x[0:400]
+            # y = torch.tensor(y[0:400], dtype=torch.float32)
+            # check all nan in x and y, fill nan with 0
+            if torch.isnan(x).sum() > 0:
+                x[torch.isnan(x)] = 0
+            if torch.isnan(y).sum() > 0:
+                y[torch.isnan(y)] = 0
+        else:
+            x, y = list(), list()
+            cols = list(r_data.columns)
+            r_cols_id = []
+            for col in cols:
+                if 'Incident' in col:
+                    r_cols_id.append(cols.index(col))
+                if 'Route' in col:
+                    r_cols_id.append(cols.index(col))
+                # if 'Min Delay' in col:
+                #     r_cols_id.append(cols.index(col))
+                if 'Time' in col:
+                    r_cols_id.append(cols.index(col))
+                if 'Month' in col:
+                    r_cols_id.append(cols.index(col))
+                if 'Day' in col:
+                    r_cols_id.append(cols.index(col))
+            self.graph_feature_num = len(r_cols_id)
+            for i in range(data_len - self.seq_len):
+                xin = np.zeros((self.seq_len, self.node_num, self.graph_feature_num))
+                for j in range(self.seq_len):
+                    if j > 0:
+                        xin[j, :] = xin[j - 1, :, :]
+                    sid = int(data[i + j, -2])
+                    xin[j, sid, :] = data[i + j, r_cols_id]
+                    # mask the last day's delay info to -1
+                    if j == self.seq_len - 1:
+                        xin[j, sid, -1] = -1
+                xfeat = data[i + self.seq_len - 1, :-1]
+                # squeeze the xin to 1D tensor
+                xin = xin.flatten()
+                x.append(np.concatenate((xin, xfeat), axis=0).astype(np.float32))
+                y.append(data[i + self.seq_len - 1, -1])
+            x = torch.tensor(np.array(x), dtype=torch.float32)
+            y = torch.tensor(y, dtype=torch.float32)
         dataset = torch.utils.data.TensorDataset(x, y)
         return dataset
 
@@ -212,7 +255,7 @@ class DataModule(pl.LightningDataModule):
         test_size = len(all_dataset) - train_size
         print(len(all_dataset))
         print(train_size, test_size)
-        train_dataset, test_dataset = torch.utils.data.random_split(all_dataset, [train_size, test_size])
+        train_dataset, val_dataset = torch.utils.data.random_split(all_dataset, [train_size, test_size])
         if self.using_sample:
             # calculate the sample weight
             y = train_dataset
@@ -230,14 +273,20 @@ class DataModule(pl.LightningDataModule):
                 else:
                     samples_weight.append(1 / negative_count)
             self.sampler = WeightedRandomSampler(samples_weight, train_size)
-        return train_dataset, test_dataset
+        return train_dataset, val_dataset
+
+    @staticmethod
+    def seed_worker(worker_id):
+        worker_seed = torch.initial_seed() % 2 ** 32
+        np.random.seed(worker_seed)
+        random.seed(worker_seed)
 
     def train_dataloader(self):
         if self.sampler is not None:
             return DataLoader(self.train_dataset, batch_size=self.batch_size, sampler=self.sampler, num_workers=0)
         return DataLoader(self.train_dataset, batch_size=self.batch_size, num_workers=0)
-        # return DataLoader(self.val_dataset, batch_size=len(self.val_dataset), num_workers=0)
 
     def val_dataloader(self):
-        return DataLoader(self.val_dataset, batch_size=len(self.val_dataset), num_workers=0)
+        return DataLoader(self.val_dataset, batch_size=self.batch_size, num_workers=0)
+
 

@@ -12,10 +12,10 @@ class LSTM_FEAT(nn.Module):
         self.input_size = input_size
         self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True, dropout=0.7)
         self.fc = nn.Sequential(
-            nn.Linear(hidden_size * seq_len, 512),
-            nn.BatchNorm1d(512),
+            nn.Linear(hidden_size * seq_len, hidden_size),
+            nn.BatchNorm1d(hidden_size),
             nn.ReLU(),
-            nn.Linear(512, output_size)
+            nn.Linear(hidden_size, output_size)
         )
 
     def forward(self, x):

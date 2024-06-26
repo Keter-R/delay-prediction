@@ -4,9 +4,9 @@ from torch import nn
 
 
 class GCN(nn.Module):
-    def __init__(self, node_num, seq_len, feature_num, adj_mat, hidden_size=1024, fc_hidden_size=512):
+    def __init__(self, node_num, seq_len, feature_num, adj_mat, gcn_hidden_size=512, fc_hidden_size=512):
         super(GCN, self).__init__()
-        self.hidden_size = hidden_size
+        self.gcn_hidden_size = gcn_hidden_size
         self.adj_mat = adj_mat
         self.node_num = node_num
         self.seq_len = seq_len
@@ -15,11 +15,16 @@ class GCN(nn.Module):
         A = adj_mat + torch.eye(node_num)
         D = torch.inverse(torch.sqrt(torch.diag(torch.sum(A, dim=1))))
         self.A = torch.tensor(torch.mm(torch.mm(D, A), D))
-        self.gc1 = nn.Linear(feature_num, hidden_size//2, bias=True)
-        self.gc2 = nn.Linear(hidden_size//2, hidden_size//2, bias=True)
-        self.gc3 = nn.Linear(hidden_size//2, hidden_size, bias=True)
+        self.gc1 = nn.Linear(feature_num, gcn_hidden_size//2, bias=True)
+        self.gc2 = nn.Linear(gcn_hidden_size//2, gcn_hidden_size//2, bias=True)
+        self.gc3 = nn.Linear(gcn_hidden_size//2, gcn_hidden_size, bias=True)
+        self.fc0 = nn.Sequential(
+            nn.Linear(feature_num - 1, fc_hidden_size),
+            nn.BatchNorm1d(fc_hidden_size),
+            nn.LeakyReLU()
+        )
         self.fc = nn.Sequential(
-            nn.Linear(hidden_size + feature_num - 1, fc_hidden_size),
+            nn.Linear(gcn_hidden_size + fc_hidden_size, fc_hidden_size),
             # nn.Linear(feature_num - 1, 128),
             nn.BatchNorm1d(fc_hidden_size),
             nn.LeakyReLU(),
@@ -40,13 +45,14 @@ class GCN(nn.Module):
                 feat = torch.cat((feat, t), 0)
                 X[i, sid, :] = feat
         x = x[:, -1, :-2].reshape(x.shape[0], -1)
+        x = self.fc0(x)
         X = torch.tensor(X, dtype=torch.float32, device=x.device)
         self.A = self.A.to(x.device)
         # graph convolution
         X = torch.nn.functional.relu(self.gc1(self.A @ X))
         X = torch.nn.functional.relu(self.gc2(self.A @ X))
         X = torch.nn.functional.relu(self.gc3(self.A @ X))
-        gFeature = np.zeros((x.shape[0], self.hidden_size))
+        gFeature = np.zeros((x.shape[0], self.gcn_hidden_size))
         gFeature = torch.tensor(gFeature, dtype=torch.float32)
         for i in range(x.shape[0]):
             gFeature[i, :] = X[i, station_ids[i], :]

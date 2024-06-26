@@ -1,11 +1,11 @@
 import os
 
 import torch
+import torcheval
 from torch import optim, nn, utils, Tensor
 import pytorch_lightning as pl
 import torchmetrics as tm
 from torcheval.metrics.aggregation.auc import AUC
-
 
 def calculate_metrics(y_hat: Tensor, y: Tensor) -> dict:
     # print(f"\ny_hat_max: {y_hat.max()}, y_hat_min: {y_hat.min()}")
@@ -16,6 +16,7 @@ def calculate_metrics(y_hat: Tensor, y: Tensor) -> dict:
     recall = tm.Recall(task="binary").to("cuda")
     spec = tm.classification.BinarySpecificity().to("cuda")
     auc = tm.classification.BinaryAUROC().to("cuda")
+    # print(auc.shape)
     # value >= 0.5 as positive
     pred_positives = torch.sum(y_hat >= 0.5).item()
     pred_negatives = torch.sum(y_hat < 0.5).item()
@@ -28,14 +29,14 @@ def calculate_metrics(y_hat: Tensor, y: Tensor) -> dict:
     Accuracy = acc(y_hat, y).item()
     Sensitivity = 0 #recall(y_hat, y)
     Specificity = spec(y_hat, y).item()
-    AUC = auc(y_hat, y).item()
     # print("Accuracy: ", Accuracy)
-    return {"Accuracy": Accuracy, "Sensitivity": Sensitivity, "Specificity": Specificity, "AUC": AUC}
+    return {"Accuracy": Accuracy, "Sensitivity": Sensitivity, "Specificity": Specificity, "AUC": auc(y_hat, y).item()}
 
 
 class ModelModule(pl.LightningModule):
     def __init__(self, model, seq_len, pre_len, batch_size, loss_function, max_delay=0, lr=0.001, weight_decay=3e-5):
         super(ModelModule, self).__init__()
+        self.save_hyperparameters()
         self.model = model
         self.seq_len = seq_len
         self.pre_len = pre_len
@@ -72,9 +73,8 @@ class ModelModule(pl.LightningModule):
         y_hat = y_hat.reshape((-1, 1))
         loss = self.loss(y_hat, y)
         # calculate_metrics(y_hat, y)
-        assert torch.isnan(y_hat).sum() == 0, print(f"loss: {loss} , y_hat: {y_hat}, y: {y}")
-        assert torch.isnan(loss).sum() == 0, print(f"loss: {loss} , y_hat: {y_hat}, y: {y}")
-        # print(y_hat)
+        # assert torch.isnan(y_hat).sum() == 0, print(f"loss: {loss} , y_hat: {y_hat}, y: {y}")
+        # assert torch.isnan(loss).sum() == 0, print(f"loss: {loss} , y_hat: {y_hat}, y: {y}")
         # exit if loss == nan
         # assert loss.item() != loss.item()
         # calculate_metrics(y_hat, y)
@@ -98,6 +98,8 @@ class ModelModule(pl.LightningModule):
         # attach y_hat to self.val_step_outputs and y to self.val_step_targets with 1D tensor
         # self.val_step_outputs.extend(y_hat.clone().argmax(dim=1).cpu().numpy())
         # self.val_step_targets.extend(y.clone().cpu().numpy())
+
+        # print(f"val_metrics: {metrics}")
         return loss
 
     # def train_epoch_end(self, outputs):
@@ -134,7 +136,7 @@ class ModelModule(pl.LightningModule):
         #     momentum=0.7
         # )
 
-        lr_scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.991)
+        lr_scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.997)
         return {"optimizer": optimizer, "lr_scheduler": lr_scheduler}
         # return optimizer
 
