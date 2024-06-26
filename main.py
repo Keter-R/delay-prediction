@@ -30,12 +30,11 @@ pl.seed_everything(seed, workers=True)
 # random.seed(seed)
 # np.random.seed(seed)
 torch.set_float32_matmul_precision('high')
-torch.use_deterministic_algorithms(warn_only=True, mode=True)
 name = 'ttc-streetcar-delay-data'
 year = '2020-with-stations'
 val_year = 2020
 batch_size = 32
-epoch = 50
+epoch = 200
 seq_len = 16
 pre_len = 1
 hidden_size = 512
@@ -88,43 +87,28 @@ def FCTest():
     # result2 = trainer2.validate(ckpt_path="best", datamodule=data_with_station)
 
 
+def validate(data, name=""):
+    model = ModelModule.load_from_checkpoint(checkpoint_path=f"checkpoints/{name}.ckpt")
+    trainer = pl.Trainer(accelerator="gpu", devices="1")
+    trainer.validate(model=model, datamodule=data)
+
 def run(model, data, name=""):
     # loss = nn.BCEWithLogitsLoss(pos_weight=torch.tensor([0.1]))
+    ckpt_path = f"checkpoints/{name}.ckpt"
     loss = nn.BCELoss()
     task = ModelModule(model, seq_len, pre_len, batch_size, loss, max_delay=0, lr=0.001)
-    trainer = pl.Trainer(accelerator="gpu", devices="1", max_epochs=epoch)
+    trainer = pl.Trainer(accelerator="gpu", devices="1", max_epochs=epoch, deterministic="warn")
     trainer.fit(task, datamodule=data)
-    print(f"------{name} Validation----")
-    result = trainer.validate(ckpt_path="best", datamodule=data, verbose=True)
+    result = trainer.validate(ckpt_path="best", datamodule=data)
     return result
 
 
 if __name__ == '__main__':
-    model = STGCN.STGCN(node_num=data_with_graph.node_num, seq_len=seq_len, feature_num=data_with_graph.feature_num,
-                        adj_mat=data_with_graph.adj_mat, graph_feature_num=data_with_graph.graph_feature_num,
-                        fc_hidden_size=512, gcn_output_size=32)
-    # model = BasicFullyConnection.FCForGraph(data_with_graph.feature_num, hidden_size=512)
+    # model = STGCN.STGCN(node_num=data_with_graph.node_num, seq_len=seq_len, feature_num=data_with_graph.feature_num,
+    #                     adj_mat=data_with_graph.adj_mat, graph_feature_num=data_with_graph.graph_feature_num,
+    #                     fc_hidden_size=512, gcn_output_size=32)
+    model = BasicFullyConnection.FCForGraph(data_with_graph.feature_num, hidden_size=8)
     run(model, data_with_graph, "FCN")
-    # trainer0 = pl.Trainer(accelerator="gpu", devices="1", max_epochs=epoch)
-    # trainer0.fit(task_STGCN, data_with_graph)
-    # trainer1 = pl.Trainer(accelerator="gpu", devices="1", max_epochs=epoch)
-    # trainer1.fit(task, data_with_station)
-    # trainer2 = pl.Trainer(accelerator="gpu", devices="1", max_epochs=epoch)
-    # trainer2.fit(task1, data_with_station)
-    # trainer3 = pl.Trainer(accelerator="gpu", devices="1", max_epochs=epoch)
-    # trainer3.fit(task_GCN, data_with_station)
-    # trainer4= pl.Trainer(accelerator="gpu", devices="1", max_epochs=epoch)
-    # trainer4.fit(task_GCN2, data_with_station)
-    # print("------STGCN Validation----")
-    # result0 = trainer0.validate(ckpt_path="best", datamodule=data_with_graph)
-    # print("------BasicFullyConnection Validation----")
-    # result1 = trainer1.validate(ckpt_path="best", datamodule=data_with_station)
-    # print("------FCLstm Validation----")
-    # result2 = trainer2.validate(ckpt_path="best", datamodule=data_with_station)
-    # print("------GCN Validation----")
-    # result3 = trainer3.validate(ckpt_path="best", datamodule=data_with_station)
-    # print("------GCN2 Validation----")
-    # result4 = trainer4.validate(ckpt_path="best", datamodule=data_with_station)
 
 
 

@@ -12,25 +12,23 @@ def calculate_metrics(y_hat: Tensor, y: Tensor) -> dict:
     # print(f"y_max: {y.max()}, y_min: {y.min()}")
     # y_hat = (y_hat > 30).float()
     # y = (y > 30).float()
+    # set values to 0 or 1
+    y_hat = (y_hat >= 0.5).float()
+    TP = (y_hat * y).sum().item()
+    TN = ((1 - y_hat) * (1 - y)).sum().item()
+    FP = (y_hat * (1 - y)).sum().item()
+    FN = ((1 - y_hat) * y).sum().item()
     acc = tm.classification.BinaryAccuracy().to("cuda")
     recall = tm.Recall(task="binary").to("cuda")
     spec = tm.classification.BinarySpecificity().to("cuda")
     auc = tm.classification.BinaryAUROC().to("cuda")
-    # print(auc.shape)
-    # value >= 0.5 as positive
-    pred_positives = torch.sum(y_hat >= 0.5).item()
-    pred_negatives = torch.sum(y_hat < 0.5).item()
-    ground_positives = torch.sum(y).item()
-    ground_negatives = len(y) - ground_positives
-    # print(f"y_hat: {y_hat}")
-    # print(f"y: {y}")
-    # print(f"\npred_positives: {pred_positives}, pred_negatives: {pred_negatives}")
-    # print(f"ground_positives: {ground_positives}, ground_negatives: {ground_negatives}")
     Accuracy = acc(y_hat, y).item()
-    Sensitivity = 0 #recall(y_hat, y)
+    Sensitivity = recall(y_hat, y).item()
     Specificity = spec(y_hat, y).item()
-    # print("Accuracy: ", Accuracy)
-    return {"Accuracy": Accuracy, "Sensitivity": Sensitivity, "Specificity": Specificity, "AUC": auc(y_hat, y).item()}
+    FPR = FP / (FP + TN)
+    FNR = FN / (TP + FN)
+    return {"Accuracy": Accuracy, "AUC": auc(y_hat, y).item(), "Sensitivity": Sensitivity, "Specificity": Specificity,
+            "FPR": FPR, "FNR": FNR, "TP": TP, "TN": TN, "FP": FP, "FN": FN}
 
 
 class ModelModule(pl.LightningModule):
@@ -90,38 +88,32 @@ class ModelModule(pl.LightningModule):
         y = y.reshape((-1, 1))
         y_hat = y_hat.reshape((-1, 1))
         loss = self.loss(y_hat, y)
-        metrics = calculate_metrics(y_hat.clone(), y.clone())
+        self.val_step_outputs.extend(y_hat.clone().cpu().tolist())
+        self.val_step_targets.extend(y.clone().cpu().tolist())
+        # print(f"y_hat: {self.val_step_outputs}")
+        # print(f"y: {self.val_step_targets}")
+        # print(len(self.val_step_targets))
+        # metrics = calculate_metrics(y_hat.clone(), y.clone())
         # add loss to metrics
-        metrics["val_loss"] = loss
-        metrics["step"] = self.current_epoch
-        self.log_dict(metrics, on_step=False, on_epoch=True, batch_size=self.batch_size)
+        # metrics["val_loss"] = loss
+        # metrics["step"] = self.current_epoch
+        # self.log_dict(metrics, on_step=False, on_epoch=True, batch_size=self.batch_size)
         # attach y_hat to self.val_step_outputs and y to self.val_step_targets with 1D tensor
-        # self.val_step_outputs.extend(y_hat.clone().argmax(dim=1).cpu().numpy())
-        # self.val_step_targets.extend(y.clone().cpu().numpy())
-
+        # print(y.shape)
         # print(f"val_metrics: {metrics}")
         return loss
 
-    # def train_epoch_end(self, outputs):
-    #     tensorboard_logs = {'ttt': 9, 'ssss': 33, 'step': self.current_epoch}
-    #     self.logger.agg_and_log_metrics(tensorboard_logs, step=self.current_epoch)
-    #     return {'loss': 0, 'log': tensorboard_logs}
-        # print(self.training_step_outputs)
-        # train_step_outputs = torch.Tensor(self.train_step_outputs).reshape((-1, 1))
-        # train_step_targets = torch.Tensor(self.train_step_targets).reshape((-1, 1))
-        # metrics = calculate_metrics(train_step_outputs, train_step_targets)
-        # self.log_dict(metrics)
-        # self.train_step_outputs.clear()
-        # self.train_step_targets.clear()
-
-    # def on_validation_epoch_end(self):
-    #     val_all_outputs = torch.Tensor(self.val_step_outputs).reshape((-1, 1))
-    #     val_all_targets = torch.Tensor(self.val_step_targets).reshape((-1, 1))
-    #     metrics = calculate_metrics(val_all_outputs, val_all_targets)
-    #     self.log_dict(metrics)
-    #     print(metrics)
-    #     self.val_step_outputs.clear()
-    #     self.val_step_targets.clear()
+    def on_validation_epoch_end(self):
+        val_all_outputs = torch.Tensor(self.val_step_outputs).reshape((-1, 1))
+        val_all_targets = torch.Tensor(self.val_step_targets).reshape((-1, 1))
+        loss = self.loss(val_all_outputs, val_all_targets)
+        metrics = calculate_metrics(val_all_outputs, val_all_targets)
+        metrics["step"] = self.current_epoch
+        metrics["val_loss"] = loss
+        self.log_dict(metrics)
+        print(metrics)
+        self.val_step_outputs.clear()
+        self.val_step_targets.clear()
 
     def configure_optimizers(self):
         optimizer = optim.Adam(
@@ -136,7 +128,7 @@ class ModelModule(pl.LightningModule):
         #     momentum=0.7
         # )
 
-        lr_scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.997)
+        lr_scheduler = optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.97)
         return {"optimizer": optimizer, "lr_scheduler": lr_scheduler}
         # return optimizer
 

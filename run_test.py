@@ -43,53 +43,19 @@ hidden_size = 512
 num_layers = 2
 
 data_with_graph = DataModule(name, year, batch_size, seq_len=seq_len, label_encode=True, split_ratio=0.8, with_station_id=True, graph=True)
-data_with_graph.setup()
 # data_with_station = DataModule(name, year, batch_size, seq_len=seq_len, label_encode=True, split_ratio=0.8, with_station_id=True)
 # feature_num = data_with_station.feature_num
 # # load model
-name = "STGCN_512_32"
-checkpoint_path = "lightning_logs/{}/checkpoints/epoch=49-step=49.ckpt".format(name)
-
-
-def train():
-    model = STGCN.STGCN(node_num=data_with_graph.node_num, seq_len=seq_len, feature_num=data_with_graph.feature_num,
-                        adj_mat=data_with_graph.adj_mat, graph_feature_num=data_with_graph.graph_feature_num,
-                        fc_hidden_size=512, gcn_output_size=32)
-    model = model.to("cuda")
-    for i in range(epoch):
-        model.train(True)
-        train_loss = 0.0
-        train_batches = len(data_with_graph.train_dataloader())
-        loss_fn = nn.BCELoss()
-        opt = torch.optim.Adam(model.parameters(), lr=0.001)
-        for j, data in enumerate(data_with_graph.train_dataloader()):
-            opt.zero_grad()
-            x, y = data
-            x = x.to("cuda")
-            y = y.to("cuda").reshape(-1)
-            y_hat = model(x).reshape(-1)
-            loss = loss_fn(y_hat, y)
-            loss.backward()
-            opt.step()
-            train_loss += loss.item()
-        train_loss = train_loss / train_batches
-        print(f"epoch: {i}, train loss: {train_loss}")
-        model.eval()
-        with torch.no_grad():
-            val_loss = 0.0
-            for j, data in enumerate(data_with_graph.val_dataloader()):
-                x, y = data
-                x = x.to("cuda")
-                y = y.to("cuda").reshape(-1)
-                y_hat = model(x).reshape(-1)
-                loss = loss_fn(y_hat, y)
-                val_loss += loss.item()
-            val_loss /= len(data_with_graph.val_dataloader())
-            print(f"epoch: {i}, val_loss: {val_loss}")
+name = "version_0"
+#  checkpoint_path = "checkpoints/" + name + ".ckpt"
+#checkpoint_path = f"lightning_logs/{name}/checkpoints/epoch=49-step=49.ckpt"
+hyper_path = f"lightning_logs/{name}/hparams.yaml"
 
 
 if __name__ == '__main__':
-    train()
+    model = ModelModule.load_from_checkpoint(checkpoint_path="checkpoints/FCN.ckpt")
+    trainer = pl.Trainer(accelerator="gpu", devices="1")
+    trainer.validate(model=model, datamodule=data_with_graph)
 
 
 

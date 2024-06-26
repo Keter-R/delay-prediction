@@ -15,6 +15,8 @@ class DataModule(pl.LightningDataModule):
         super(DataModule, self).__init__()
         self.val_dataset = None
         self.train_dataset = None
+        self.val_dataldr = None
+        self.train_dataldr = None
         self.name = name
         self.year = year
         self.batch_size = batch_size
@@ -37,13 +39,10 @@ class DataModule(pl.LightningDataModule):
         self.raw_data = None
         self.data = self.load_data()
         assert self.data is not None
-        self.generate_dataset()
+        self.train_dataset, self.val_dataset = self.generate_dataset()
 
     def setup(self, stage: str = None):
-        (
-            self.train_dataset,
-            self.val_dataset,
-        ) = self.generate_dataset()
+        print(f"setup stage: {stage}")
 
     def load_data(self):
         if self.name == 'ttc-streetcar-delay-data':
@@ -284,7 +283,8 @@ class DataModule(pl.LightningDataModule):
     def train_dataloader(self):
         if self.sampler is not None:
             return DataLoader(self.train_dataset, batch_size=self.batch_size, sampler=self.sampler, num_workers=0)
-        return DataLoader(self.train_dataset, batch_size=self.batch_size, num_workers=0)
+        else:
+            return DataLoader(self.train_dataset, batch_size=self.batch_size, num_workers=0)
 
     def val_dataloader(self):
         return DataLoader(self.val_dataset, batch_size=self.batch_size, num_workers=0)
