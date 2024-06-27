@@ -11,8 +11,9 @@ from torch.utils.data import WeightedRandomSampler
 # no shuffle for the DataLoader
 class DataModule(pl.LightningDataModule):
     def __init__(self, name, year, batch_size, split_ratio=0.8, seq_len=10, label_encode=False,
-                 with_station_id=False, delt_t=60, graph=False):
+                 with_station_id=False, delt_t=360, graph=False):
         super(DataModule, self).__init__()
+        self.np_ratio = 10
         self.val_dataset = None
         self.train_dataset = None
         self.val_dataldr = None
@@ -52,7 +53,8 @@ class DataModule(pl.LightningDataModule):
             sheet_names = xls.sheet_names
             dat = None
             target_cols = ['Report Date', 'Time', 'Day', 'Incident', 'Min Delay', 'Route', 'Line', 'Date', 'Station ID',
-                           'Delay']
+                          'Delay']
+            # target_cols = ['Report Date', 'Time', 'Day', 'Incident', 'Min Delay', 'Date', 'Station ID', 'Delay']
             for sheet_name in sheet_names:
                 df = pd.read_excel(file_path, sheet_name)
                 # remove cols that not in target_cols
@@ -119,6 +121,9 @@ class DataModule(pl.LightningDataModule):
 
     def data_encode(self, data):
         for col in ['Day', 'Incident', 'Route']:
+            if col not in data.columns:
+                print(f"column {col} not in the data")
+                continue
             data[col] = data[col].astype('category').cat.codes.astype('int') + 1
         if not self.with_station_id:
             data = data.drop(columns=['Station ID'])
@@ -127,7 +132,7 @@ class DataModule(pl.LightningDataModule):
             data = self.node_map(data)
         # data = pd.get_dummies(data, columns=['Station ID'])
         # 'Time' column //15
-        data['Time'] = data['Time'] // 60
+        data['Time'] = data['Time'] // self.delt_t
         self.raw_data = data
         data = pd.get_dummies(data, columns=['Time'])
         data = pd.get_dummies(data, columns=['Day'])
@@ -160,26 +165,19 @@ class DataModule(pl.LightningDataModule):
 
     @staticmethod
     def preprocess_time(self, df):
-        # convert the 'Time' column to minutes in the month
-        # with day info in the column 'Report Date'
-        for i in range(len(df)):
-            # cast str(00:00) to datetime.time
-            if len(str(df.iloc[i, 2])) == 5:
-                df.iloc[i, 2] = pd.to_datetime(df.iloc[i, 2], format='%H:%M').time()
-            time = df.iloc[i, 2]
-            day = pd.to_datetime(df.iloc[i, 0])
-            day_min = (day.day - 1) * 24 * 60
-            month_min = day_min + time.hour * 60 + time.minute
-            # normalize
-            df.iloc[i, 2] = month_min - day_min
-        # set the column 'Report Date' to 'Month'
+        # find the column 'Time'
         cols = list(df.columns)
         if 'Report Date' in cols:
             df = df.rename(columns={'Report Date': 'Month'})
         elif 'Date' in cols:
             df = df.rename(columns={'Date': 'Month'})
-        # set the column 'Month' to int type
+
         df['Month'] = pd.to_datetime(df['Month']).dt.month
+        # convert time to 'HH:MM:SS' if the time is in 'HH:MM'
+        if 'Time' in cols:
+            df['Time'] = df['Time'].apply(lambda x: str(x) + ':00' if len(str(x)) == 5 else x)
+            df['Time'] = (pd.to_datetime(df['Time'], format='%H:%M:%S').dt.hour * 60
+                          + pd.to_datetime(df['Time'], format='%H:%M:%S').dt.minute)
         return df
 
     def generate_batch_data(self, data, using_sample=False):
@@ -268,10 +266,15 @@ class DataModule(pl.LightningDataModule):
             samples_weight = []
             for (a, b) in y:
                 if b == 1:
-                    samples_weight.append(1 / positive_count)
+                    samples_weight.append(10000000) #1 / positive_count)
                 else:
                     samples_weight.append(1 / negative_count)
-            self.sampler = WeightedRandomSampler(samples_weight, train_size)
+            print('Train P count:', positive_count)
+            print('Train N count:', negative_count)
+            print('Train N/P ratio:', negative_count / positive_count)
+            self.sampler = WeightedRandomSampler(samples_weight, positive_count * 2, replacement=False)
+            self.sampler = None
+            self.np_ratio = negative_count / positive_count
         return train_dataset, val_dataset
 
     @staticmethod

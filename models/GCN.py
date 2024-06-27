@@ -18,13 +18,8 @@ class GCN(nn.Module):
         self.gc1 = nn.Linear(feature_num, gcn_hidden_size//2, bias=True)
         self.gc2 = nn.Linear(gcn_hidden_size//2, gcn_hidden_size//2, bias=True)
         self.gc3 = nn.Linear(gcn_hidden_size//2, gcn_hidden_size, bias=True)
-        self.fc0 = nn.Sequential(
-            nn.Linear(feature_num - 1, fc_hidden_size),
-            nn.BatchNorm1d(fc_hidden_size),
-            nn.LeakyReLU()
-        )
         self.fc = nn.Sequential(
-            nn.Linear(gcn_hidden_size + fc_hidden_size, fc_hidden_size),
+            nn.Linear(gcn_hidden_size + feature_num - 1, fc_hidden_size),
             # nn.Linear(feature_num - 1, 128),
             nn.BatchNorm1d(fc_hidden_size),
             nn.LeakyReLU(),
@@ -45,7 +40,7 @@ class GCN(nn.Module):
                 feat = torch.cat((feat, t), 0)
                 X[i, sid, :] = feat
         x = x[:, -1, :-2].reshape(x.shape[0], -1)
-        x = self.fc0(x)
+        # x = self.fc0(x)
         X = torch.tensor(X, dtype=torch.float32, device=x.device)
         self.A = self.A.to(x.device)
         # graph convolution

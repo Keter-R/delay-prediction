@@ -24,13 +24,17 @@ class STGCN(nn.Module):
         self.stmgcn = STMGCN.ST_MGCN(M=1, seq_len=seq_len, n_nodes=node_num, input_dim=self.stmgcn_feature_num, lstm_hidden_dim=64, lstm_num_layers=3,
                                gcn_hidden_dim=64, sta_kernel_config=sta_kernel_config, gconv_use_bias=True, gconv_activation=nn.ReLU, output_dim=self.stmgcn_output_dim)
         self.fc0 = nn.Sequential(
+            nn.BatchNorm1d(feature_num - 1),
             nn.Linear(feature_num - 1, fc_hidden_size),
             nn.BatchNorm1d(fc_hidden_size),
             nn.LeakyReLU()
         )
         self.fc = nn.Sequential(
             nn.BatchNorm1d(fc_hidden_size + self.stmgcn_output_dim),
-            nn.Linear(fc_hidden_size + self.stmgcn_output_dim, 1),
+            nn.Linear(fc_hidden_size + self.stmgcn_output_dim, 8),
+            nn.BatchNorm1d(8),
+            nn.LeakyReLU(),
+            nn.Linear(8, 1),
             nn.Sigmoid()
         )
 

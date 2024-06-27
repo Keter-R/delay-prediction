@@ -43,11 +43,12 @@ class FCForGraph(nn.Module):
         self.feature_num = feature_num
         print('FCFG liner input size:', feature_num - 1)
         self.fc = nn.Sequential(
+            nn.BatchNorm1d(feature_num - 1),
             nn.Linear(feature_num - 1, hidden_size),  # exclude station id
             nn.BatchNorm1d(hidden_size),
             nn.LeakyReLU(),
             nn.Linear(hidden_size, 1),
-            nn.Sigmoid()
+            # nn.Sigmoid()
         )
 
     def forward(self, x):

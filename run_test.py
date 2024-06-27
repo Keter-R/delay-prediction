@@ -46,16 +46,16 @@ data_with_graph = DataModule(name, year, batch_size, seq_len=seq_len, label_enco
 # data_with_station = DataModule(name, year, batch_size, seq_len=seq_len, label_encode=True, split_ratio=0.8, with_station_id=True)
 # feature_num = data_with_station.feature_num
 # # load model
-name = "version_0"
-#  checkpoint_path = "checkpoints/" + name + ".ckpt"
-#checkpoint_path = f"lightning_logs/{name}/checkpoints/epoch=49-step=49.ckpt"
-hyper_path = f"lightning_logs/{name}/hparams.yaml"
-
-
-if __name__ == '__main__':
-    model = ModelModule.load_from_checkpoint(checkpoint_path="checkpoints/FCN.ckpt")
-    trainer = pl.Trainer(accelerator="gpu", devices="1")
-    trainer.validate(model=model, datamodule=data_with_graph)
+# name = "FCN_128"
+# #  checkpoint_path = "checkpoints/" + name + ".ckpt"
+# #checkpoint_path = f"lightning_logs/{name}/checkpoints/epoch=49-step=49.ckpt"
+# hyper_path = f"lightning_logs/{name}/hparams.yaml"
+#
+#
+# if __name__ == '__main__':
+#     model = ModelModule.load_from_checkpoint(checkpoint_path="checkpoints/FCN.ckpt")
+#     trainer = pl.Trainer(accelerator="gpu", devices="1")
+#     trainer.validate(model=model, datamodule=data_with_graph)
 
 
 
