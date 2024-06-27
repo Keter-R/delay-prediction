@@ -212,13 +212,15 @@ class DataModule(pl.LightningDataModule):
             x, y = list(), list()
             cols = list(r_data.columns)
             r_cols_id = []
+            use_min_delay = False
             for col in cols:
                 if 'Incident' in col:
                     r_cols_id.append(cols.index(col))
                 if 'Route' in col:
                     r_cols_id.append(cols.index(col))
-                # if 'Min Delay' in col:
-                #     r_cols_id.append(cols.index(col))
+                if 'Min Delay' in col:
+                    r_cols_id.append(cols.index(col))
+                    use_min_delay = True
                 if 'Time' in col:
                     r_cols_id.append(cols.index(col))
                 if 'Month' in col:
@@ -234,7 +236,7 @@ class DataModule(pl.LightningDataModule):
                     sid = int(data[i + j, -2])
                     xin[j, sid, :] = data[i + j, r_cols_id]
                     # mask the last day's delay info to -1
-                    if j == self.seq_len - 1:
+                    if j == self.seq_len - 1 and use_min_delay:
                         xin[j, sid, -1] = -1
                 xfeat = data[i + self.seq_len - 1, :-1]
                 # squeeze the xin to 1D tensor

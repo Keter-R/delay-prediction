@@ -19,12 +19,11 @@ class GCN(nn.Module):
         self.gc2 = nn.Linear(gcn_hidden_size//2, gcn_hidden_size//2, bias=True)
         self.gc3 = nn.Linear(gcn_hidden_size//2, gcn_hidden_size, bias=True)
         self.fc = nn.Sequential(
+            nn.BatchNorm1d(gcn_hidden_size + feature_num - 1),
             nn.Linear(gcn_hidden_size + feature_num - 1, fc_hidden_size),
-            # nn.Linear(feature_num - 1, 128),
             nn.BatchNorm1d(fc_hidden_size),
             nn.LeakyReLU(),
-            nn.Linear(fc_hidden_size, 1),
-            nn.Sigmoid()
+            nn.Linear(fc_hidden_size, 1)
         )
 
     def forward(self, x):

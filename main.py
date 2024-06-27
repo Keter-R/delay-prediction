@@ -21,9 +21,9 @@ torch.set_float32_matmul_precision('high')
 name = 'ttc-streetcar-delay-data'
 year = '2020-with-stations'
 val_year = 2020
-batch_size = 128
+batch_size = 32
 epoch = 100
-seq_len = 16
+seq_len = 32
 pre_len = 1
 hidden_size = 512
 num_layers = 2
@@ -63,7 +63,7 @@ def run(model, data, name=""):
     ckpt_path = f"checkpoints/{name}.ckpt"
     loss = nn.BCEWithLogitsLoss(pos_weight=torch.Tensor([data.np_ratio]).to('cuda'))
     # loss = nn.BCEWithLogitsLoss()
-    task = ModelModule(model, seq_len, pre_len, batch_size, loss, max_delay=0, lr=0.01)
+    task = ModelModule(model, seq_len, pre_len, batch_size, loss, max_delay=0, lr=0.001)
     trainer = pl.Trainer(accelerator="gpu", devices="1", max_epochs=epoch, deterministic="warn")
     trainer.fit(task, datamodule=data)
     result = trainer.validate(ckpt_path="best", datamodule=data)
@@ -71,11 +71,12 @@ def run(model, data, name=""):
 
 
 if __name__ == '__main__':
-    # model = STGCN.STGCN(node_num=data_with_graph.node_num, seq_len=seq_len, feature_num=data_with_graph.feature_num,
-    #                     adj_mat=data_with_graph.adj_mat, graph_feature_num=data_with_graph.graph_feature_num,
-    #                     fc_hidden_size=64, gcn_output_size=4)
-    model = GCN.GCN(node_num=data_with_station.node_num, feature_num=data_with_station.feature_num,
-                    fc_hidden_size=16, gcn_hidden_size=0,
-                    seq_len=seq_len, adj_mat=data_with_station.adj_mat)
+    model = STGCN.STGCN_Graph(node_num=data_with_graph.node_num, seq_len=seq_len,
+                              feature_num=data_with_graph.feature_num,
+                              adj_mat=data_with_graph.adj_mat, graph_feature_num=data_with_graph.graph_feature_num,
+                              fc_hidden_size=16, gcn_output_size=1)
+    # model = GCN.GCN(node_num=data_with_station.node_num, feature_num=data_with_station.feature_num,
+    # fc_hidden_size=16, gcn_hidden_size=4,
+    # seq_len=seq_len, adj_mat=data_with_station.adj_mat)
     # model = BasicFullyConnection.FCForGraph(data_with_graph.feature_num, hidden_size=16)
-    run(model, data_with_station, "STGCN")
+    run(model, data_with_graph, "STGCN")
