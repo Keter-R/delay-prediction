@@ -25,20 +25,20 @@ class STGCN(nn.Module):
                                gcn_hidden_dim=64, sta_kernel_config=sta_kernel_config, gconv_use_bias=True, gconv_activation=nn.ReLU, output_dim=self.stmgcn_output_dim)
         self.fc0 = nn.Sequential(
             nn.BatchNorm1d(feature_num - 1),
-            nn.Linear(feature_num - 1, self.stmgcn_output_dim),
-            nn.BatchNorm1d(self.stmgcn_output_dim),
+            # nn.Linear(feature_num - 1, fc_hidden_size),
+            # nn.BatchNorm1d(fc_hidden_size),
+            # nn.LeakyReLU()
         )
         self.fc1 = nn.Sequential(
-            nn.BatchNorm1d(self.stmgcn_output_dim),
+            # nn.BatchNorm1d(self.stmgcn_output_dim),
         )
         self.fc = nn.Sequential(
-            nn.Linear(self.stmgcn_output_dim * 2, fc_hidden_size),
+            nn.BatchNorm1d(self.stmgcn_output_dim + feature_num - 1),
+            nn.Linear(self.stmgcn_output_dim + feature_num - 1, fc_hidden_size),
             nn.BatchNorm1d(fc_hidden_size),
             nn.LeakyReLU(),
             nn.Linear(fc_hidden_size, 1)
         )
-        self.alpha = nn.Parameter(torch.tensor(0.5))
-        self.beta = nn.Parameter(torch.tensor(0.5))
 
     def forward(self, x):
         # for each batch x is flattened from (seq_len, node_num, graph_feature_num) + (1, feature_num)
@@ -59,13 +59,9 @@ class STGCN(nn.Module):
         for i in range(x2.shape[0]):
             gFeature[i, :] = x1[i, sid[i], :]
         x2 = x2.to(x.device)
-        x2 = self.fc0(x2)
+        # x2 = self.fc0(x2)
         gFeature = gFeature.to(x.device)
-        x1 = self.fc1(gFeature)
-        # let x = concat(alpha * x1, beta * x2)
-        x1 = self.alpha * x1
-        x2 = self.beta * x2
-        x = torch.concat((x1, x2), 1)
+        x = torch.concat((gFeature, x2), 1)
         x = self.fc(x)
         return x
 

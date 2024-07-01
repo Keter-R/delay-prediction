@@ -35,7 +35,7 @@ torch.set_float32_matmul_precision('high')
 name = 'ttc-streetcar-delay-data'
 year = '2020-with-stations'
 val_year = 2020
-batch_size = 32
+batch_size = 128
 epoch = 50
 seq_len = 16
 pre_len = 1
@@ -46,16 +46,16 @@ data_with_graph = DataModule(name, year, batch_size, seq_len=seq_len, label_enco
 # data_with_station = DataModule(name, year, batch_size, seq_len=seq_len, label_encode=True, split_ratio=0.8, with_station_id=True)
 # feature_num = data_with_station.feature_num
 # # load model
-# name = "FCN_128"
+name = "STGCN"
 # #  checkpoint_path = "checkpoints/" + name + ".ckpt"
-# #checkpoint_path = f"lightning_logs/{name}/checkpoints/epoch=49-step=49.ckpt"
+checkpoint_path = f"lightning_logs/{name}/checkpoints/epoch=57-step=57.ckpt"
 # hyper_path = f"lightning_logs/{name}/hparams.yaml"
 #
 #
-# if __name__ == '__main__':
-#     model = ModelModule.load_from_checkpoint(checkpoint_path="checkpoints/FCN.ckpt")
-#     trainer = pl.Trainer(accelerator="gpu", devices="1")
-#     trainer.validate(model=model, datamodule=data_with_graph)
+if __name__ == '__main__':
+    model = ModelModule.load_from_checkpoint(checkpoint_path=checkpoint_path)
+    trainer = pl.Trainer(accelerator="gpu", devices="1")
+    trainer.validate(model=model, datamodule=data_with_graph)
 
 
 

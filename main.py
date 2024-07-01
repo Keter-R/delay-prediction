@@ -14,6 +14,7 @@ import models.FCLstm as FCLstm
 import models.GCN as GCN
 import models.STGCN as STGCN
 import FocalLoss
+from RandomForest import RandomForest
 
 seed = 998244353
 pl.seed_everything(seed, workers=True)
@@ -23,7 +24,7 @@ year = '2020-with-stations'
 val_year = 2020
 batch_size = 32
 epoch = 100
-seq_len = 32
+seq_len = 16
 pre_len = 1
 hidden_size = 512
 num_layers = 2
@@ -35,6 +36,11 @@ data_with_station = DataModule(name, year, batch_size, seq_len=seq_len, label_en
 feature_num = data_with_station.feature_num
 
 
+print(f"graph feature num: {data_with_graph.graph_feature_num}, seq len: {seq_len}, feature num: {feature_num}")
+rf = RandomForest(data_with_graph, seq_len, batch_size, data_with_graph.feature_num)
+rf.fit()
+rf.validate()
+exit(11111)
 # model_STGCN = STGCN.STGCN(node_num=data_with_graph.node_num, feature_num=data_with_graph.feature_num
 #                           , seq_len=seq_len, adj_mat=data_with_graph.adj_mat, graph_feature_num=data_with_graph.graph_feature_num)
 # task_STGCN = ModelModule(model_STGCN, seq_len, pre_len, batch_size, nn.BCELoss(), max_delay=0, lr=0.001)
@@ -63,7 +69,7 @@ def run(model, data, name=""):
     ckpt_path = f"checkpoints/{name}.ckpt"
     loss = nn.BCEWithLogitsLoss(pos_weight=torch.Tensor([data.np_ratio]).to('cuda'))
     # loss = nn.BCEWithLogitsLoss()
-    task = ModelModule(model, seq_len, pre_len, batch_size, loss, max_delay=0, lr=0.001)
+    task = ModelModule(model, seq_len, pre_len, batch_size, loss, max_delay=0, lr=0.01)
     trainer = pl.Trainer(accelerator="gpu", devices="1", max_epochs=epoch, deterministic="warn")
     trainer.fit(task, datamodule=data)
     result = trainer.validate(ckpt_path="best", datamodule=data)
@@ -71,10 +77,10 @@ def run(model, data, name=""):
 
 
 if __name__ == '__main__':
-    model = STGCN.STGCN_Graph(node_num=data_with_graph.node_num, seq_len=seq_len,
-                              feature_num=data_with_graph.feature_num,
-                              adj_mat=data_with_graph.adj_mat, graph_feature_num=data_with_graph.graph_feature_num,
-                              fc_hidden_size=16, gcn_output_size=1)
+    model = STGCN.STGCN(node_num=data_with_graph.node_num, seq_len=seq_len,
+                        feature_num=data_with_graph.feature_num,
+                        adj_mat=data_with_graph.adj_mat, graph_feature_num=data_with_graph.graph_feature_num,
+                        fc_hidden_size=32, gcn_output_size=32)
     # model = GCN.GCN(node_num=data_with_station.node_num, feature_num=data_with_station.feature_num,
     # fc_hidden_size=16, gcn_hidden_size=4,
     # seq_len=seq_len, adj_mat=data_with_station.adj_mat)

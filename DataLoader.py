@@ -6,6 +6,36 @@ import torch
 from torch.utils.data import DataLoader
 import pytorch_lightning as pl
 from torch.utils.data import WeightedRandomSampler
+from imblearn.over_sampling import SMOTEN
+
+
+def resample(dat, n):
+    # swap 'Min Delay' to the last column
+    cols = list(dat.columns)
+    cols.remove('Min Delay')
+    cols.append('Min Delay')
+    dat = dat[cols]
+    data = dat.values
+    # drop row that contains empty value
+    data = data[~pd.isnull(data).any(axis=1)]
+    print(f"resample data with n={n}")
+    # get dataframe of x
+    x = data[:, :-1]
+    y = data[:, -1]
+    # if string in x columns, then
+    # if y is not 0/1, then convert it to 0/1
+    if y.max() > 1:
+        y = (y >= 30).astype(int)
+    print(x)
+    print(y)
+    smote_n = SMOTEN(random_state=42)
+    x_res, y_res = smote_n.fit_resample(x, y)
+    data_ = np.concatenate((x_res, y_res.reshape(-1, 1)), axis=1)
+    print(f"resample data shape: {data_.shape}")
+    dat_ = pd.DataFrame(data=data_, columns=dat.columns)
+    dat_.to_csv("data/temp.csv", index=False)
+    # exit(1770)
+    return dat_
 
 
 # no shuffle for the DataLoader
@@ -53,7 +83,7 @@ class DataModule(pl.LightningDataModule):
             sheet_names = xls.sheet_names
             dat = None
             target_cols = ['Report Date', 'Time', 'Day', 'Incident', 'Min Delay', 'Route', 'Line', 'Date', 'Station ID',
-                          'Delay']
+                           'Delay']
             # target_cols = ['Report Date', 'Time', 'Day', 'Incident', 'Min Delay', 'Date', 'Station ID', 'Delay']
             for sheet_name in sheet_names:
                 df = pd.read_excel(file_path, sheet_name)
@@ -71,11 +101,12 @@ class DataModule(pl.LightningDataModule):
                     df = df.rename(columns={'Report Date': 'Date'})
                 # convert the 'Time' column to minutes in the month
                 # with day info in the column 'Report Date'
-                df = self.preprocess_time(self, df)
+                df = self.preprocess_time(df)
                 if dat is None:
                     dat = df
                 else:
                     dat = pd.concat([dat, df], ignore_index=True)
+            # dat = resample(dat, 2 * len(dat))
             dat = self.data_encode(dat)
             return dat
         return None
@@ -120,11 +151,11 @@ class DataModule(pl.LightningDataModule):
         return data
 
     def data_encode(self, data):
-        for col in ['Day', 'Incident', 'Route']:
-            if col not in data.columns:
-                print(f"column {col} not in the data")
-                continue
-            data[col] = data[col].astype('category').cat.codes.astype('int') + 1
+        # for col in ['Day', 'Incident', 'Route']:
+        #     if col not in data.columns:
+        #         print(f"column {col} not in the data")
+        #         continue
+        #     data[col] = data[col].astype('category').cat.codes.astype('int') + 1
         if not self.with_station_id:
             data = data.drop(columns=['Station ID'])
         else:
@@ -139,8 +170,8 @@ class DataModule(pl.LightningDataModule):
         data = pd.get_dummies(data, columns=['Incident'])
         data = pd.get_dummies(data, columns=['Month'])
         data = pd.get_dummies(data, columns=['Route'])
-        # change the column 'Min Delay' to 0/1 by the limit 30
-        if self.label_encode:
+        # change the column 'Min Delay' to 0/1 by the limit 30 if Min Delay >= 30
+        if self.label_encode and data['Min Delay'].max() > 1:
             data['Min Delay'] = (data['Min Delay'] >= 30).astype(int)
         else:
             data['Min Delay'] = data['Min Delay']  # / 30
@@ -164,7 +195,7 @@ class DataModule(pl.LightningDataModule):
         return data
 
     @staticmethod
-    def preprocess_time(self, df):
+    def preprocess_time(df):
         # find the column 'Time'
         cols = list(df.columns)
         if 'Report Date' in cols:
@@ -172,6 +203,9 @@ class DataModule(pl.LightningDataModule):
         elif 'Date' in cols:
             df = df.rename(columns={'Date': 'Month'})
 
+        # # set the 'Day' column to the day of the month
+        # if 'Day' in cols:
+        #     df['Day'] = pd.to_datetime(df['Month']).dt.day
         df['Month'] = pd.to_datetime(df['Month']).dt.month
         # convert time to 'HH:MM:SS' if the time is in 'HH:MM'
         if 'Time' in cols:
@@ -190,6 +224,7 @@ class DataModule(pl.LightningDataModule):
         #         if type(data[i][j]) is str:
         #             print(data[i])
         # exit(0)
+
         if not self.graph:
             x, y = list(), list()
             for i in range(data_len - self.seq_len):
@@ -213,20 +248,33 @@ class DataModule(pl.LightningDataModule):
             cols = list(r_data.columns)
             r_cols_id = []
             use_min_delay = False
+            unrelated_cols = ['Incident_Investigation', 'Incident_Emergency Services', 'Incident_Overhead - Pantograph',
+                              'Incident_General Delay', 'Route']
+            # unrelated_cols = []
             for col in cols:
+                # if values in unrelated_cols is substring of col or col is substring of values in unrelated_cols
+                # then continue
+                if any([uc in col for uc in unrelated_cols]):
+                    continue
                 if 'Incident' in col:
                     r_cols_id.append(cols.index(col))
+                    print('add col:', col)
                 if 'Route' in col:
                     r_cols_id.append(cols.index(col))
-                if 'Min Delay' in col:
-                    r_cols_id.append(cols.index(col))
-                    use_min_delay = True
+                    print('add col:', col)
+                # if 'Min Delay' in col:
+                # r_cols_id.append(cols.index(col))
+                # print('add col:', col)
+                # use_min_delay = True
                 if 'Time' in col:
                     r_cols_id.append(cols.index(col))
+                    print('add col:', col)
                 if 'Month' in col:
                     r_cols_id.append(cols.index(col))
+                    print('add col:', col)
                 if 'Day' in col:
                     r_cols_id.append(cols.index(col))
+                    print('add col:', col)
             self.graph_feature_num = len(r_cols_id)
             for i in range(data_len - self.seq_len):
                 xin = np.zeros((self.seq_len, self.node_num, self.graph_feature_num))
@@ -268,13 +316,13 @@ class DataModule(pl.LightningDataModule):
             samples_weight = []
             for (a, b) in y:
                 if b == 1:
-                    samples_weight.append(10000000) #1 / positive_count)
+                    samples_weight.append(1 / positive_count)
                 else:
                     samples_weight.append(1 / negative_count)
             print('Train P count:', positive_count)
             print('Train N count:', negative_count)
             print('Train N/P ratio:', negative_count / positive_count)
-            self.sampler = WeightedRandomSampler(samples_weight, positive_count * 2, replacement=False)
+            self.sampler = WeightedRandomSampler(samples_weight, positive_count + negative_count, replacement=True)
             self.sampler = None
             self.np_ratio = negative_count / positive_count
         return train_dataset, val_dataset
@@ -293,5 +341,3 @@ class DataModule(pl.LightningDataModule):
 
     def val_dataloader(self):
         return DataLoader(self.val_dataset, batch_size=self.batch_size, num_workers=0)
-
-
