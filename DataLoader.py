@@ -41,7 +41,7 @@ def resample(dat, n):
 # no shuffle for the DataLoader
 class DataModule(pl.LightningDataModule):
     def __init__(self, name, year, batch_size, split_ratio=0.8, seq_len=10, label_encode=False,
-                 with_station_id=False, delt_t=360, graph=False):
+                 with_station_id=False, delt_t=20, graph=False):
         super(DataModule, self).__init__()
         self.np_ratio = 10
         self.val_dataset = None
@@ -107,6 +107,7 @@ class DataModule(pl.LightningDataModule):
                 else:
                     dat = pd.concat([dat, df], ignore_index=True)
             # dat = resample(dat, 2 * len(dat))
+            print(f"raw data row count: {len(dat)}")
             dat = self.data_encode(dat)
             return dat
         return None
@@ -192,6 +193,9 @@ class DataModule(pl.LightningDataModule):
 
         print(data.columns)
         print(data.head())
+        print(f"total rows: {len(data)}")
+        print(f"positive count: {len(data[data['Min Delay'] == 1])}")
+        print(f"negative count: {len(data[data['Min Delay'] == 0])}")
         return data
 
     @staticmethod

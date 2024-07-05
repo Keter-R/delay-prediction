@@ -12,7 +12,7 @@ from ModelModule import calculate_metrics
 
 
 def load_from_xlsx():
-    file_path = 'data/ttc-streetcar-delay-data-2020-with-stations.xlsx'
+    file_path = 'data/ttc-streetcar-delay-data-2019.xlsx'
     # read all sheets from the Excel file
     xls = pd.ExcelFile(file_path)
     sheet_names = xls.sheet_names
@@ -50,13 +50,17 @@ dat = dat[[col for col in dat.columns if col != 'Min Delay'] + ['Min Delay']]
 # remove rows that contain empty values
 dat = dat.dropna()
 # drop the columns 'Station ID'
-dat = dat.drop(columns=['Station ID'])
+# dat = dat.drop(columns=['Station ID'])
 dat = dat.drop(columns=['Route'])
 # convert Min Delay to 0/1 by the limit 30
 dat['Min Delay'] = dat['Min Delay'].apply(lambda x: 1 if x > 30 else 0)
-dat['Time'] = dat['Time']//360
+dat['Time'] = dat['Time']//120
+# dat = dat.drop_duplicates()
+# print count of rows in which Min Delay is 0 and 1
+# print(dat.drop_duplicates()['Min Delay'].value_counts())
+# exit(12)
 # split 'dat' to train and test by 0.8 ratio
-train = dat.sample(frac=0.8)
+train = dat.sample(frac=0.8, random_state=998244353)
 test = dat.drop(train.index)
 r_x_train = train.values[:, :-1]
 r_y_train = train.values[:, -1].astype(int)
@@ -68,17 +72,16 @@ x_test = test.values[:, :-1]
 y_test = test.values[:, -1]
 
 # enhance the train data by SMOTEN
-smoten = SMOTEN(random_state=998244353, k_neighbors=100)
+smoten = SMOTEN(random_state=998244353)
 x_train = train.values[:, :-1]
 y_train = train.values[:, -1].astype(int)
-x_train, y_train = smoten.fit_resample(x_train, y_train)
+# x_train, y_train = smoten.fit_resample(x_train, y_train)
 train = np.concatenate([x_train, y_train.reshape((-1, 1))], axis=1)
 
 # save the train and test data
 train_dat = pd.DataFrame(columns=dat.columns, data=np.concatenate([x_train, y_train.reshape((-1, 1))], axis=1))
 test_dat = pd.DataFrame(columns=dat.columns, data=np.concatenate([x_test, y_test.reshape((-1, 1))], axis=1))
-# drop the same row in the train data
-train_dat = train_dat.drop_duplicates()
+
 train_dat.to_csv('data/train.csv', index=False)
 test_dat.to_csv('data/test.csv', index=False)
 
@@ -115,7 +118,7 @@ print(f"x_train_len: {len(x_train)}, y_train_len: {len(y_train)}, x_test_len: {l
 rf = BalancedRandomForestClassifier(n_estimators=300, criterion='gini', max_depth=None, min_samples_split=16,
                                     max_features='sqrt', n_jobs=-1, random_state=998244353, verbose=1)
 # rf = EasyEnsembleClassifier(n_estimators=100, n_jobs=-1, random_state=998244353, verbose=1)
-rf.fit(r_x_train, r_y_train)
+rf.fit(x_train, y_train)
 y_hat = rf.predict_proba(x_test)
 y_hat = y_hat[:, 1]
 balanced_acc = balanced_accuracy_score(y_test, rf.predict(x_test))

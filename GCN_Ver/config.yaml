@@ -1,0 +1,39 @@
+
+batch_size : 32
+epoch : 100
+lr : 0.01
+lr_gamma : 0.87
+split_ratio : 0.8
+random_seed : [2, 3, 5, 7, 11, 13, 17, 19, 23, 998244353]
+data_path : './data/ttc-streetcar-delay-data-2020-with-stations.xlsx'
+weight_decay : 0.01
+
+node_num : 343
+
+k_neighbors : 5
+time_interval_minutes : 480
+time_limit : 15
+
+self_enhance:
+  spatial_adj_lmb : 5
+  temporal_adj_lmb : 2
+  neighbor_adj_lmb : 3
+
+raw_cols:
+  - 'Day'
+  - 'Date'
+  - 'Time'
+  - 'Route'
+  - 'Incident'
+  - 'Delay'
+  - 'Station ID'
+
+
+
+graph_feature_cols:
+  # - 'Station ID'
+  - 'Route'
+  - 'Incident'
+  - 'Time'
+  - 'Day'
+  - 'Month'

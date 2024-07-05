@@ -1,913 +1,2372 @@
 Month,Time,Day,Incident,Min Delay
-1,1,Wednesday,Investigation,0
-1,3,Wednesday,Investigation,0
-1,3,Thursday,Investigation,0
-1,1,Friday,Mechanical,0
-1,1,Friday,Investigation,0
-1,2,Friday,Investigation,0
-1,2,Friday,Investigation,0
-1,2,Saturday,Late Leaving Garage,0
-1,2,Saturday,Mechanical,0
-1,2,Saturday,Emergency Services,0
-1,2,Saturday,Mechanical,0
-1,3,Saturday,Investigation,0
-1,1,Sunday,Investigation,0
-1,2,Sunday,Mechanical,0
-1,2,Monday,Mechanical,0
-1,0,Tuesday,Held By,0
-1,1,Tuesday,Investigation,0
-1,2,Tuesday,Mechanical,0
-1,2,Tuesday,Emergency Services,0
-1,3,Tuesday,Mechanical,0
-1,3,Wednesday,Investigation,0
-1,2,Thursday,General Delay,0
-1,0,Friday,Emergency Services,0
-1,1,Friday,General Delay,0
-1,1,Saturday,Mechanical,0
-1,3,Saturday,Mechanical,0
-1,3,Saturday,Mechanical,0
-1,3,Saturday,Diversion,1
-1,0,Sunday,General Delay,0
-1,1,Sunday,General Delay,0
-1,1,Sunday,Late Leaving Garage,0
-1,3,Sunday,Emergency Services,0
-1,1,Monday,Held By,0
-1,1,Monday,Investigation,0
-1,2,Monday,Mechanical,0
-1,2,Monday,Mechanical,0
-1,1,Tuesday,General Delay,0
-1,1,Tuesday,Held By,0
-1,3,Tuesday,Mechanical,0
-1,0,Wednesday,Mechanical,0
-1,1,Wednesday,Emergency Services,0
+1,1,Tuesday,Mechanical,0
+1,4,Tuesday,Late Leaving Garage,0
+1,5,Tuesday,Investigation,0
+1,6,Tuesday,Mechanical,0
+1,7,Tuesday,Mechanical,0
+1,10,Tuesday,Mechanical,0
 1,2,Wednesday,Mechanical,0
-1,0,Thursday,Held By,1
-1,0,Thursday,Mechanical,0
-1,1,Thursday,General Delay,0
-1,1,Thursday,Mechanical,0
-1,2,Thursday,Mechanical,0
-1,0,Friday,Late Leaving Garage,0
-1,1,Friday,Mechanical,0
-1,1,Friday,General Delay,0
-1,2,Friday,General Delay,0
+1,3,Wednesday,Late Leaving Garage,0
+1,6,Wednesday,Mechanical,0
+1,7,Wednesday,Investigation,0
+1,11,Wednesday,Mechanical,0
+1,2,Thursday,Late Leaving Garage,0
+1,3,Thursday,Mechanical,0
+1,3,Thursday,Investigation,0
+1,3,Thursday,Late Leaving Garage,0
+1,5,Thursday,Held By,0
+1,7,Thursday,Investigation,0
+1,8,Thursday,Mechanical,0
+1,8,Thursday,Mechanical,1
 1,2,Friday,Mechanical,0
-1,2,Friday,Investigation,0
-1,2,Friday,Mechanical,0
-1,1,Saturday,Held By,0
-1,1,Saturday,Mechanical,0
-1,2,Saturday,General Delay,0
+1,2,Friday,Late Leaving Garage,0
+1,2,Friday,Late Leaving Garage,0
+1,3,Friday,Late Leaving Garage,0
+1,3,Friday,Held By,0
+1,3,Friday,Mechanical,0
+1,4,Friday,Investigation,0
+1,8,Friday,Mechanical,0
+1,8,Friday,Investigation,0
 1,2,Saturday,Mechanical,0
-1,2,Saturday,Held By,0
-1,2,Saturday,Held By,0
-1,2,Saturday,Held By,0
-1,1,Monday,Mechanical,0
-1,2,Monday,General Delay,0
+1,4,Saturday,Mechanical,0
+1,5,Saturday,General Delay,0
+1,5,Sunday,Mechanical,0
+1,5,Sunday,Mechanical,0
+1,6,Sunday,Emergency Services,0
+1,2,Monday,Late Leaving Garage,0
 1,2,Monday,Mechanical,0
 1,3,Monday,Mechanical,0
-1,2,Tuesday,General Delay,1
+1,3,Monday,Mechanical,0
+1,3,Monday,Mechanical,0
+1,3,Monday,Mechanical,0
+1,6,Monday,Mechanical,0
+1,7,Monday,Mechanical,0
+1,9,Monday,Mechanical,0
+1,9,Monday,Mechanical,0
+1,10,Monday,Investigation,0
+1,11,Monday,Held By,1
+1,0,Tuesday,Investigation,0
 1,2,Tuesday,Mechanical,0
-1,2,Tuesday,General Delay,0
-1,2,Tuesday,Held By,0
-1,0,Wednesday,Late Leaving Garage,0
-1,1,Wednesday,General Delay,0
-1,1,Wednesday,Utilized Off Route,0
-1,1,Wednesday,Utilized Off Route,0
-1,1,Wednesday,Utilized Off Route,0
-1,1,Wednesday,Utilized Off Route,0
-1,2,Wednesday,Mechanical,0
-1,2,Wednesday,General Delay,0
-1,3,Wednesday,Held By,0
-1,1,Thursday,Mechanical,0
-1,1,Thursday,Held By,0
-1,2,Thursday,Investigation,0
-1,0,Friday,Investigation,0
-1,1,Friday,Mechanical,0
-1,2,Friday,Investigation,0
-1,2,Friday,Mechanical,0
-1,2,Friday,Emergency Services,0
-1,3,Friday,Held By,0
-1,2,Saturday,Overhead - Pantograph,0
-1,3,Saturday,Mechanical,0
-1,3,Saturday,Mechanical,0
-1,0,Sunday,Emergency Services,0
-1,2,Sunday,Mechanical,0
-1,2,Sunday,Investigation,0
-1,1,Monday,General Delay,0
-1,1,Monday,Mechanical,0
-1,1,Monday,Mechanical,0
-1,0,Tuesday,Held By,1
-1,2,Tuesday,General Delay,0
+1,3,Tuesday,Investigation,0
+1,3,Tuesday,Mechanical,0
+1,4,Tuesday,Mechanical,0
+1,5,Tuesday,Held By,0
+1,5,Tuesday,Mechanical,0
+1,8,Tuesday,Mechanical,0
 1,0,Wednesday,Mechanical,0
-1,2,Wednesday,Mechanical,0
-1,2,Wednesday,Investigation,0
-1,3,Wednesday,Utilized Off Route,0
-1,3,Wednesday,Mechanical,0
-1,3,Wednesday,Held By,0
-1,0,Thursday,Mechanical,1
+1,3,Wednesday,Late Leaving Garage,0
+1,4,Wednesday,Mechanical,0
+1,8,Wednesday,Emergency Services,0
+1,8,Wednesday,Mechanical,0
+1,11,Wednesday,Investigation,0
+1,0,Thursday,Mechanical,0
+1,0,Thursday,Mechanical,0
 1,1,Thursday,Held By,0
 1,2,Thursday,Mechanical,0
-1,2,Friday,Utilized Off Route,0
-1,2,Friday,Emergency Services,0
-2,1,Saturday,Held By,0
+1,3,Thursday,Mechanical,0
+1,3,Thursday,Investigation,0
+1,3,Thursday,Mechanical,0
+1,3,Thursday,Held By,0
+1,3,Thursday,Held By,0
+1,3,Thursday,Mechanical,0
+1,3,Thursday,Mechanical,0
+1,4,Thursday,Emergency Services,0
+1,6,Thursday,Mechanical,0
+1,8,Thursday,Mechanical,0
+1,0,Friday,Held By,0
+1,3,Friday,Late Leaving Garage,1
+1,3,Friday,Late Leaving Garage,1
+1,3,Friday,Late Leaving Garage,0
+1,3,Friday,Mechanical,0
+1,3,Friday,Late Leaving Garage,1
+1,3,Friday,Mechanical,0
+1,3,Friday,Mechanical,0
+1,4,Friday,Mechanical,0
+1,4,Friday,Mechanical,0
+1,7,Friday,Held By,1
+1,7,Friday,Mechanical,0
+1,9,Friday,Mechanical,0
+1,5,Saturday,Mechanical,0
+1,8,Saturday,Held By,0
+1,11,Saturday,Investigation,0
+1,11,Saturday,Mechanical,0
+1,0,Sunday,Emergency Services,0
+1,5,Sunday,Mechanical,0
+1,5,Sunday,Mechanical,0
+1,8,Sunday,Investigation,0
+1,9,Sunday,Mechanical,0
+1,3,Monday,Mechanical,0
+1,4,Monday,Mechanical,0
+1,4,Monday,Utilized Off Route,0
+1,8,Monday,Mechanical,0
+1,9,Monday,General Delay,0
+1,9,Monday,General Delay,0
+1,11,Monday,Mechanical,0
+1,3,Tuesday,Late Leaving Garage,0
+1,3,Tuesday,Late Leaving Garage,0
+1,3,Tuesday,Late Leaving Garage,0
+1,6,Tuesday,Held By,0
+1,7,Tuesday,Mechanical,0
+1,8,Tuesday,General Delay,0
+1,8,Tuesday,General Delay,0
+1,3,Wednesday,Late Leaving Garage,0
+1,4,Wednesday,General Delay,0
+1,8,Wednesday,Mechanical,0
+1,9,Wednesday,General Delay,0
+1,3,Thursday,Mechanical,0
+1,3,Thursday,Mechanical,0
+1,5,Thursday,Held By,0
+1,10,Thursday,Mechanical,1
+1,2,Friday,Held By,0
+1,3,Friday,Held By,0
+1,3,Friday,Late Leaving Garage,0
+1,3,Friday,Mechanical,0
+1,4,Friday,Investigation,1
+1,7,Friday,Mechanical,0
+1,10,Friday,Diversion,1
+1,4,Saturday,Mechanical,0
+1,6,Saturday,Overhead - Pantograph,0
+1,6,Saturday,Mechanical,0
+1,6,Saturday,Held By,0
+1,7,Saturday,Mechanical,0
+1,8,Saturday,Held By,0
+1,8,Saturday,Mechanical,0
+1,8,Saturday,Mechanical,0
+1,8,Saturday,Mechanical,0
+1,9,Saturday,Diversion,1
+1,9,Saturday,Investigation,0
+1,10,Saturday,General Delay,0
+1,10,Saturday,Investigation,0
+1,10,Saturday,General Delay,0
+1,11,Saturday,Mechanical,0
+1,1,Sunday,Held By,1
+1,2,Sunday,Investigation,0
+1,2,Sunday,Late Leaving Garage,0
+1,2,Sunday,Late Leaving Garage,0
+1,2,Sunday,Held By,0
+1,2,Sunday,Held By,0
+1,3,Sunday,Late Leaving Garage,0
+1,3,Sunday,Investigation,0
+1,4,Sunday,Late Leaving Garage,0
+1,4,Sunday,Mechanical,0
+1,4,Sunday,Late Leaving Garage,0
+1,4,Sunday,Mechanical,0
+1,4,Sunday,Late Leaving Garage,0
+1,4,Sunday,Late Leaving Garage,0
+1,4,Sunday,Late Leaving Garage,0
+1,5,Sunday,Held By,0
+1,6,Sunday,Late Leaving Garage,0
+1,6,Sunday,Late Leaving Garage,0
+1,8,Sunday,Mechanical,0
+1,8,Sunday,Investigation,0
+1,2,Monday,Mechanical,0
+1,3,Monday,Late Leaving Garage,0
+1,4,Monday,Investigation,1
+1,4,Monday,Investigation,1
+1,5,Monday,Held By,0
+1,6,Monday,Mechanical,0
+1,6,Monday,Held By,0
+1,6,Monday,Mechanical,0
+1,7,Monday,Late Leaving Garage,0
+1,7,Monday,Mechanical,0
+1,8,Monday,Mechanical,0
+1,9,Monday,Investigation,0
+1,9,Monday,Held By,1
+1,10,Monday,Held By,0
+1,10,Monday,Emergency Services,0
+1,11,Monday,Mechanical,0
+1,3,Tuesday,Late Leaving Garage,0
+1,3,Tuesday,Late Leaving Garage,0
+1,3,Tuesday,Mechanical,0
+1,3,Tuesday,Late Leaving Garage,0
+1,3,Tuesday,Mechanical,0
+1,5,Tuesday,Investigation,0
+1,6,Tuesday,Mechanical,1
+1,7,Tuesday,Mechanical,0
+1,7,Tuesday,Diversion,0
+1,8,Tuesday,Mechanical,0
+1,8,Tuesday,Mechanical,0
+1,9,Tuesday,Emergency Services,0
+1,9,Tuesday,Investigation,0
+1,9,Tuesday,Held By,0
+1,2,Wednesday,Mechanical,0
+1,2,Wednesday,Mechanical,0
+1,3,Wednesday,Mechanical,0
+1,4,Wednesday,Held By,0
+1,6,Wednesday,Investigation,0
+1,10,Wednesday,Investigation,0
+1,10,Wednesday,Utilized Off Route,0
+1,10,Wednesday,Mechanical,0
+1,11,Wednesday,Emergency Services,0
+1,2,Thursday,Held By,0
+1,3,Thursday,Late Leaving Garage,1
+1,3,Thursday,Late Leaving Garage,0
+1,3,Thursday,Mechanical,0
+1,5,Thursday,Mechanical,0
+1,6,Thursday,Diversion,0
+1,6,Thursday,Mechanical,0
+1,7,Thursday,Mechanical,0
+1,7,Thursday,Overhead - Pantograph,0
+1,8,Thursday,Overhead - Pantograph,0
+1,9,Thursday,General Delay,0
+1,2,Friday,Late Leaving Garage,0
+1,3,Friday,Late Leaving Garage,0
+1,3,Friday,Late Leaving Garage,0
+1,3,Friday,Mechanical,0
+1,4,Friday,Held By,0
+1,4,Friday,Mechanical,0
+1,6,Friday,Mechanical,0
+1,7,Friday,Held By,0
+1,7,Friday,Mechanical,0
+1,8,Friday,Mechanical,0
+1,8,Friday,Mechanical,0
+1,8,Friday,Overhead - Pantograph,0
+1,9,Friday,Mechanical,0
+1,10,Friday,Held By,0
+1,1,Saturday,Held By,0
+1,1,Saturday,Held By,0
+1,1,Saturday,Utilized Off Route,0
+1,3,Saturday,Held By,0
+1,3,Saturday,Late Leaving Garage,0
+1,5,Saturday,Mechanical,0
+1,7,Saturday,General Delay,0
+1,8,Saturday,Mechanical,0
+1,10,Saturday,Mechanical,0
+1,11,Saturday,Mechanical,0
+1,2,Sunday,Late Leaving Garage,0
+1,2,Sunday,Late Leaving Garage,0
+1,4,Sunday,Late Leaving Garage,0
+1,4,Sunday,Late Leaving Garage,0
+1,4,Sunday,Late Leaving Garage,0
+1,5,Sunday,Mechanical,0
+1,6,Sunday,Mechanical,0
+1,6,Sunday,Overhead - Pantograph,0
+1,7,Sunday,Mechanical,0
+1,11,Sunday,Mechanical,0
+1,0,Monday,Mechanical,0
+1,1,Monday,Mechanical,0
+1,2,Monday,Mechanical,0
+1,3,Monday,Late Leaving Garage,0
+1,3,Monday,Mechanical,0
+1,3,Monday,Mechanical,0
+1,3,Monday,Mechanical,0
+1,4,Monday,General Delay,0
+1,4,Monday,Mechanical,0
+1,4,Monday,General Delay,0
+1,4,Monday,Mechanical,0
+1,5,Monday,Mechanical,0
+1,5,Monday,Investigation,0
+1,6,Monday,Mechanical,0
+1,7,Monday,Investigation,0
+1,8,Monday,Investigation,0
+1,8,Monday,Mechanical,0
+1,9,Monday,Mechanical,0
+1,9,Monday,Mechanical,0
+1,10,Monday,Held By,1
+1,11,Monday,Held By,0
+1,11,Monday,Mechanical,0
+1,2,Tuesday,Mechanical,1
+1,3,Tuesday,Late Leaving Garage,0
+1,3,Tuesday,Late Leaving Garage,0
+1,3,Tuesday,Held By,0
+1,3,Tuesday,Late Leaving Garage,0
+1,3,Tuesday,Mechanical,0
+1,5,Tuesday,Held By,0
+1,5,Tuesday,Held By,0
+1,6,Tuesday,Held By,1
+1,7,Tuesday,General Delay,0
+1,8,Tuesday,Mechanical,0
+1,10,Tuesday,Investigation,0
+1,10,Tuesday,Held By,1
+1,11,Tuesday,Held By,0
+1,0,Wednesday,Held By,1
+1,3,Wednesday,Mechanical,0
+1,3,Wednesday,General Delay,0
+1,4,Wednesday,Mechanical,0
+1,5,Wednesday,Mechanical,0
+1,6,Wednesday,Held By,0
+1,6,Wednesday,General Delay,0
+1,7,Wednesday,Held By,1
+1,7,Wednesday,Held By,1
+1,8,Wednesday,Mechanical,0
+1,9,Wednesday,Held By,1
+1,9,Wednesday,Held By,0
+1,9,Wednesday,Emergency Services,0
+1,11,Wednesday,Investigation,1
+1,11,Wednesday,Held By,0
+1,0,Thursday,Investigation,0
+1,2,Thursday,Mechanical,0
+1,3,Thursday,Investigation,0
+1,3,Thursday,Mechanical,0
+1,3,Thursday,Investigation,0
+1,3,Thursday,Late Leaving Garage,0
+1,3,Thursday,Mechanical,0
+1,4,Thursday,Mechanical,0
+1,4,Thursday,Held By,0
+1,5,Thursday,Mechanical,0
+1,6,Thursday,Held By,0
+1,6,Thursday,Mechanical,0
+1,6,Thursday,Mechanical,0
+1,6,Thursday,General Delay,0
+1,7,Thursday,Held By,0
+1,7,Thursday,General Delay,0
+1,7,Thursday,Investigation,1
+1,7,Thursday,Held By,0
+1,7,Thursday,Mechanical,0
+1,8,Thursday,Late Leaving Garage,0
+1,8,Thursday,Investigation,0
+1,8,Thursday,Held By,1
+1,9,Thursday,Mechanical,0
+1,9,Thursday,Investigation,0
+1,9,Thursday,Mechanical,0
+1,9,Thursday,Held By,1
+2,3,Friday,Emergency Services,0
+2,4,Friday,Mechanical,0
+2,4,Friday,Investigation,0
+2,5,Friday,Investigation,0
+2,6,Friday,Held By,1
+2,6,Friday,Held By,0
+2,6,Friday,Investigation,0
+2,6,Friday,Held By,0
+2,7,Friday,Mechanical,0
+2,7,Friday,Investigation,0
+2,10,Friday,Investigation,0
+2,10,Friday,Mechanical,0
+2,0,Saturday,Investigation,0
+2,3,Saturday,Mechanical,0
+2,3,Saturday,Held By,0
+2,5,Saturday,Held By,0
+2,5,Saturday,Investigation,0
+2,6,Saturday,Held By,0
+2,6,Saturday,Held By,0
+2,6,Saturday,Late Leaving Garage,0
+2,6,Saturday,Mechanical,0
+2,6,Saturday,Mechanical,0
+2,6,Saturday,Overhead - Pantograph,0
+2,6,Saturday,Held By,0
+2,7,Saturday,Mechanical,0
+2,7,Saturday,Investigation,0
+2,7,Saturday,Mechanical,0
+2,9,Saturday,Held By,1
+2,0,Sunday,Mechanical,0
+2,2,Sunday,Mechanical,0
+2,2,Sunday,Held By,0
+2,3,Sunday,Mechanical,0
+2,3,Sunday,Mechanical,0
+2,3,Sunday,Mechanical,0
+2,4,Sunday,Mechanical,0
+2,5,Sunday,Investigation,0
+2,5,Sunday,Utilized Off Route,0
+2,6,Sunday,Held By,1
+2,8,Sunday,Mechanical,0
+2,3,Monday,Late Leaving Garage,0
+2,3,Monday,Late Leaving Garage,0
+2,3,Monday,Mechanical,0
+2,4,Monday,Held By,0
+2,5,Monday,Investigation,0
+2,6,Monday,Held By,1
+2,10,Monday,Mechanical,0
+2,1,Tuesday,Investigation,0
+2,3,Tuesday,Late Leaving Garage,0
+2,3,Tuesday,Late Leaving Garage,0
+2,3,Tuesday,Emergency Services,0
+2,3,Tuesday,Late Leaving Garage,0
+2,4,Tuesday,Mechanical,0
+2,6,Tuesday,Emergency Services,1
+2,6,Tuesday,Investigation,0
+2,7,Tuesday,Emergency Services,0
+2,9,Tuesday,Emergency Services,0
+2,9,Tuesday,Mechanical,0
+2,11,Tuesday,Emergency Services,0
+2,3,Wednesday,Late Leaving Garage,0
+2,7,Wednesday,Mechanical,0
+2,9,Wednesday,Investigation,0
+2,10,Wednesday,Investigation,0
+2,2,Thursday,Late Leaving Garage,0
+2,2,Thursday,Mechanical,0
+2,2,Thursday,Mechanical,0
+2,3,Thursday,Late Leaving Garage,0
+2,3,Thursday,Mechanical,0
+2,3,Thursday,Late Leaving Garage,0
+2,8,Thursday,Investigation,0
+2,8,Thursday,Investigation,0
+2,8,Thursday,Mechanical,0
+2,9,Thursday,Investigation,0
+2,1,Friday,Investigation,0
+2,3,Friday,Late Leaving Garage,0
+2,3,Friday,Late Leaving Garage,0
+2,7,Friday,Investigation,0
+2,8,Friday,Diversion,0
+2,9,Friday,Mechanical,0
+2,1,Saturday,Emergency Services,0
 2,1,Saturday,Mechanical,0
-2,0,Monday,Mechanical,0
-2,1,Monday,Investigation,0
+2,3,Saturday,Investigation,0
+2,5,Saturday,Mechanical,0
+2,8,Saturday,Mechanical,0
+2,9,Saturday,Utilized Off Route,0
+2,11,Saturday,Held By,0
+2,1,Sunday,Investigation,0
+2,3,Sunday,Mechanical,0
+2,4,Sunday,Late Leaving Garage,0
+2,5,Sunday,Mechanical,0
+2,5,Sunday,Mechanical,0
+2,8,Sunday,Mechanical,0
+2,8,Sunday,Investigation,0
+2,10,Sunday,Held By,0
+2,3,Monday,Late Leaving Garage,0
+2,5,Monday,Mechanical,0
+2,6,Monday,Mechanical,0
+2,9,Monday,General Delay,0
+2,2,Tuesday,Mechanical,0
+2,2,Tuesday,Mechanical,0
+2,3,Tuesday,Mechanical,1
+2,3,Tuesday,Mechanical,0
+2,4,Tuesday,Mechanical,0
+2,4,Tuesday,Mechanical,0
+2,5,Tuesday,Mechanical,0
+2,5,Tuesday,Mechanical,0
+2,6,Tuesday,Mechanical,0
+2,6,Tuesday,Mechanical,0
+2,8,Tuesday,Mechanical,0
+2,8,Tuesday,Investigation,0
+2,9,Tuesday,General Delay,0
+2,1,Wednesday,Overhead - Pantograph,0
+2,1,Wednesday,Mechanical,1
+2,2,Wednesday,General Delay,0
+2,2,Wednesday,Mechanical,0
+2,3,Wednesday,Mechanical,0
+2,4,Wednesday,Investigation,0
+2,4,Wednesday,General Delay,0
+2,4,Wednesday,Mechanical,0
+2,6,Wednesday,Mechanical,0
+2,7,Wednesday,Mechanical,0
+2,0,Thursday,Investigation,0
+2,2,Thursday,Late Leaving Garage,0
+2,2,Thursday,Late Leaving Garage,0
+2,2,Thursday,Mechanical,0
+2,3,Thursday,Mechanical,0
+2,3,Thursday,Mechanical,0
+2,3,Thursday,Utilized Off Route,0
+2,3,Thursday,Mechanical,0
+2,3,Thursday,Held By,0
+2,4,Thursday,Emergency Services,0
+2,5,Thursday,Held By,0
+2,8,Thursday,Emergency Services,0
+2,10,Thursday,Held By,1
+2,2,Friday,Mechanical,0
+2,3,Friday,Mechanical,0
+2,3,Friday,Held By,0
+2,5,Friday,Investigation,0
+2,6,Friday,Mechanical,0
+2,7,Friday,Held By,0
+2,10,Friday,Held By,1
+2,1,Saturday,Investigation,0
+2,2,Saturday,Mechanical,0
+2,2,Saturday,Investigation,0
+2,6,Saturday,Held By,1
+2,6,Saturday,Mechanical,0
+2,7,Saturday,Investigation,0
+2,9,Saturday,Held By,0
+2,9,Saturday,Mechanical,0
+2,5,Sunday,Held By,1
+2,5,Sunday,General Delay,0
+2,6,Sunday,Utilized Off Route,0
+2,6,Sunday,General Delay,0
+2,8,Sunday,Held By,0
+2,2,Monday,Mechanical,0
+2,3,Monday,Investigation,0
+2,3,Monday,Late Leaving Garage,0
+2,3,Monday,Mechanical,0
+2,4,Monday,Held By,0
+2,4,Monday,Utilized Off Route,0
+2,4,Monday,Mechanical,0
+2,5,Monday,Mechanical,0
+2,6,Monday,Investigation,0
+2,7,Monday,Held By,1
+2,10,Monday,Held By,0
+2,2,Tuesday,Mechanical,0
+2,2,Tuesday,Mechanical,0
+2,2,Tuesday,Held By,0
+2,3,Tuesday,General Delay,0
+2,4,Tuesday,General Delay,0
+2,5,Tuesday,Held By,0
+2,9,Tuesday,Held By,0
+2,0,Wednesday,Mechanical,0
+2,3,Wednesday,Late Leaving Garage,0
+2,3,Wednesday,Held By,0
+2,3,Wednesday,Held By,0
+2,3,Wednesday,Mechanical,0
+2,3,Wednesday,General Delay,0
+2,10,Wednesday,Held By,0
+2,10,Wednesday,Investigation,1
+2,11,Wednesday,Investigation,0
+2,2,Thursday,Held By,0
+2,3,Thursday,Mechanical,0
+2,3,Thursday,Held By,0
+2,3,Thursday,Mechanical,0
+2,3,Thursday,Mechanical,0
+2,3,Thursday,Mechanical,0
+2,3,Thursday,Late Leaving Garage,0
+2,4,Thursday,General Delay,0
+2,5,Thursday,Investigation,0
+2,6,Thursday,Mechanical,0
+2,7,Thursday,Investigation,0
+2,8,Thursday,Investigation,0
+2,8,Thursday,Mechanical,0
+2,9,Thursday,Investigation,0
+2,9,Thursday,Diversion,0
+2,0,Friday,Investigation,0
+2,1,Friday,Diversion,1
+2,2,Friday,Mechanical,0
+2,3,Friday,General Delay,1
+2,3,Friday,Mechanical,0
+2,4,Friday,Held By,0
+2,8,Friday,Mechanical,0
+2,9,Friday,Held By,0
+2,3,Saturday,Utilized Off Route,1
+2,4,Saturday,Mechanical,0
+2,5,Saturday,General Delay,0
+2,8,Saturday,Mechanical,0
+2,7,Sunday,Utilized Off Route,0
+2,8,Sunday,Investigation,0
 2,1,Monday,Investigation,0
 2,2,Monday,Mechanical,0
-2,2,Monday,Investigation,0
-2,1,Tuesday,Utilized Off Route,0
-2,2,Tuesday,Mechanical,0
-2,2,Tuesday,Mechanical,0
-2,2,Tuesday,Investigation,0
-2,2,Tuesday,Mechanical,0
-2,2,Wednesday,Mechanical,0
-2,3,Wednesday,Emergency Services,0
-2,3,Wednesday,Mechanical,0
-2,3,Wednesday,Mechanical,0
-2,1,Thursday,Mechanical,0
-2,2,Thursday,Mechanical,0
-2,2,Thursday,Mechanical,0
-2,2,Thursday,Emergency Services,0
-2,1,Friday,Investigation,0
-2,1,Friday,Investigation,0
-2,1,Friday,Mechanical,0
-2,0,Saturday,Overhead - Pantograph,0
-2,0,Saturday,Mechanical,0
-2,1,Saturday,Mechanical,0
-2,2,Saturday,Mechanical,0
-2,0,Sunday,Mechanical,0
-2,0,Sunday,Mechanical,0
-2,3,Monday,Utilized Off Route,0
-2,1,Tuesday,General Delay,0
-2,2,Tuesday,Investigation,0
-2,2,Tuesday,General Delay,0
-2,3,Tuesday,Held By,0
+2,2,Monday,Held By,0
+2,3,Monday,Held By,0
+2,4,Monday,Mechanical,0
+2,5,Monday,Mechanical,0
+2,7,Monday,Mechanical,0
+2,7,Monday,Mechanical,0
+2,8,Monday,Utilized Off Route,0
+2,3,Tuesday,Late Leaving Garage,0
 2,3,Tuesday,Mechanical,0
 2,3,Tuesday,Emergency Services,0
-2,0,Wednesday,Late Leaving Garage,0
-2,0,Wednesday,Late Leaving Garage,0
-2,1,Wednesday,Mechanical,0
-2,1,Thursday,Late Leaving Garage,0
-2,1,Thursday,Utilized Off Route,0
-2,1,Thursday,General Delay,0
-2,1,Thursday,General Delay,0
+2,4,Tuesday,Held By,0
+2,4,Tuesday,Held By,0
+2,5,Tuesday,Held By,0
+2,5,Tuesday,Held By,1
+2,8,Tuesday,Investigation,0
+2,9,Tuesday,Mechanical,0
+2,9,Tuesday,Investigation,0
+2,0,Wednesday,Mechanical,0
+2,3,Wednesday,Late Leaving Garage,0
+2,5,Wednesday,Mechanical,0
+2,5,Wednesday,Held By,0
+2,6,Wednesday,Mechanical,0
+2,6,Wednesday,Mechanical,0
+2,7,Wednesday,Mechanical,0
+2,7,Wednesday,Investigation,0
 2,2,Thursday,Mechanical,0
-2,1,Friday,Mechanical,0
-2,3,Friday,Investigation,1
-2,3,Friday,Mechanical,0
-2,3,Friday,Mechanical,0
-2,1,Saturday,Investigation,0
-2,2,Saturday,Overhead - Pantograph,0
-2,2,Sunday,Mechanical,0
-2,0,Tuesday,Held By,0
-2,1,Tuesday,Utilized Off Route,0
-2,2,Tuesday,Emergency Services,0
-2,3,Tuesday,Mechanical,0
-2,0,Wednesday,Investigation,0
-2,0,Wednesday,Investigation,0
-2,1,Wednesday,Held By,0
-2,1,Wednesday,Investigation,0
-2,2,Wednesday,Investigation,0
-2,0,Thursday,Mechanical,0
-2,1,Thursday,Mechanical,0
-2,1,Thursday,Emergency Services,0
-2,2,Thursday,Mechanical,0
-2,0,Friday,Late Leaving Garage,0
-2,0,Friday,Late Leaving Garage,0
-2,1,Friday,Late Leaving Garage,0
-2,1,Friday,General Delay,0
-2,2,Friday,Held By,0
-2,1,Saturday,Investigation,0
-2,1,Saturday,Late Leaving Garage,0
-2,2,Saturday,Held By,0
-2,0,Sunday,Mechanical,0
-2,2,Sunday,Emergency Services,0
-2,3,Sunday,Investigation,0
-2,0,Monday,Held By,0
-2,1,Monday,Mechanical,0
-2,2,Monday,Utilized Off Route,0
-2,0,Tuesday,Mechanical,0
-2,3,Tuesday,Mechanical,0
-2,3,Tuesday,Mechanical,0
-2,1,Wednesday,Held By,0
-2,0,Thursday,Late Leaving Garage,0
-2,0,Thursday,Late Leaving Garage,0
-2,0,Thursday,Late Leaving Garage,0
-2,0,Thursday,Mechanical,0
-2,0,Thursday,Late Leaving Garage,0
-2,0,Thursday,Late Leaving Garage,0
-2,0,Thursday,Late Leaving Garage,0
-2,1,Thursday,Investigation,0
-2,2,Thursday,Held By,0
-2,0,Friday,Late Leaving Garage,0
-2,1,Friday,Investigation,0
-2,1,Friday,Held By,0
-2,1,Friday,Mechanical,0
-2,3,Friday,Investigation,0
-2,1,Saturday,Held By,0
-2,1,Saturday,Held By,0
-2,2,Saturday,Mechanical,0
-2,2,Saturday,Utilized Off Route,0
-3,0,Sunday,Mechanical,0
-3,1,Sunday,Emergency Services,0
-3,1,Monday,Mechanical,0
-3,1,Tuesday,Investigation,0
-3,1,Wednesday,Mechanical,0
-3,1,Wednesday,Held By,0
-3,2,Wednesday,Overhead - Pantograph,0
-3,2,Wednesday,Emergency Services,0
-3,2,Wednesday,Mechanical,0
-3,2,Wednesday,Held By,0
-3,1,Thursday,Mechanical,0
-3,2,Thursday,Mechanical,0
-3,3,Thursday,Mechanical,0
-3,2,Friday,Held By,0
-3,2,Friday,Emergency Services,1
+2,3,Thursday,General Delay,0
+2,5,Thursday,General Delay,0
+2,5,Thursday,Investigation,0
+2,6,Thursday,Held By,0
+2,6,Thursday,General Delay,1
+2,6,Thursday,Held By,0
+2,8,Thursday,Investigation,0
+2,10,Thursday,General Delay,0
+2,10,Thursday,Mechanical,0
 3,2,Friday,Mechanical,0
-3,3,Friday,Investigation,1
-3,3,Friday,Emergency Services,0
-3,0,Saturday,Investigation,0
-3,1,Saturday,Investigation,0
-3,1,Saturday,Mechanical,0
+3,2,Friday,Mechanical,0
+3,3,Friday,Mechanical,0
+3,5,Friday,Mechanical,0
+3,6,Friday,Mechanical,0
+3,8,Friday,Investigation,0
+3,8,Friday,Diversion,0
+3,8,Friday,Investigation,0
+3,9,Friday,Investigation,0
+3,9,Friday,Held By,0
+3,9,Friday,Mechanical,0
+3,10,Friday,Held By,0
+3,10,Friday,Investigation,0
+3,2,Saturday,Held By,0
 3,2,Saturday,Mechanical,0
-3,1,Sunday,Mechanical,0
-3,2,Sunday,Held By,0
-3,2,Sunday,Mechanical,0
-3,0,Monday,Investigation,0
-3,2,Tuesday,Held By,0
-3,3,Tuesday,Mechanical,0
-3,3,Tuesday,Emergency Services,0
-3,1,Wednesday,Mechanical,0
-3,1,Wednesday,Mechanical,0
-3,0,Thursday,Held By,0
-3,1,Thursday,General Delay,0
-3,1,Thursday,General Delay,0
-3,1,Thursday,General Delay,0
-3,1,Thursday,General Delay,0
-3,1,Thursday,Mechanical,0
-3,2,Thursday,Emergency Services,0
-3,2,Thursday,Investigation,0
-3,2,Thursday,General Delay,0
-3,2,Thursday,General Delay,0
-3,3,Thursday,Emergency Services,0
-3,0,Friday,Investigation,0
-3,1,Friday,Mechanical,0
-3,1,Friday,Diversion,0
-3,1,Friday,Emergency Services,0
-3,1,Friday,Mechanical,0
-3,3,Friday,Mechanical,0
-3,1,Saturday,Emergency Services,1
-3,2,Monday,Mechanical,0
-3,2,Monday,Held By,0
-3,3,Monday,Mechanical,0
-3,0,Tuesday,Mechanical,0
-3,2,Tuesday,Mechanical,0
-3,2,Wednesday,Late Leaving Garage,0
-3,0,Thursday,Late Leaving Garage,0
-3,2,Thursday,Mechanical,0
-3,1,Friday,Held By,0
-3,2,Friday,Mechanical,0
-3,2,Friday,Mechanical,0
-3,3,Friday,Mechanical,0
-3,1,Saturday,Investigation,0
-3,1,Saturday,Mechanical,0
-3,1,Saturday,Held By,0
-3,1,Saturday,Held By,0
-3,1,Saturday,Late Leaving Garage,0
-3,2,Saturday,Emergency Services,0
+3,2,Saturday,Mechanical,0
 3,3,Saturday,Mechanical,0
 3,3,Saturday,Emergency Services,0
-3,1,Sunday,Late Leaving Garage,0
-3,1,Sunday,Investigation,1
-3,2,Sunday,Utilized Off Route,0
-3,3,Sunday,Mechanical,0
-3,3,Monday,Mechanical,0
-3,1,Tuesday,Mechanical,0
-3,2,Tuesday,Investigation,0
-3,3,Tuesday,Mechanical,0
-3,1,Wednesday,Mechanical,0
-3,1,Wednesday,Mechanical,0
-3,1,Wednesday,Mechanical,0
-3,3,Wednesday,Investigation,0
-3,2,Thursday,Mechanical,0
-3,2,Thursday,Mechanical,0
-3,3,Thursday,Investigation,0
-3,2,Friday,Emergency Services,0
-3,3,Friday,Emergency Services,0
-3,1,Saturday,Utilized Off Route,0
-3,2,Saturday,Mechanical,0
+3,4,Saturday,General Delay,0
+3,6,Saturday,Utilized Off Route,0
+3,7,Saturday,Emergency Services,0
+3,7,Saturday,Investigation,0
+3,8,Saturday,Investigation,0
+3,8,Saturday,Investigation,0
+3,10,Saturday,Investigation,0
+3,11,Saturday,Held By,0
 3,1,Sunday,Mechanical,0
+3,1,Sunday,Investigation,0
+3,3,Sunday,Mechanical,0
+3,3,Sunday,Emergency Services,0
+3,4,Sunday,Held By,0
+3,4,Sunday,Held By,0
+3,4,Sunday,Held By,0
+3,6,Sunday,Investigation,1
+3,1,Monday,Emergency Services,0
+3,2,Monday,General Delay,0
+3,3,Monday,Mechanical,0
+3,7,Monday,Mechanical,0
+3,7,Monday,Mechanical,0
+3,8,Monday,Mechanical,0
+3,9,Monday,General Delay,0
+3,9,Monday,Utilized Off Route,0
+3,10,Monday,Investigation,0
+3,10,Monday,Mechanical,0
+3,11,Monday,Mechanical,0
+3,3,Tuesday,Mechanical,0
+3,3,Tuesday,Mechanical,0
+3,4,Tuesday,Mechanical,0
+3,5,Tuesday,Investigation,1
+3,5,Tuesday,Mechanical,0
+3,6,Tuesday,Investigation,0
+3,7,Tuesday,Investigation,0
+3,7,Tuesday,Investigation,0
+3,8,Tuesday,Investigation,0
+3,3,Wednesday,General Delay,0
+3,5,Wednesday,General Delay,0
+3,7,Wednesday,Mechanical,0
+3,9,Wednesday,Investigation,0
+3,0,Thursday,Held By,0
+3,4,Thursday,Held By,0
+3,6,Thursday,Mechanical,0
+3,7,Thursday,Mechanical,0
+3,7,Thursday,General Delay,0
+3,10,Thursday,Mechanical,0
+3,3,Friday,Mechanical,0
+3,4,Friday,Mechanical,0
+3,5,Friday,Mechanical,0
+3,6,Friday,Investigation,0
+3,6,Friday,Mechanical,0
+3,8,Friday,Emergency Services,0
+3,9,Friday,Investigation,0
+3,9,Friday,Held By,0
+3,0,Saturday,Investigation,0
+3,4,Saturday,Mechanical,0
+3,5,Saturday,Mechanical,0
+3,8,Saturday,Investigation,1
+3,8,Saturday,Mechanical,0
+3,1,Sunday,Investigation,0
 3,2,Sunday,Mechanical,0
-3,2,Monday,Investigation,0
-3,0,Tuesday,Mechanical,0
+3,2,Sunday,Late Leaving Garage,0
+3,4,Sunday,Late Leaving Garage,0
+3,4,Sunday,Mechanical,0
+3,6,Sunday,Late Leaving Garage,0
+3,6,Sunday,Mechanical,0
+3,7,Sunday,Mechanical,0
+3,7,Sunday,Held By,0
+3,9,Sunday,Emergency Services,0
+3,9,Sunday,Utilized Off Route,0
+3,9,Sunday,General Delay,0
+3,9,Sunday,Held By,0
+3,10,Sunday,Diversion,1
+3,10,Sunday,Diversion,1
+3,2,Monday,Overhead - Pantograph,0
+3,3,Monday,Mechanical,0
+3,4,Monday,Mechanical,0
+3,4,Monday,Mechanical,0
+3,5,Monday,Investigation,0
+3,5,Monday,Mechanical,0
+3,7,Monday,Mechanical,0
 3,3,Tuesday,Mechanical,0
+3,6,Tuesday,Mechanical,0
+3,7,Tuesday,Held By,0
+3,7,Tuesday,Mechanical,0
+3,9,Tuesday,Mechanical,0
+3,11,Tuesday,Investigation,1
+3,3,Wednesday,Mechanical,0
+3,3,Wednesday,Emergency Services,0
+3,6,Wednesday,Mechanical,0
+3,8,Wednesday,Emergency Services,0
+3,10,Wednesday,General Delay,0
+3,11,Wednesday,Investigation,0
+3,0,Thursday,Mechanical,0
+3,4,Thursday,Mechanical,0
+3,8,Thursday,Investigation,0
+3,8,Thursday,Mechanical,0
+3,9,Thursday,General Delay,0
+3,10,Thursday,Investigation,0
+3,0,Friday,Emergency Services,0
+3,6,Friday,Held By,0
+3,7,Friday,General Delay,0
+3,9,Friday,Investigation,0
+3,10,Friday,General Delay,1
+3,10,Friday,Mechanical,0
+3,11,Friday,Mechanical,0
+3,2,Saturday,Mechanical,0
+3,4,Saturday,Late Leaving Garage,1
+3,4,Saturday,Late Leaving Garage,1
+3,6,Saturday,Investigation,0
+3,8,Saturday,Emergency Services,1
+3,11,Saturday,Mechanical,0
+3,11,Saturday,Mechanical,0
+3,0,Sunday,Mechanical,0
+3,3,Sunday,Overhead - Pantograph,0
+3,4,Sunday,Mechanical,0
+3,5,Sunday,Investigation,1
+3,6,Sunday,Late Leaving Garage,0
+3,6,Sunday,Emergency Services,0
+3,6,Sunday,General Delay,0
+3,7,Sunday,Mechanical,0
+3,9,Sunday,Mechanical,0
+3,10,Sunday,Mechanical,0
+3,2,Monday,Mechanical,0
+3,3,Monday,Investigation,1
+3,3,Monday,Mechanical,0
+3,8,Monday,Mechanical,0
+3,1,Tuesday,Mechanical,0
 3,3,Tuesday,Mechanical,0
-4,2,Wednesday,Mechanical,0
-4,3,Wednesday,Emergency Services,0
-4,1,Thursday,Investigation,0
-4,1,Friday,Mechanical,0
-4,1,Friday,Investigation,0
-4,2,Friday,Investigation,0
-4,1,Saturday,Mechanical,0
+3,4,Tuesday,Mechanical,0
+3,4,Tuesday,Mechanical,0
+3,6,Tuesday,Mechanical,0
+3,8,Tuesday,Mechanical,0
+3,9,Tuesday,Investigation,0
+3,2,Wednesday,Late Leaving Garage,0
+3,2,Wednesday,Late Leaving Garage,0
+3,3,Wednesday,Mechanical,0
+3,6,Wednesday,Investigation,0
+3,6,Wednesday,Mechanical,0
+3,7,Wednesday,General Delay,0
+3,8,Wednesday,Held By,0
+3,8,Wednesday,General Delay,0
+3,10,Wednesday,Mechanical,0
+3,11,Wednesday,Mechanical,0
+3,2,Thursday,Mechanical,0
+3,4,Thursday,Mechanical,0
+3,7,Thursday,Held By,0
+3,11,Thursday,Investigation,0
+3,11,Thursday,Held By,0
+3,2,Friday,Emergency Services,1
+3,6,Friday,Investigation,0
+3,7,Friday,Investigation,0
+3,7,Friday,Mechanical,0
+3,8,Friday,Mechanical,0
+3,11,Friday,Utilized Off Route,0
+3,11,Friday,Mechanical,0
+3,2,Saturday,Emergency Services,0
+3,3,Saturday,Investigation,0
+3,4,Saturday,General Delay,0
+3,5,Saturday,Late Leaving Garage,0
+3,5,Saturday,Mechanical,0
+3,5,Saturday,Mechanical,0
+3,6,Saturday,General Delay,0
+3,7,Saturday,General Delay,0
+3,0,Sunday,Investigation,0
+3,0,Sunday,Emergency Services,0
+3,1,Sunday,Investigation,0
+3,4,Sunday,General Delay,0
+3,5,Sunday,Mechanical,0
+3,10,Sunday,Investigation,0
+3,3,Monday,Mechanical,0
+3,5,Monday,Utilized Off Route,0
+3,7,Monday,Investigation,0
+3,9,Monday,Utilized Off Route,0
+3,3,Tuesday,Investigation,0
+3,5,Tuesday,General Delay,0
+3,5,Tuesday,Mechanical,0
+3,5,Tuesday,Mechanical,0
+3,7,Tuesday,Utilized Off Route,0
+3,7,Tuesday,Utilized Off Route,0
+3,7,Tuesday,Mechanical,0
+3,10,Tuesday,Held By,0
+3,11,Tuesday,General Delay,0
+3,4,Wednesday,Mechanical,0
+3,5,Wednesday,Held By,0
+3,6,Wednesday,Mechanical,0
+3,6,Wednesday,General Delay,0
+3,6,Wednesday,General Delay,0
+3,8,Wednesday,Utilized Off Route,0
+3,10,Wednesday,Held By,0
+3,10,Wednesday,General Delay,0
+3,3,Thursday,General Delay,0
+3,7,Thursday,General Delay,0
+3,9,Thursday,Mechanical,0
+3,10,Thursday,General Delay,0
+3,2,Friday,Mechanical,0
+3,6,Friday,Mechanical,0
+3,7,Friday,General Delay,0
+3,8,Friday,Investigation,0
+3,9,Friday,General Delay,0
+3,9,Friday,Mechanical,0
+3,10,Friday,Mechanical,0
+3,2,Saturday,Late Leaving Garage,0
+3,3,Saturday,Mechanical,0
+3,4,Saturday,Mechanical,0
+3,4,Saturday,Mechanical,0
+3,7,Saturday,Mechanical,0
+3,7,Saturday,Mechanical,0
+3,8,Saturday,Investigation,0
+3,9,Saturday,Mechanical,1
+3,9,Saturday,Investigation,0
+3,3,Sunday,Mechanical,0
+3,3,Sunday,Investigation,0
+3,5,Sunday,Mechanical,0
+3,5,Sunday,Emergency Services,0
 4,2,Monday,Mechanical,0
-4,1,Tuesday,Investigation,1
-4,2,Tuesday,Mechanical,0
-4,2,Tuesday,Mechanical,0
-4,2,Tuesday,Held By,1
-4,3,Tuesday,Mechanical,0
-4,2,Thursday,Mechanical,0
-4,1,Friday,Investigation,0
-4,2,Friday,Held By,1
-4,2,Saturday,Held By,0
-4,1,Sunday,Late Leaving Garage,0
-4,1,Monday,Mechanical,0
-4,1,Monday,Investigation,0
-4,2,Tuesday,Investigation,0
-4,0,Wednesday,Investigation,0
-4,1,Wednesday,Mechanical,0
-4,1,Wednesday,Late Leaving Garage,0
-4,1,Wednesday,Mechanical,0
-4,1,Thursday,Investigation,0
-4,2,Thursday,Mechanical,0
-4,3,Thursday,Mechanical,1
-4,0,Friday,General Delay,0
-4,1,Friday,General Delay,0
-4,2,Friday,Investigation,0
-4,3,Friday,Held By,0
-4,0,Saturday,Emergency Services,0
-4,2,Saturday,Investigation,0
-4,1,Sunday,Mechanical,0
-4,1,Sunday,Mechanical,0
-4,2,Sunday,Mechanical,0
+4,2,Monday,Mechanical,0
+4,2,Monday,Mechanical,0
+4,2,Monday,Late Leaving Garage,0
 4,3,Monday,Mechanical,0
-4,3,Monday,Held By,1
-4,0,Tuesday,Investigation,0
-4,1,Tuesday,Mechanical,0
+4,3,Monday,Mechanical,0
+4,3,Monday,Investigation,0
+4,8,Monday,Mechanical,0
+4,8,Monday,Investigation,0
 4,3,Tuesday,Mechanical,0
-4,0,Wednesday,Investigation,0
+4,4,Tuesday,Mechanical,0
+4,7,Tuesday,Investigation,0
 4,2,Wednesday,Mechanical,0
-4,1,Thursday,Mechanical,0
-4,1,Thursday,Investigation,0
-4,1,Saturday,Investigation,0
-4,1,Saturday,Investigation,0
-4,2,Saturday,Diversion,0
-4,1,Sunday,Overhead - Pantograph,0
-4,3,Sunday,Held By,0
-4,1,Monday,Mechanical,0
-4,0,Tuesday,Mechanical,0
-4,1,Tuesday,Investigation,0
-4,2,Tuesday,Utilized Off Route,0
-4,0,Wednesday,Mechanical,0
-4,1,Wednesday,Mechanical,0
-4,1,Wednesday,Mechanical,0
-4,1,Wednesday,Investigation,0
 4,3,Wednesday,Investigation,0
-4,2,Thursday,Held By,0
-5,1,Friday,Mechanical,0
-5,1,Friday,Mechanical,0
-5,3,Saturday,Mechanical,0
-5,2,Sunday,Overhead - Pantograph,1
-5,2,Sunday,Investigation,0
-5,1,Monday,Mechanical,0
-5,2,Monday,Mechanical,0
-5,2,Monday,Emergency Services,0
-5,3,Monday,Mechanical,0
-5,1,Tuesday,Held By,0
-5,1,Wednesday,Investigation,0
-5,1,Wednesday,Mechanical,0
-5,2,Wednesday,Held By,1
-5,2,Wednesday,Utilized Off Route,0
-5,2,Thursday,Emergency Services,0
-5,2,Thursday,Mechanical,0
-5,3,Thursday,Mechanical,0
-5,3,Thursday,Mechanical,0
+4,3,Wednesday,Mechanical,0
+4,5,Wednesday,Mechanical,0
+4,6,Wednesday,Investigation,0
+4,7,Wednesday,Mechanical,0
+4,9,Wednesday,Mechanical,0
+4,10,Wednesday,Mechanical,0
+4,11,Wednesday,Investigation,0
+4,3,Thursday,General Delay,0
+4,4,Thursday,General Delay,0
+4,5,Thursday,Mechanical,0
+4,6,Thursday,General Delay,0
+4,7,Thursday,Mechanical,0
+4,11,Thursday,Investigation,0
+4,3,Friday,Late Leaving Garage,0
+4,5,Friday,Investigation,0
+4,6,Friday,Investigation,1
+4,7,Friday,Mechanical,0
+4,4,Saturday,Mechanical,0
+4,4,Saturday,Mechanical,0
+4,4,Saturday,Mechanical,0
+4,10,Saturday,General Delay,0
+4,10,Saturday,General Delay,0
+4,0,Sunday,Emergency Services,0
+4,6,Sunday,General Delay,0
+4,6,Sunday,Investigation,0
+4,7,Sunday,Held By,0
+4,10,Sunday,Emergency Services,0
+4,11,Sunday,Investigation,0
+4,2,Monday,Mechanical,0
+4,4,Monday,Emergency Services,0
+4,4,Monday,General Delay,0
+4,5,Monday,Investigation,0
+4,5,Monday,Mechanical,0
+4,8,Monday,Mechanical,0
+4,8,Monday,Investigation,0
+4,8,Monday,Investigation,0
+4,8,Monday,Held By,1
+4,7,Tuesday,Emergency Services,0
+4,10,Tuesday,Utilized Off Route,0
+4,1,Wednesday,Mechanical,0
+4,7,Wednesday,Mechanical,0
+4,2,Thursday,Mechanical,0
+4,3,Thursday,Mechanical,0
+4,8,Thursday,Mechanical,0
+4,8,Thursday,General Delay,0
+4,10,Thursday,General Delay,0
+4,10,Thursday,Investigation,0
+4,1,Friday,Investigation,0
+4,3,Friday,Mechanical,0
+4,3,Friday,Mechanical,0
+4,3,Friday,Utilized Off Route,0
+4,7,Friday,Investigation,0
+4,7,Friday,Emergency Services,1
+4,8,Friday,Mechanical,0
+4,8,Friday,Mechanical,0
+4,9,Friday,Mechanical,0
+4,0,Saturday,Emergency Services,0
+4,5,Saturday,Mechanical,0
+4,7,Saturday,Held By,0
+4,8,Saturday,Investigation,0
+4,8,Saturday,Mechanical,0
+4,0,Sunday,Mechanical,0
+4,2,Sunday,Investigation,0
+4,3,Sunday,Held By,1
+4,3,Sunday,Mechanical,0
+4,7,Sunday,Mechanical,0
+4,9,Sunday,Mechanical,0
+4,10,Sunday,Mechanical,1
+4,2,Monday,Mechanical,0
+4,5,Monday,Held By,0
+4,5,Monday,Investigation,0
+4,7,Monday,Late Leaving Garage,0
+4,7,Monday,Late Leaving Garage,0
+4,7,Monday,Held By,0
+4,7,Monday,Mechanical,0
+4,8,Monday,Held By,0
+4,9,Monday,General Delay,0
+4,10,Monday,Held By,0
+4,2,Tuesday,Mechanical,0
+4,4,Tuesday,Emergency Services,0
+4,4,Tuesday,General Delay,0
+4,6,Tuesday,Held By,0
+4,7,Tuesday,Held By,0
+4,8,Tuesday,Mechanical,0
+4,8,Tuesday,Investigation,0
+4,11,Tuesday,Emergency Services,0
+4,11,Tuesday,Held By,1
+4,11,Tuesday,Diversion,1
+4,2,Wednesday,Held By,0
+4,2,Wednesday,Mechanical,0
+4,2,Wednesday,Late Leaving Garage,0
+4,5,Wednesday,General Delay,0
+4,5,Wednesday,General Delay,0
+4,5,Wednesday,Mechanical,0
+4,6,Wednesday,Emergency Services,0
+4,10,Wednesday,Mechanical,0
+4,5,Thursday,Held By,0
+4,6,Thursday,Held By,0
+4,6,Thursday,Held By,0
+4,8,Thursday,Mechanical,0
+4,8,Thursday,Investigation,0
+4,11,Thursday,Emergency Services,1
+4,11,Thursday,Mechanical,0
+4,11,Thursday,Held By,1
+4,4,Friday,Overhead - Pantograph,0
+4,4,Friday,Mechanical,0
+4,9,Friday,Mechanical,0
+4,9,Friday,Diversion,1
+4,2,Saturday,Held By,0
+4,4,Saturday,Late Leaving Garage,0
+4,6,Saturday,Mechanical,0
+4,6,Saturday,Mechanical,0
+4,7,Saturday,General Delay,0
+4,7,Saturday,Mechanical,0
+4,8,Saturday,Diversion,1
+4,8,Saturday,Mechanical,0
+4,10,Saturday,Emergency Services,0
+4,6,Sunday,Utilized Off Route,0
+4,6,Sunday,Mechanical,0
+4,7,Sunday,Diversion,1
+4,11,Sunday,Mechanical,0
+4,5,Monday,Investigation,0
+4,6,Monday,Mechanical,0
+4,6,Monday,Mechanical,0
+4,7,Monday,General Delay,0
+4,9,Monday,Investigation,0
+4,10,Monday,General Delay,0
+4,0,Tuesday,Mechanical,0
+4,4,Tuesday,Mechanical,0
+4,7,Tuesday,Mechanical,0
+4,7,Tuesday,Mechanical,0
+4,10,Tuesday,Investigation,0
+4,11,Tuesday,Held By,1
+4,4,Wednesday,General Delay,0
+4,6,Wednesday,Diversion,1
+4,8,Wednesday,Mechanical,0
+4,9,Wednesday,Mechanical,0
+4,3,Thursday,Mechanical,0
+4,3,Thursday,Mechanical,0
+4,4,Thursday,Investigation,0
+4,5,Thursday,Mechanical,0
+4,5,Thursday,Investigation,1
+4,6,Thursday,Held By,1
+4,7,Thursday,Held By,0
+4,7,Thursday,Investigation,0
+4,8,Thursday,Utilized Off Route,0
+4,8,Thursday,Diversion,1
+4,8,Thursday,Emergency Services,0
+4,3,Friday,Mechanical,0
+4,4,Friday,Mechanical,0
+4,5,Friday,Mechanical,0
+4,5,Friday,Mechanical,0
+4,6,Friday,Late Leaving Garage,0
+4,7,Friday,Emergency Services,0
+4,8,Friday,Investigation,0
+4,8,Friday,Mechanical,1
+4,1,Saturday,Mechanical,0
+4,2,Saturday,Mechanical,0
+4,4,Saturday,Investigation,0
+4,5,Saturday,Emergency Services,0
+4,6,Saturday,General Delay,0
+4,10,Saturday,Mechanical,0
+4,1,Sunday,Held By,0
+4,4,Sunday,Mechanical,0
+4,4,Sunday,General Delay,0
+4,5,Sunday,General Delay,0
+4,6,Sunday,General Delay,0
+4,7,Sunday,Mechanical,1
+4,8,Sunday,Mechanical,0
+4,2,Monday,Late Leaving Garage,0
+4,4,Monday,Mechanical,0
+4,5,Monday,Emergency Services,0
+4,6,Monday,General Delay,0
+4,8,Monday,Mechanical,0
+4,2,Tuesday,Late Leaving Garage,0
+4,5,Tuesday,Mechanical,0
+5,2,Wednesday,Overhead - Pantograph,0
+5,2,Wednesday,Investigation,0
+5,5,Wednesday,General Delay,0
+5,9,Wednesday,Mechanical,0
+5,11,Wednesday,Mechanical,0
+5,11,Wednesday,Investigation,0
+5,5,Thursday,General Delay,0
 5,2,Friday,Mechanical,0
+5,2,Friday,Mechanical,0
+5,2,Friday,Held By,0
 5,3,Friday,Mechanical,0
+5,6,Friday,General Delay,0
+5,7,Friday,General Delay,0
+5,8,Friday,Mechanical,0
+5,9,Friday,Held By,0
 5,2,Saturday,Mechanical,0
-5,2,Saturday,Overhead - Pantograph,0
-5,3,Tuesday,Mechanical,0
-5,0,Wednesday,Mechanical,0
+5,6,Saturday,General Delay,0
+5,6,Saturday,Emergency Services,0
+5,8,Saturday,Investigation,0
+5,2,Sunday,Mechanical,0
+5,5,Sunday,Mechanical,0
+5,5,Sunday,Investigation,0
+5,2,Monday,Mechanical,0
+5,4,Monday,Mechanical,0
+5,5,Monday,Emergency Services,0
+5,5,Monday,Held By,1
+5,5,Monday,Investigation,0
+5,5,Monday,Utilized Off Route,0
+5,6,Monday,Mechanical,0
+5,6,Monday,Mechanical,0
+5,7,Monday,Mechanical,1
+5,9,Monday,Investigation,0
+5,2,Tuesday,Investigation,0
+5,4,Tuesday,General Delay,0
+5,6,Tuesday,General Delay,0
+5,8,Tuesday,General Delay,0
+5,9,Tuesday,Investigation,0
+5,2,Wednesday,Held By,0
 5,2,Wednesday,Mechanical,0
-5,2,Wednesday,Held By,1
-5,2,Wednesday,Held By,1
-5,3,Wednesday,Mechanical,0
-5,2,Thursday,Investigation,0
-5,2,Thursday,Investigation,0
-5,2,Thursday,Investigation,0
-5,1,Friday,Mechanical,0
-5,1,Friday,Investigation,0
-5,1,Friday,Mechanical,0
+5,8,Wednesday,Mechanical,0
+5,8,Wednesday,General Delay,0
+5,4,Thursday,Held By,0
+5,8,Thursday,Mechanical,0
+5,8,Thursday,Mechanical,0
+5,9,Thursday,Mechanical,0
+5,10,Thursday,Emergency Services,1
 5,2,Friday,Mechanical,0
-5,3,Friday,Held By,1
-5,0,Saturday,Investigation,0
-5,2,Saturday,Investigation,0
-5,2,Saturday,Mechanical,0
-5,3,Sunday,Mechanical,0
-5,2,Monday,Held By,1
-5,3,Monday,Investigation,0
-5,2,Tuesday,Overhead - Pantograph,0
-5,2,Tuesday,Utilized Off Route,0
-5,2,Tuesday,Utilized Off Route,0
-5,2,Tuesday,Utilized Off Route,0
-5,0,Wednesday,Mechanical,0
-5,1,Thursday,Emergency Services,0
-5,1,Thursday,Investigation,0
-5,3,Thursday,Investigation,0
-5,3,Thursday,Investigation,1
-5,0,Friday,Held By,1
-5,1,Friday,Investigation,0
-5,2,Friday,Investigation,1
-5,0,Saturday,Emergency Services,0
-5,2,Saturday,Overhead - Pantograph,1
-5,2,Saturday,Held By,1
-5,0,Sunday,Mechanical,0
-5,3,Sunday,Held By,0
-5,1,Monday,Mechanical,0
-5,1,Monday,Investigation,0
+5,5,Friday,Mechanical,0
+5,8,Friday,Mechanical,0
+5,4,Saturday,Emergency Services,1
+5,5,Saturday,Held By,0
+5,8,Saturday,Mechanical,0
+5,5,Sunday,Held By,0
+5,8,Sunday,Mechanical,0
+5,10,Sunday,Investigation,0
+5,2,Monday,Mechanical,0
+5,3,Monday,Mechanical,0
+5,3,Monday,Late Leaving Garage,0
+5,3,Monday,Late Leaving Garage,0
+5,4,Monday,General Delay,0
+5,9,Monday,Mechanical,0
+5,3,Tuesday,Held By,0
+5,4,Tuesday,Investigation,0
+5,5,Tuesday,Mechanical,0
+5,7,Tuesday,Diversion,1
+5,7,Tuesday,Investigation,1
+5,7,Tuesday,Mechanical,0
+5,3,Wednesday,Mechanical,0
+5,5,Wednesday,Mechanical,0
+5,7,Wednesday,Held By,0
+5,7,Wednesday,Held By,0
+5,7,Wednesday,General Delay,0
+5,9,Wednesday,Mechanical,0
+5,10,Wednesday,Held By,0
+5,3,Thursday,Mechanical,0
+5,5,Thursday,Mechanical,0
+5,6,Thursday,Mechanical,0
+5,7,Thursday,General Delay,0
+5,8,Thursday,Mechanical,0
+5,3,Friday,Mechanical,0
+5,8,Friday,General Delay,0
+5,10,Friday,Held By,1
+5,10,Friday,Investigation,0
+5,10,Friday,Held By,0
+5,7,Saturday,Mechanical,0
+5,7,Saturday,Mechanical,0
+5,10,Saturday,Investigation,0
+5,1,Sunday,Mechanical,0
+5,4,Sunday,Late Leaving Garage,0
+5,5,Sunday,Held By,0
+5,7,Sunday,General Delay,0
+5,10,Sunday,Mechanical,0
+5,4,Monday,Utilized Off Route,0
+5,7,Monday,Emergency Services,0
+5,10,Monday,Mechanical,0
 5,1,Tuesday,Mechanical,0
 5,2,Tuesday,Mechanical,0
-5,3,Tuesday,Mechanical,0
-5,1,Wednesday,Mechanical,0
-5,2,Wednesday,Mechanical,0
-5,2,Wednesday,Utilized Off Route,0
-5,2,Wednesday,Mechanical,0
-5,2,Thursday,Utilized Off Route,0
-5,1,Friday,Utilized Off Route,0
-5,3,Friday,General Delay,0
-5,0,Saturday,Mechanical,0
+5,2,Tuesday,Mechanical,0
+5,3,Tuesday,Late Leaving Garage,0
+5,8,Tuesday,Investigation,0
+5,8,Tuesday,Mechanical,0
+5,3,Wednesday,Late Leaving Garage,0
+5,3,Wednesday,Late Leaving Garage,0
+5,3,Wednesday,Late Leaving Garage,0
+5,3,Wednesday,Mechanical,0
+5,3,Wednesday,Mechanical,0
+5,4,Wednesday,Mechanical,0
+5,7,Wednesday,Held By,0
+5,7,Wednesday,Late Leaving Garage,0
+5,7,Wednesday,Late Leaving Garage,0
+5,8,Wednesday,Mechanical,0
+5,0,Thursday,Mechanical,0
+5,3,Thursday,General Delay,0
+5,3,Thursday,Late Leaving Garage,0
+5,3,Thursday,Late Leaving Garage,0
+5,4,Thursday,Mechanical,0
+5,4,Thursday,Mechanical,0
+5,4,Thursday,Investigation,0
+5,6,Thursday,Held By,0
+5,7,Thursday,Late Leaving Garage,0
+5,7,Thursday,Late Leaving Garage,0
+5,8,Thursday,Utilized Off Route,0
+5,9,Thursday,Utilized Off Route,0
+5,9,Thursday,Investigation,0
+5,0,Friday,Investigation,0
+5,3,Friday,Mechanical,0
+5,3,Friday,Mechanical,0
+5,4,Friday,Mechanical,0
 5,2,Saturday,Mechanical,0
-5,2,Saturday,Utilized Off Route,0
-5,2,Saturday,Utilized Off Route,0
-5,3,Saturday,Mechanical,0
-5,3,Saturday,Investigation,0
-5,3,Saturday,Utilized Off Route,0
-5,1,Sunday,Emergency Services,1
-5,2,Sunday,Mechanical,0
-6,3,Monday,Emergency Services,0
-6,3,Tuesday,Held By,0
-6,1,Wednesday,Held By,1
-6,2,Wednesday,Mechanical,0
-6,3,Wednesday,Investigation,1
-6,0,Friday,Mechanical,0
-6,1,Friday,Utilized Off Route,0
-6,3,Friday,Mechanical,0
-6,0,Saturday,Mechanical,0
-6,2,Saturday,Held By,1
-6,1,Tuesday,Mechanical,0
-6,1,Thursday,Mechanical,0
-6,1,Thursday,Overhead - Pantograph,0
-6,2,Thursday,Mechanical,0
-6,3,Thursday,Mechanical,0
-6,3,Friday,Held By,0
-6,3,Friday,Investigation,0
-6,2,Saturday,Diversion,1
-6,2,Saturday,Utilized Off Route,0
-6,3,Saturday,Mechanical,0
-6,3,Sunday,Mechanical,0
-6,2,Tuesday,Mechanical,0
-6,1,Wednesday,Mechanical,0
-6,2,Wednesday,Mechanical,1
-6,2,Thursday,Investigation,1
-6,0,Friday,Held By,0
+5,4,Saturday,Mechanical,0
+5,5,Saturday,General Delay,0
+5,5,Saturday,Utilized Off Route,0
+5,6,Saturday,Investigation,0
+5,11,Saturday,General Delay,0
+5,3,Sunday,Investigation,0
+5,4,Sunday,Late Leaving Garage,0
+5,6,Sunday,Mechanical,0
+5,9,Sunday,Mechanical,0
+5,0,Monday,Mechanical,0
+5,4,Monday,Held By,0
+5,5,Monday,Utilized Off Route,0
+5,5,Monday,Mechanical,0
+5,8,Monday,Mechanical,0
+5,8,Monday,Mechanical,0
+5,8,Monday,Mechanical,0
+5,9,Monday,Mechanical,0
+5,9,Monday,Investigation,0
+5,11,Monday,Overhead - Pantograph,1
+5,2,Tuesday,Held By,0
+5,3,Tuesday,Late Leaving Garage,1
+5,4,Tuesday,Utilized Off Route,0
+5,4,Tuesday,Diversion,0
+5,7,Tuesday,Mechanical,0
+5,7,Tuesday,Held By,0
+5,9,Tuesday,Mechanical,0
+5,3,Wednesday,Late Leaving Garage,0
+5,4,Wednesday,Held By,0
+5,5,Wednesday,Held By,0
+5,5,Wednesday,Diversion,0
+5,6,Wednesday,Late Leaving Garage,0
+5,6,Wednesday,Mechanical,0
+5,6,Wednesday,Held By,0
+5,7,Wednesday,Emergency Services,0
+5,8,Wednesday,Held By,1
+5,8,Wednesday,Mechanical,0
+5,9,Wednesday,Investigation,0
+5,11,Wednesday,Mechanical,0
+5,4,Thursday,Mechanical,0
+5,5,Thursday,Investigation,0
+5,7,Thursday,Mechanical,0
+5,0,Friday,Held By,0
+5,0,Friday,Mechanical,0
+5,3,Friday,Mechanical,0
+5,4,Friday,Investigation,0
+5,8,Friday,Mechanical,0
+6,5,Saturday,Mechanical,0
+6,8,Saturday,Mechanical,0
+6,8,Saturday,Investigation,1
+6,9,Saturday,Mechanical,0
+6,11,Saturday,Mechanical,0
+6,2,Sunday,Held By,0
 6,2,Sunday,Mechanical,0
-6,0,Monday,Mechanical,0
-6,1,Monday,Utilized Off Route,0
-6,3,Monday,Held By,0
-6,2,Tuesday,Investigation,0
-6,1,Wednesday,Mechanical,0
-6,2,Wednesday,General Delay,1
-6,2,Thursday,Utilized Off Route,0
-6,0,Friday,Late Leaving Garage,0
+6,5,Sunday,General Delay,0
+6,8,Sunday,Mechanical,0
+6,9,Sunday,Held By,0
+6,4,Monday,Mechanical,0
+6,6,Monday,Late Leaving Garage,0
+6,6,Monday,General Delay,0
+6,7,Monday,General Delay,0
+6,8,Monday,General Delay,0
+6,9,Monday,Mechanical,0
+6,11,Monday,General Delay,1
+6,4,Tuesday,General Delay,0
+6,5,Tuesday,Mechanical,0
+6,7,Tuesday,Mechanical,0
+6,8,Tuesday,Mechanical,0
+6,9,Tuesday,Diversion,0
+6,5,Wednesday,Emergency Services,0
+6,6,Wednesday,Late Leaving Garage,0
+6,6,Wednesday,Mechanical,0
+6,7,Wednesday,Mechanical,0
+6,7,Wednesday,Utilized Off Route,0
+6,7,Wednesday,Utilized Off Route,0
+6,7,Wednesday,General Delay,0
+6,8,Wednesday,General Delay,0
+6,1,Thursday,Emergency Services,1
+6,3,Thursday,Mechanical,0
+6,4,Thursday,Investigation,0
+6,8,Thursday,Mechanical,0
+6,8,Thursday,Mechanical,0
+6,10,Thursday,General Delay,0
+6,1,Friday,Emergency Services,0
+6,4,Friday,Utilized Off Route,0
+6,4,Friday,Mechanical,0
+6,5,Friday,Mechanical,0
+6,6,Friday,Late Leaving Garage,0
+6,7,Friday,General Delay,0
+6,7,Friday,Investigation,0
+6,8,Friday,Mechanical,0
+6,9,Friday,General Delay,0
+6,10,Friday,General Delay,0
+6,0,Saturday,Mechanical,0
+6,4,Saturday,General Delay,1
+6,4,Saturday,General Delay,0
+6,5,Saturday,General Delay,0
+6,7,Saturday,Mechanical,0
+6,7,Saturday,Mechanical,0
+6,10,Saturday,General Delay,0
+6,10,Saturday,Mechanical,0
+6,11,Saturday,Mechanical,0
+6,4,Sunday,General Delay,0
+6,4,Sunday,Mechanical,0
+6,3,Monday,Emergency Services,1
+6,3,Monday,Mechanical,0
+6,7,Monday,Mechanical,0
+6,8,Monday,Investigation,0
+6,8,Monday,Mechanical,0
+6,10,Monday,Mechanical,0
+6,11,Monday,Investigation,0
+6,3,Tuesday,Late Leaving Garage,0
+6,3,Tuesday,Late Leaving Garage,0
+6,3,Tuesday,Late Leaving Garage,0
+6,3,Tuesday,General Delay,0
+6,6,Tuesday,Mechanical,0
+6,7,Tuesday,General Delay,0
+6,7,Tuesday,Emergency Services,0
+6,8,Tuesday,Mechanical,0
+6,9,Tuesday,Mechanical,0
+6,9,Tuesday,Mechanical,0
+6,11,Tuesday,Investigation,0
+6,5,Wednesday,Mechanical,0
+6,6,Wednesday,Investigation,0
+6,6,Wednesday,General Delay,0
+6,7,Wednesday,Mechanical,0
+6,8,Wednesday,Held By,0
+6,8,Wednesday,Held By,0
+6,8,Wednesday,Utilized Off Route,0
+6,9,Wednesday,Held By,0
+6,0,Thursday,Mechanical,0
+6,0,Thursday,Emergency Services,0
+6,7,Thursday,Mechanical,0
+6,7,Thursday,Mechanical,0
+6,8,Thursday,General Delay,0
+6,8,Thursday,Mechanical,1
+6,9,Thursday,Held By,0
+6,9,Thursday,Mechanical,0
+6,11,Thursday,General Delay,1
+6,0,Friday,General Delay,1
+6,3,Friday,Investigation,0
+6,5,Friday,Mechanical,0
+6,8,Friday,General Delay,0
+6,8,Friday,Mechanical,0
+6,10,Friday,Mechanical,0
+6,1,Saturday,Emergency Services,1
+6,2,Saturday,Diversion,1
+6,3,Saturday,Investigation,0
+6,3,Saturday,Held By,0
+6,4,Saturday,Mechanical,0
+6,4,Saturday,General Delay,0
+6,4,Saturday,Mechanical,0
+6,5,Saturday,Held By,0
+6,6,Saturday,General Delay,0
+6,6,Saturday,General Delay,0
+6,6,Saturday,Investigation,1
+6,3,Sunday,Held By,0
+6,4,Sunday,General Delay,0
+6,7,Sunday,Investigation,0
+6,7,Sunday,Held By,0
+6,7,Sunday,Held By,0
+6,8,Sunday,Investigation,0
+6,9,Sunday,Mechanical,0
+6,3,Monday,Mechanical,0
+6,4,Monday,Emergency Services,1
+6,5,Monday,Mechanical,0
+6,8,Monday,Investigation,0
+6,8,Monday,Investigation,0
+6,8,Monday,Held By,1
+6,9,Monday,Investigation,0
+6,10,Monday,General Delay,0
+6,4,Tuesday,Held By,0
+6,7,Tuesday,Investigation,1
+6,2,Wednesday,Late Leaving Garage,0
+6,3,Wednesday,Late Leaving Garage,0
+6,4,Wednesday,General Delay,0
+6,5,Wednesday,Investigation,0
+6,7,Wednesday,Investigation,0
+6,9,Wednesday,Held By,0
+6,1,Thursday,Investigation,0
+6,8,Thursday,Mechanical,0
+6,0,Friday,Mechanical,0
+6,0,Friday,Investigation,0
 6,2,Friday,Investigation,0
-6,2,Friday,Investigation,0
-6,3,Friday,Held By,0
+6,3,Friday,Mechanical,0
+6,5,Friday,Investigation,0
+6,6,Friday,Investigation,1
+6,7,Friday,Investigation,0
+6,8,Friday,Mechanical,0
+6,10,Friday,Mechanical,0
+6,10,Friday,Mechanical,0
 6,2,Saturday,Investigation,0
-6,2,Saturday,Emergency Services,0
-6,0,Sunday,Mechanical,0
-6,0,Sunday,Mechanical,0
-6,1,Sunday,Mechanical,0
-6,2,Tuesday,Emergency Services,0
-6,3,Tuesday,Mechanical,0
-6,3,Tuesday,Investigation,0
-7,2,Sunday,Held By,0
-7,0,Monday,Mechanical,0
-7,2,Tuesday,Held By,0
-7,2,Tuesday,Investigation,0
-7,2,Tuesday,Investigation,0
-7,1,Wednesday,Investigation,0
-7,3,Wednesday,Mechanical,0
-7,3,Wednesday,General Delay,0
-7,1,Thursday,Mechanical,0
-7,0,Sunday,Utilized Off Route,0
-7,0,Sunday,Mechanical,0
-7,1,Sunday,Mechanical,0
-7,3,Sunday,Investigation,1
+6,7,Saturday,Emergency Services,0
+6,7,Saturday,Emergency Services,0
+6,11,Saturday,Mechanical,0
+6,11,Saturday,Mechanical,0
+6,1,Sunday,Investigation,0
+6,3,Sunday,Mechanical,0
+6,4,Sunday,Mechanical,0
+6,6,Sunday,Investigation,0
+6,6,Sunday,Diversion,1
+6,7,Sunday,Investigation,0
+6,0,Monday,Investigation,0
+6,0,Monday,Mechanical,0
+6,2,Monday,Held By,0
+6,3,Monday,Late Leaving Garage,0
+6,3,Monday,Late Leaving Garage,0
+6,3,Monday,Late Leaving Garage,0
+6,4,Monday,General Delay,0
+6,6,Monday,Emergency Services,0
+6,7,Monday,Investigation,0
+6,7,Monday,Mechanical,0
+6,7,Monday,General Delay,0
+6,3,Tuesday,Held By,1
+6,4,Tuesday,Emergency Services,0
+6,6,Tuesday,Mechanical,0
+6,8,Tuesday,General Delay,0
+6,0,Wednesday,Mechanical,0
+6,2,Wednesday,Late Leaving Garage,0
+6,3,Wednesday,Held By,0
+6,4,Wednesday,Mechanical,0
+6,5,Wednesday,General Delay,0
+6,5,Wednesday,Utilized Off Route,0
+6,6,Wednesday,Mechanical,0
+6,7,Wednesday,Emergency Services,0
+6,8,Wednesday,Mechanical,0
+6,11,Wednesday,Mechanical,0
+6,11,Wednesday,Held By,0
+6,3,Thursday,Mechanical,0
+6,4,Thursday,Mechanical,0
+6,7,Thursday,General Delay,0
+6,0,Friday,Emergency Services,0
+6,3,Friday,Mechanical,0
+6,3,Friday,Mechanical,0
+6,4,Friday,General Delay,0
+6,6,Friday,Mechanical,0
+6,7,Friday,Investigation,0
+6,8,Saturday,Mechanical,0
+6,9,Saturday,Mechanical,0
+6,10,Saturday,Mechanical,0
+6,0,Sunday,Emergency Services,0
+6,6,Sunday,General Delay,0
+6,8,Sunday,Held By,0
+6,8,Sunday,Emergency Services,0
 7,3,Monday,Mechanical,0
-7,2,Tuesday,Mechanical,0
-7,2,Wednesday,Mechanical,0
+7,4,Monday,Mechanical,0
+7,5,Monday,Mechanical,0
+7,5,Monday,Diversion,0
+7,7,Monday,General Delay,0
+7,7,Monday,General Delay,0
+7,10,Monday,Mechanical,0
+7,3,Tuesday,Mechanical,0
+7,4,Tuesday,Mechanical,0
+7,7,Tuesday,Investigation,0
+7,7,Tuesday,Emergency Services,0
+7,11,Tuesday,Mechanical,0
+7,3,Wednesday,Mechanical,0
+7,5,Wednesday,Investigation,0
+7,0,Thursday,Investigation,0
+7,1,Thursday,Mechanical,0
+7,5,Thursday,Mechanical,0
+7,7,Thursday,General Delay,0
+7,11,Thursday,Mechanical,0
+7,0,Friday,Investigation,0
+7,3,Friday,Mechanical,0
+7,3,Friday,Late Leaving Garage,0
+7,4,Friday,Mechanical,0
+7,4,Friday,General Delay,0
+7,7,Friday,Overhead - Pantograph,1
+7,7,Friday,Mechanical,0
+7,1,Saturday,Emergency Services,0
+7,6,Saturday,Mechanical,0
+7,6,Saturday,General Delay,0
+7,8,Saturday,Investigation,0
+7,11,Saturday,Mechanical,0
+7,11,Saturday,Mechanical,0
+7,0,Sunday,Investigation,0
+7,2,Sunday,Emergency Services,0
+7,4,Sunday,Overhead - Pantograph,1
+7,6,Sunday,Mechanical,0
+7,6,Monday,Mechanical,0
+7,7,Monday,Investigation,0
+7,9,Monday,Mechanical,0
+7,3,Tuesday,Mechanical,0
+7,3,Tuesday,Mechanical,1
+7,7,Tuesday,Investigation,0
+7,7,Tuesday,Mechanical,0
+7,7,Tuesday,Mechanical,0
+7,11,Tuesday,Investigation,0
+7,11,Tuesday,Mechanical,0
+7,11,Tuesday,Mechanical,0
+7,1,Wednesday,Investigation,0
+7,3,Wednesday,Late Leaving Garage,0
+7,3,Wednesday,General Delay,0
+7,4,Wednesday,Investigation,0
+7,4,Wednesday,General Delay,0
+7,8,Wednesday,Mechanical,0
+7,4,Thursday,General Delay,0
+7,7,Thursday,Mechanical,1
+7,9,Thursday,Investigation,0
+7,10,Thursday,General Delay,0
+7,10,Thursday,Mechanical,0
+7,11,Thursday,Investigation,0
+7,4,Friday,Investigation,0
+7,4,Friday,Mechanical,0
+7,8,Friday,Mechanical,0
+7,2,Saturday,General Delay,1
+7,5,Saturday,General Delay,0
+7,6,Saturday,Held By,0
+7,9,Saturday,Mechanical,0
+7,11,Saturday,Investigation,0
+7,4,Sunday,Mechanical,0
+7,9,Sunday,Investigation,0
+7,2,Monday,Held By,0
+7,3,Monday,General Delay,0
+7,3,Monday,General Delay,0
+7,7,Monday,Held By,0
+7,8,Monday,Investigation,0
+7,10,Monday,Mechanical,0
+7,10,Monday,Held By,0
+7,11,Monday,Held By,1
+7,0,Tuesday,Diversion,1
+7,3,Tuesday,Mechanical,0
+7,4,Tuesday,Investigation,0
+7,6,Tuesday,Emergency Services,0
+7,7,Tuesday,Investigation,0
+7,7,Tuesday,Held By,0
+7,9,Tuesday,Mechanical,0
+7,0,Wednesday,Emergency Services,0
+7,0,Wednesday,Held By,0
+7,4,Wednesday,General Delay,0
+7,7,Wednesday,Investigation,0
+7,8,Wednesday,Mechanical,0
+7,10,Wednesday,Investigation,0
+7,2,Thursday,Investigation,0
 7,3,Thursday,Emergency Services,0
-7,3,Saturday,Investigation,0
+7,6,Thursday,Held By,0
+7,7,Thursday,Mechanical,0
+7,7,Thursday,Held By,1
+7,7,Thursday,Held By,0
+7,7,Thursday,Held By,0
+7,8,Thursday,Held By,0
+7,8,Thursday,General Delay,0
+7,11,Thursday,Mechanical,0
+7,0,Friday,Utilized Off Route,0
+7,2,Friday,Late Leaving Garage,0
+7,2,Friday,Overhead - Pantograph,0
+7,2,Friday,Mechanical,0
+7,3,Friday,Mechanical,0
+7,3,Friday,General Delay,0
+7,4,Friday,General Delay,0
+7,5,Friday,Mechanical,0
+7,8,Friday,General Delay,0
+7,9,Friday,Mechanical,0
+7,0,Saturday,Mechanical,0
+7,1,Saturday,Investigation,0
+7,2,Saturday,Mechanical,0
+7,2,Saturday,Mechanical,0
+7,2,Saturday,Mechanical,0
+7,2,Saturday,Utilized Off Route,0
+7,4,Saturday,General Delay,0
+7,4,Saturday,Mechanical,0
+7,6,Saturday,General Delay,0
+7,7,Saturday,Investigation,0
+7,9,Saturday,Mechanical,0
 7,0,Sunday,Mechanical,0
-7,1,Sunday,Mechanical,0
-7,2,Monday,Investigation,0
-7,2,Monday,Mechanical,0
-7,2,Monday,Mechanical,0
+7,3,Sunday,Mechanical,0
+7,3,Sunday,General Delay,0
+7,6,Sunday,General Delay,0
+7,7,Sunday,Mechanical,0
+7,8,Sunday,Held By,1
+7,3,Monday,General Delay,0
+7,5,Monday,Held By,0
+7,9,Monday,Mechanical,0
+7,10,Monday,Mechanical,0
 7,2,Tuesday,Mechanical,0
-7,2,Tuesday,Mechanical,0
-7,1,Wednesday,Emergency Services,0
-7,2,Sunday,Mechanical,0
-8,2,Saturday,Held By,0
-8,1,Sunday,Operations,0
-8,3,Sunday,Operations,0
-8,2,Monday,Operations,0
-8,2,Monday,Operations,0
-8,1,Tuesday,Operations,0
-8,1,Tuesday,Cleaning,0
-8,1,Tuesday,Mechanical,0
-8,1,Tuesday,Operations,0
-8,3,Tuesday,Emergency Services,0
-8,2,Wednesday,Collision - TTC Involved,0
-8,1,Thursday,Operations,0
-8,2,Thursday,Operations,0
-8,3,Thursday,Operations,0
-8,0,Friday,Emergency Services,0
-8,1,Friday,Operations,0
-8,1,Friday,Operations,0
-8,2,Friday,Operations,0
-8,0,Friday,Cleaning,0
-8,1,Saturday,Operations,0
-8,1,Saturday,Mechanical,0
-8,2,Saturday,Late,0
-8,1,Sunday,Operations,0
-8,2,Sunday,Operations,0
-8,2,Sunday,Operations,0
-8,3,Sunday,Mechanical,0
-8,3,Sunday,General Delay,0
-8,3,Sunday,Security,0
-8,2,Monday,Collision - TTC Involved,0
-8,3,Monday,Emergency Services,0
-8,0,Tuesday,Operations,0
-8,1,Tuesday,Operations,0
-8,3,Tuesday,Emergency Services,0
-8,1,Wednesday,Operations,0
-8,2,Wednesday,Operations,0
-8,2,Wednesday,Operations,0
-8,3,Wednesday,Operations,0
-8,0,Thursday,Investigation,1
-8,1,Thursday,Security,0
-8,2,Thursday,General Delay,0
-8,3,Thursday,Operations,0
-8,1,Friday,Operations,0
-8,1,Friday,Operations,0
-8,1,Friday,Operations,0
-8,1,Friday,Operations,0
-8,2,Friday,General Delay,1
-8,2,Friday,Operations,0
-8,2,Friday,Emergency Services,0
-8,2,Friday,Operations,0
-8,0,Saturday,Emergency Services,0
-8,1,Saturday,Operations,0
-8,2,Saturday,Mechanical,0
-8,2,Saturday,Operations,0
-8,3,Saturday,Cleaning,0
-8,1,Sunday,Mechanical,0
-8,1,Sunday,Operations,0
-8,2,Sunday,Emergency Services,0
-8,2,Sunday,Cleaning,0
-8,1,Monday,General Delay,0
-8,2,Monday,Operations,0
-8,2,Monday,Mechanical,0
-8,3,Monday,Operations,0
-8,1,Tuesday,Operations,0
-8,2,Tuesday,Operations,0
-8,2,Tuesday,Operations,0
-8,0,Tuesday,Security,0
-8,3,Wednesday,Operations,0
-8,2,Thursday,Collision - TTC Involved,1
+7,3,Tuesday,Mechanical,0
+7,4,Tuesday,Utilized Off Route,0
+7,7,Tuesday,Utilized Off Route,0
+7,8,Tuesday,Investigation,0
+7,10,Tuesday,Held By,1
+7,10,Tuesday,Mechanical,0
+7,11,Tuesday,Mechanical,0
+7,3,Wednesday,Mechanical,0
+7,5,Wednesday,Mechanical,0
+7,10,Wednesday,Investigation,0
+7,10,Wednesday,Emergency Services,0
+7,0,Thursday,Mechanical,0
+7,3,Thursday,General Delay,0
+7,4,Thursday,Held By,0
+7,4,Thursday,Mechanical,0
+7,8,Thursday,Mechanical,0
+7,0,Friday,Mechanical,0
+7,0,Friday,General Delay,0
+7,3,Friday,Investigation,1
+7,3,Friday,General Delay,0
+7,5,Friday,General Delay,0
+7,8,Friday,Mechanical,0
+7,9,Friday,Investigation,0
+7,9,Friday,Mechanical,0
+7,0,Saturday,Mechanical,0
+7,0,Saturday,Mechanical,0
+7,2,Saturday,Late Leaving Garage,0
+7,2,Saturday,Mechanical,0
+7,4,Saturday,Mechanical,0
+7,6,Saturday,Utilized Off Route,0
+7,7,Saturday,Held By,1
+7,10,Saturday,General Delay,0
+7,0,Sunday,Emergency Services,0
+7,4,Sunday,Mechanical,0
+7,5,Sunday,Mechanical,0
+7,8,Sunday,Mechanical,0
+7,0,Monday,Mechanical,0
+7,0,Monday,Investigation,1
+7,0,Monday,Investigation,0
+7,4,Monday,Investigation,0
+7,4,Monday,General Delay,0
+7,6,Monday,General Delay,0
+7,9,Monday,Investigation,0
+7,11,Monday,Mechanical,0
+7,0,Tuesday,Investigation,0
+7,4,Tuesday,Mechanical,0
+7,10,Tuesday,Mechanical,0
+7,11,Tuesday,Mechanical,0
+7,11,Tuesday,Mechanical,0
+7,4,Wednesday,Investigation,0
+7,5,Wednesday,General Delay,0
+8,2,Thursday,Held By,0
 8,3,Thursday,Investigation,0
-8,3,Thursday,Emergency Services,0
-8,1,Friday,Operations,0
-8,2,Friday,Operations,0
-8,3,Friday,Cleaning,0
-8,2,Saturday,Cleaning,0
-8,2,Saturday,Operations,0
-8,2,Saturday,Operations,0
-8,2,Saturday,Overhead,1
-8,2,Saturday,Operations,0
-8,3,Saturday,Operations,0
-8,3,Sunday,Emergency Services,0
+8,3,Thursday,Mechanical,0
+8,4,Thursday,Held By,0
+8,5,Thursday,Emergency Services,0
+8,5,Thursday,Investigation,0
+8,8,Thursday,General Delay,0
+8,10,Thursday,Mechanical,0
+8,6,Friday,Investigation,0
+8,9,Friday,Investigation,0
+8,0,Saturday,Investigation,0
+8,4,Saturday,Utilized Off Route,0
+8,5,Saturday,Utilized Off Route,0
+8,6,Saturday,Investigation,0
+8,7,Saturday,General Delay,0
+8,7,Saturday,Mechanical,0
+8,10,Saturday,Emergency Services,0
+8,11,Saturday,Held By,0
+8,0,Sunday,Diversion,0
+8,0,Monday,Mechanical,0
+8,5,Monday,Overhead - Pantograph,0
+8,11,Monday,Emergency Services,0
+8,2,Tuesday,Held By,0
+8,2,Tuesday,Held By,0
+8,5,Tuesday,Mechanical,0
+8,7,Tuesday,Investigation,0
+8,8,Tuesday,Held By,0
+8,10,Tuesday,Mechanical,0
+8,11,Tuesday,Emergency Services,0
+8,2,Wednesday,Diversion,0
+8,3,Wednesday,Mechanical,0
+8,5,Wednesday,Mechanical,0
+8,5,Wednesday,Mechanical,0
+8,6,Wednesday,Mechanical,0
+8,7,Wednesday,Mechanical,0
+8,7,Wednesday,Mechanical,0
+8,7,Wednesday,Late Leaving Garage,0
+8,10,Wednesday,Held By,0
+8,11,Wednesday,Utilized Off Route,0
+8,11,Wednesday,Emergency Services,1
+8,1,Thursday,Held By,0
+8,4,Thursday,Mechanical,0
+8,7,Thursday,Investigation,1
+8,7,Thursday,Held By,0
+8,0,Friday,Investigation,1
+8,5,Friday,Held By,1
+8,5,Friday,Utilized Off Route,0
+8,7,Friday,Held By,0
+8,7,Friday,General Delay,0
+8,8,Friday,Held By,1
+8,8,Friday,Investigation,0
+8,9,Friday,Investigation,0
+8,11,Friday,Emergency Services,0
+8,7,Saturday,Mechanical,0
+8,8,Saturday,Mechanical,1
+8,0,Sunday,Mechanical,0
+8,0,Sunday,Mechanical,0
+8,2,Sunday,Investigation,0
 8,3,Sunday,Mechanical,0
-8,0,Monday,Operations,0
-8,1,Monday,Mechanical,0
-8,2,Monday,Operations,0
-8,2,Monday,Overhead,1
-8,2,Monday,Operations,0
+8,4,Sunday,Late Leaving Garage,0
+8,6,Sunday,Mechanical,0
+8,0,Monday,Emergency Services,0
+8,6,Monday,Mechanical,0
+8,8,Monday,Investigation,0
+8,9,Monday,Held By,0
 8,2,Tuesday,Mechanical,0
-8,1,Wednesday,Security,0
-8,2,Thursday,Operations,0
-8,3,Saturday,Held By,1
-8,3,Saturday,Operations,0
-8,1,Sunday,Mechanical,0
-8,2,Sunday,Cleaning,0
-8,1,Monday,Cleaning,0
-8,2,Monday,Operations,0
-9,2,Tuesday,Held By,1
-9,3,Tuesday,Investigation,0
-9,3,Wednesday,Operations,0
-9,2,Thursday,Operations,0
-9,2,Friday,Collision - TTC Involved,0
-9,2,Saturday,Operations,0
-9,3,Saturday,Operations,0
-9,3,Saturday,Collision - TTC Involved,0
-9,0,Sunday,Collision - TTC Involved,0
-9,1,Tuesday,Mechanical,0
-9,2,Tuesday,Security,0
+8,3,Tuesday,Utilized Off Route,0
+8,3,Tuesday,Utilized Off Route,0
+8,3,Tuesday,Utilized Off Route,0
+8,5,Tuesday,Mechanical,0
+8,8,Tuesday,Utilized Off Route,0
+8,10,Tuesday,Diversion,0
+8,11,Tuesday,Emergency Services,1
+8,11,Tuesday,Mechanical,0
+8,4,Wednesday,Held By,0
+8,5,Wednesday,Mechanical,0
+8,6,Wednesday,Late Leaving Garage,0
+8,7,Wednesday,Emergency Services,1
+8,9,Wednesday,Mechanical,0
+8,9,Wednesday,Mechanical,0
+8,1,Thursday,Emergency Services,0
+8,2,Thursday,Late Leaving Garage,0
+8,2,Thursday,Late Leaving Garage,0
+8,2,Thursday,Late Leaving Garage,0
+8,3,Thursday,Held By,1
+8,4,Thursday,Mechanical,0
+8,5,Thursday,Mechanical,0
+8,10,Thursday,Mechanical,0
+8,10,Thursday,Utilized Off Route,0
+8,0,Friday,Mechanical,0
+8,0,Friday,Emergency Services,0
+8,1,Friday,Mechanical,0
+8,3,Friday,Investigation,0
+8,5,Friday,Investigation,0
+8,5,Friday,Investigation,0
+8,7,Friday,Emergency Services,0
+8,1,Saturday,Mechanical,0
+8,5,Saturday,Mechanical,0
+8,8,Saturday,Investigation,0
+8,10,Saturday,Mechanical,0
+8,4,Sunday,Utilized Off Route,0
+8,11,Sunday,Mechanical,0
+8,4,Monday,Investigation,0
+8,4,Monday,Diversion,0
+8,5,Monday,Mechanical,0
+8,6,Monday,Mechanical,0
+8,7,Monday,Mechanical,0
+8,9,Monday,Investigation,0
+8,0,Tuesday,Emergency Services,0
+8,7,Tuesday,Mechanical,0
+8,8,Tuesday,Mechanical,0
+8,9,Tuesday,Mechanical,0
+8,8,Wednesday,Mechanical,0
+8,8,Wednesday,Utilized Off Route,0
+8,9,Wednesday,Held By,0
+8,4,Thursday,Investigation,0
+8,5,Thursday,Mechanical,0
+8,9,Thursday,Mechanical,0
+8,9,Thursday,Investigation,1
+8,2,Friday,Mechanical,0
+8,2,Friday,Late Leaving Garage,0
+8,5,Friday,Mechanical,0
+8,5,Friday,Mechanical,0
+8,5,Friday,Investigation,0
+8,6,Friday,Mechanical,0
+8,7,Friday,Mechanical,0
+8,9,Friday,Mechanical,0
+8,4,Saturday,Diversion,0
+8,8,Saturday,Investigation,0
+8,8,Saturday,Held By,0
+8,0,Sunday,Mechanical,0
+8,5,Sunday,Investigation,0
+8,6,Sunday,Emergency Services,0
+8,7,Sunday,Mechanical,1
+8,7,Sunday,Overhead - Pantograph,0
+8,7,Sunday,Overhead - Pantograph,0
+8,9,Sunday,Investigation,0
+8,4,Monday,Mechanical,0
+8,7,Monday,Late Leaving Garage,0
+8,8,Monday,Diversion,0
+8,8,Monday,Investigation,0
+8,9,Monday,Mechanical,0
+8,1,Tuesday,Emergency Services,1
+8,4,Tuesday,Diversion,0
+8,7,Tuesday,Held By,0
+8,7,Tuesday,Investigation,0
+8,8,Tuesday,Emergency Services,0
+8,10,Wednesday,Mechanical,0
+8,0,Thursday,Investigation,0
+8,2,Thursday,Held By,1
+8,4,Thursday,Mechanical,0
+8,5,Thursday,Investigation,0
+8,5,Thursday,General Delay,1
+8,8,Thursday,Mechanical,0
+8,11,Thursday,Investigation,0
+8,4,Friday,Diversion,0
+8,8,Friday,Mechanical,0
+8,8,Friday,Mechanical,0
+8,9,Friday,Mechanical,0
+8,1,Saturday,Mechanical,0
+8,9,Saturday,Mechanical,0
+8,10,Saturday,Held By,1
+9,0,Sunday,Held By,0
+9,2,Sunday,Mechanical,0
+9,3,Sunday,Investigation,1
+9,6,Sunday,Investigation,0
+9,8,Sunday,Mechanical,0
+9,5,Monday,Held By,0
+9,7,Monday,Investigation,0
+9,8,Monday,Mechanical,0
+9,10,Monday,Mechanical,1
+9,10,Monday,Mechanical,0
+9,10,Monday,Investigation,0
+9,5,Tuesday,Investigation,0
+9,6,Tuesday,Investigation,0
+9,7,Tuesday,Held By,1
+9,7,Tuesday,General Delay,0
+9,9,Tuesday,Mechanical,0
 9,1,Wednesday,Mechanical,0
-9,2,Wednesday,Operations,0
-9,3,Wednesday,Collision - TTC Involved,0
-9,0,Thursday,Operations,0
-9,3,Friday,Cleaning,0
+9,2,Wednesday,Mechanical,0
+9,4,Wednesday,Mechanical,0
+9,5,Wednesday,Investigation,0
+9,7,Wednesday,Utilized Off Route,0
+9,10,Wednesday,Emergency Services,0
+9,4,Thursday,Investigation,1
+9,9,Thursday,Investigation,0
+9,11,Thursday,Mechanical,0
+9,4,Friday,Mechanical,0
+9,4,Friday,General Delay,0
+9,4,Friday,Mechanical,0
+9,6,Friday,Investigation,0
+9,6,Friday,Emergency Services,0
+9,7,Friday,General Delay,0
+9,8,Friday,Emergency Services,0
+9,8,Friday,Mechanical,0
+9,9,Friday,Utilized Off Route,0
+9,11,Friday,Overhead - Pantograph,1
+9,0,Saturday,Mechanical,0
 9,2,Saturday,Mechanical,0
-9,2,Saturday,Collision - TTC Involved,0
-9,3,Saturday,Utilized Off Route,0
-9,1,Sunday,Operations,0
-9,2,Sunday,Operations,0
-9,1,Monday,Security,0
-9,1,Monday,Operations,0
-9,2,Monday,Collision - TTC Involved,0
-9,2,Monday,Security,0
-9,3,Monday,Security,0
-9,1,Tuesday,Operations,0
-9,1,Tuesday,Operations,0
-9,2,Tuesday,Security,0
+9,4,Saturday,Mechanical,0
+9,5,Saturday,Late Leaving Garage,0
+9,5,Saturday,Mechanical,0
+9,10,Saturday,Mechanical,0
+9,4,Sunday,Mechanical,0
+9,7,Sunday,General Delay,0
+9,9,Sunday,Mechanical,0
+9,4,Monday,Emergency Services,0
+9,8,Monday,Investigation,0
+9,10,Monday,Held By,0
+9,0,Tuesday,Mechanical,0
+9,0,Tuesday,Mechanical,0
+9,2,Tuesday,Mechanical,0
+9,6,Tuesday,Held By,0
+9,7,Tuesday,Mechanical,0
+9,8,Tuesday,General Delay,0
+9,9,Tuesday,Investigation,0
 9,1,Wednesday,Mechanical,0
-9,2,Thursday,Operations,0
-9,2,Thursday,Held By,1
-9,3,Thursday,Operations,0
-9,0,Friday,Security,1
-9,1,Friday,Emergency Services,0
-9,2,Friday,Held By,1
-9,3,Friday,Utilized Off Route,0
-9,1,Sunday,Operations,0
-9,2,Sunday,Held By,1
-9,1,Monday,Operations,0
-9,1,Monday,Operations,0
-9,3,Tuesday,Investigation,0
 9,1,Wednesday,Emergency Services,0
-9,2,Wednesday,Collision - TTC Involved,0
-9,2,Wednesday,Operations,0
-9,3,Wednesday,Security,0
-9,2,Thursday,Operations,0
-9,2,Thursday,Emergency Services,0
-9,2,Thursday,Emergency Services,0
-9,3,Thursday,Cleaning,0
-9,0,Thursday,Held By,0
-9,1,Friday,Held By,0
-9,2,Saturday,Operations,0
-9,3,Saturday,Mechanical,0
-9,1,Monday,Operations,0
-9,1,Monday,Collision - TTC Involved,0
-9,2,Monday,Operations,0
-9,2,Monday,Held By,1
-9,3,Monday,Late,0
-9,1,Tuesday,Utilized Off Route,0
-9,3,Tuesday,Emergency Services,0
-9,1,Wednesday,Cleaning,0
-10,1,Thursday,Cleaning,0
-10,2,Thursday,Held By,1
-10,2,Thursday,Operations,0
-10,2,Friday,Collision - TTC Involved,1
-10,3,Friday,Security,0
-10,3,Friday,Security,0
-10,3,Friday,Cleaning,0
-10,1,Saturday,Cleaning,0
-10,2,Sunday,Mechanical,0
-10,2,Sunday,Overhead,1
-10,2,Sunday,Mechanical,0
-10,3,Sunday,Security,0
-10,0,Tuesday,Emergency Services,0
-10,1,Tuesday,Utilized Off Route,0
-10,2,Tuesday,Emergency Services,0
-10,3,Tuesday,Collision - TTC Involved,0
+9,1,Wednesday,Mechanical,0
+9,2,Wednesday,Mechanical,0
+9,3,Wednesday,Late Leaving Garage,0
+9,4,Wednesday,Emergency Services,1
+9,4,Wednesday,Investigation,0
+9,4,Wednesday,Investigation,0
+9,5,Wednesday,Mechanical,0
+9,6,Wednesday,Investigation,1
+9,7,Wednesday,Investigation,1
+9,7,Wednesday,Held By,0
+9,2,Thursday,Late Leaving Garage,0
+9,4,Thursday,Mechanical,0
+9,6,Thursday,Mechanical,0
+9,7,Thursday,Mechanical,0
+9,9,Thursday,General Delay,0
+9,10,Thursday,Mechanical,0
+9,11,Thursday,Late Leaving Garage,0
+9,2,Friday,Mechanical,0
+9,3,Friday,Mechanical,0
+9,3,Friday,Investigation,0
+9,5,Friday,Investigation,0
+9,9,Friday,Investigation,0
+9,11,Friday,General Delay,0
+9,0,Saturday,Emergency Services,0
+9,2,Saturday,Mechanical,0
+9,4,Saturday,Mechanical,0
+9,10,Saturday,Investigation,1
+9,10,Saturday,Mechanical,0
+9,4,Sunday,Mechanical,0
+9,6,Sunday,Mechanical,0
+9,7,Sunday,Diversion,1
+9,7,Sunday,Mechanical,0
+9,8,Sunday,Mechanical,0
+9,8,Monday,Mechanical,0
+9,2,Tuesday,Investigation,0
+9,2,Tuesday,Diversion,1
+9,6,Tuesday,Investigation,0
+9,8,Tuesday,Mechanical,0
+9,8,Tuesday,Investigation,0
+9,9,Tuesday,Utilized Off Route,0
+9,10,Tuesday,Mechanical,0
+9,7,Wednesday,Mechanical,0
+9,7,Wednesday,Late Leaving Garage,0
+9,9,Wednesday,Mechanical,0
+9,10,Wednesday,Emergency Services,0
+9,4,Thursday,Mechanical,0
+9,6,Thursday,Investigation,0
+9,7,Thursday,Utilized Off Route,0
+9,7,Thursday,Emergency Services,0
+9,8,Thursday,Held By,0
+9,11,Thursday,Mechanical,0
+9,3,Friday,Utilized Off Route,0
+9,4,Friday,General Delay,0
+9,9,Friday,Mechanical,0
+9,0,Saturday,General Delay,0
+9,4,Saturday,Mechanical,0
+9,6,Saturday,Mechanical,0
+9,7,Saturday,Mechanical,0
+9,10,Saturday,Investigation,0
+9,10,Saturday,Investigation,0
+9,11,Saturday,Mechanical,0
+9,6,Sunday,General Delay,0
+9,8,Sunday,Held By,1
+9,9,Sunday,Mechanical,0
+9,11,Sunday,Utilized Off Route,0
+9,11,Sunday,Investigation,0
+9,6,Monday,Mechanical,0
+9,6,Monday,Utilized Off Route,0
+9,7,Monday,Investigation,0
+9,8,Monday,Investigation,0
+9,8,Monday,Investigation,0
+9,7,Tuesday,Held By,0
+9,7,Tuesday,Investigation,0
+9,4,Wednesday,Mechanical,0
+9,7,Wednesday,Investigation,0
+9,10,Wednesday,Investigation,0
+9,0,Thursday,Emergency Services,0
+9,2,Thursday,Mechanical,0
+9,7,Thursday,Mechanical,0
+9,3,Friday,Mechanical,0
+9,4,Friday,Held By,0
+9,5,Friday,Mechanical,0
+9,6,Friday,General Delay,0
+9,6,Friday,Held By,1
+9,7,Friday,Mechanical,0
+9,7,Friday,Investigation,0
+9,7,Friday,Held By,1
+9,11,Friday,Emergency Services,0
+9,0,Saturday,Mechanical,0
+9,2,Saturday,Mechanical,0
+9,6,Saturday,Mechanical,0
+9,6,Saturday,Mechanical,0
+9,8,Saturday,Investigation,0
+9,7,Sunday,Mechanical,0
+9,8,Sunday,Utilized Off Route,0
+9,11,Sunday,Mechanical,0
+9,11,Sunday,Mechanical,0
+9,1,Monday,Mechanical,0
+9,1,Monday,Emergency Services,0
+9,3,Monday,Mechanical,0
+9,4,Monday,Mechanical,0
+9,7,Monday,Investigation,0
+9,8,Monday,Investigation,0
+9,9,Monday,Investigation,0
+9,11,Monday,Investigation,0
+10,3,Tuesday,Mechanical,0
+10,7,Tuesday,General Delay,0
+10,8,Tuesday,Mechanical,0
+10,10,Tuesday,Mechanical,0
 10,0,Wednesday,Investigation,0
-10,0,Wednesday,Mechanical,0
-10,1,Wednesday,Cleaning,0
-10,1,Thursday,Operations,0
-10,2,Thursday,Operations,0
-10,3,Thursday,Emergency Services,0
-10,0,Friday,General Delay,0
-10,2,Friday,Operations,0
-10,3,Friday,Emergency Services,0
-10,3,Friday,Operations,0
-10,2,Saturday,Late,0
-10,2,Saturday,Late,0
-10,3,Saturday,Mechanical,0
-10,3,Saturday,Security,0
-10,0,Saturday,Emergency Services,0
-10,2,Sunday,Held By,0
-10,2,Sunday,Security,0
-10,1,Tuesday,Security,0
-10,0,Tuesday,Cleaning,0
-10,0,Wednesday,Operations,0
-10,0,Wednesday,General Delay,0
-10,3,Wednesday,Operations,0
-10,3,Saturday,Held By,0
-10,0,Saturday,Operations,1
-10,2,Sunday,Cleaning,0
-10,3,Sunday,Operations,1
-10,1,Monday,Mechanical,0
-10,2,Monday,Cleaning,0
-10,0,Tuesday,General Delay,0
-10,1,Tuesday,Held By,1
-10,0,Wednesday,General Delay,0
-10,1,Wednesday,Mechanical,0
-10,1,Wednesday,Mechanical,0
-10,2,Wednesday,Mechanical,0
-10,2,Wednesday,Held By,1
-10,1,Thursday,Security,0
-10,1,Thursday,Cleaning,0
-10,2,Thursday,Held By,0
-10,3,Thursday,Held By,1
-10,1,Friday,General Delay,0
-10,1,Friday,Operations,0
-10,1,Friday,Operations,0
-10,2,Friday,Held By,1
-10,3,Friday,Security,0
-10,1,Saturday,Cleaning,0
-10,2,Saturday,Mechanical,0
-10,2,Saturday,Security,0
-10,3,Sunday,Emergency Services,0
-10,1,Monday,Operations,0
-10,1,Monday,General Delay,1
+10,5,Wednesday,Mechanical,0
+10,6,Wednesday,Mechanical,0
+10,8,Wednesday,Investigation,0
+10,11,Wednesday,Utilized Off Route,0
+10,0,Thursday,Mechanical,0
+10,6,Thursday,Investigation,0
+10,6,Thursday,Mechanical,0
+10,7,Thursday,General Delay,0
+10,7,Thursday,Mechanical,0
+10,8,Thursday,Mechanical,0
+10,8,Thursday,General Delay,0
+10,11,Thursday,Mechanical,0
+10,3,Friday,Mechanical,0
+10,5,Friday,Mechanical,0
+10,9,Friday,Mechanical,0
+10,11,Friday,Emergency Services,0
+10,1,Saturday,Mechanical,0
+10,2,Saturday,Held By,0
+10,2,Saturday,Investigation,0
+10,3,Saturday,Mechanical,1
+10,5,Saturday,Mechanical,0
+10,5,Saturday,Investigation,1
+10,8,Saturday,Emergency Services,1
+10,8,Saturday,Utilized Off Route,0
+10,8,Saturday,General Delay,0
+10,9,Saturday,Mechanical,0
+10,10,Saturday,Emergency Services,0
+10,0,Sunday,Investigation,0
+10,3,Sunday,Mechanical,0
+10,4,Sunday,Held By,0
+10,6,Sunday,Investigation,0
+10,7,Sunday,Utilized Off Route,0
+10,0,Monday,Mechanical,0
 10,2,Monday,Mechanical,0
-10,2,Tuesday,Held By,0
-10,1,Thursday,Mechanical,0
-10,1,Thursday,Mechanical,0
-10,1,Thursday,General Delay,0
-10,1,Thursday,General Delay,0
+10,2,Monday,Held By,0
+10,2,Monday,Held By,0
+10,2,Monday,Held By,0
+10,4,Monday,Mechanical,0
+10,5,Monday,Investigation,1
+10,11,Monday,Emergency Services,0
+10,3,Tuesday,Mechanical,0
+10,3,Tuesday,Held By,0
+10,3,Tuesday,Held By,1
+10,4,Tuesday,Emergency Services,0
+10,5,Tuesday,Investigation,1
+10,6,Tuesday,Mechanical,0
+10,6,Tuesday,General Delay,0
+10,9,Tuesday,Mechanical,0
+10,9,Tuesday,Investigation,1
+10,7,Wednesday,Investigation,1
+10,7,Wednesday,Investigation,1
+10,3,Thursday,Mechanical,0
+10,6,Thursday,Held By,0
+10,7,Thursday,Mechanical,0
+10,0,Friday,Investigation,1
+10,2,Friday,General Delay,0
+10,4,Friday,Mechanical,0
+10,8,Friday,Investigation,0
+10,1,Saturday,Held By,0
+10,4,Saturday,Mechanical,0
+10,5,Saturday,Mechanical,0
+10,9,Saturday,Investigation,0
+10,9,Saturday,Emergency Services,0
+10,10,Saturday,Investigation,0
+10,1,Sunday,Emergency Services,0
+10,3,Sunday,Held By,0
+10,8,Sunday,Held By,0
+10,11,Sunday,Mechanical,0
+10,5,Monday,Mechanical,0
+10,5,Monday,Overhead - Pantograph,0
+10,8,Monday,Held By,0
+10,8,Monday,Mechanical,0
+10,2,Tuesday,Mechanical,0
+10,3,Tuesday,Investigation,0
+10,4,Tuesday,Held By,0
+10,5,Tuesday,Mechanical,0
+10,7,Tuesday,Investigation,0
+10,2,Wednesday,Mechanical,0
+10,3,Wednesday,Emergency Services,0
+10,4,Wednesday,General Delay,0
+10,6,Wednesday,Mechanical,0
+10,6,Wednesday,Emergency Services,0
+10,8,Wednesday,Mechanical,0
+10,8,Wednesday,Mechanical,0
+10,3,Thursday,Mechanical,0
+10,4,Thursday,Mechanical,0
+10,4,Thursday,Held By,0
+10,5,Thursday,Utilized Off Route,0
+10,10,Thursday,General Delay,0
+10,6,Friday,Investigation,0
+10,7,Friday,Emergency Services,1
+10,7,Friday,Mechanical,1
+10,11,Friday,Investigation,0
+10,5,Saturday,Investigation,0
+10,10,Saturday,Emergency Services,0
+10,11,Saturday,Investigation,0
+10,4,Sunday,General Delay,0
+10,4,Sunday,Held By,1
+10,5,Sunday,General Delay,0
+10,5,Sunday,General Delay,0
+10,6,Sunday,General Delay,0
+10,6,Sunday,General Delay,0
+10,6,Sunday,General Delay,0
+10,7,Sunday,Mechanical,0
+10,8,Sunday,General Delay,1
+10,8,Sunday,Held By,1
+10,11,Sunday,Investigation,0
+10,0,Monday,Mechanical,0
+10,3,Monday,Mechanical,0
+10,4,Monday,Utilized Off Route,0
+10,5,Monday,Held By,0
+10,9,Monday,Utilized Off Route,0
+10,2,Tuesday,Mechanical,0
+10,3,Tuesday,Mechanical,0
+10,3,Tuesday,Held By,0
+10,3,Tuesday,Investigation,0
+10,4,Tuesday,Mechanical,0
+10,10,Tuesday,Investigation,0
+10,5,Wednesday,Held By,0
+10,11,Wednesday,Investigation,0
+10,3,Thursday,Held By,0
+10,3,Thursday,Mechanical,0
+10,3,Thursday,General Delay,0
+10,4,Thursday,Investigation,0
+10,4,Thursday,Mechanical,0
+10,6,Thursday,Investigation,0
+10,6,Thursday,Mechanical,0
+10,6,Thursday,Held By,1
+10,8,Thursday,General Delay,0
+10,9,Thursday,General Delay,0
+10,3,Friday,Held By,0
+10,6,Friday,Mechanical,0
+10,7,Friday,Mechanical,0
+10,9,Friday,Investigation,0
+10,11,Friday,Mechanical,0
+10,11,Friday,Held By,0
+10,4,Saturday,Held By,0
+10,5,Saturday,Mechanical,0
+10,5,Saturday,Held By,0
+10,5,Saturday,Held By,0
+10,5,Saturday,Held By,0
+10,8,Saturday,Mechanical,1
+10,11,Saturday,Mechanical,0
+10,1,Sunday,Emergency Services,0
+10,1,Sunday,Mechanical,0
+10,2,Sunday,Held By,0
+10,3,Sunday,Mechanical,0
+10,4,Sunday,Late Leaving Garage,0
+10,4,Sunday,Late Leaving Garage,0
+10,6,Sunday,Investigation,0
+10,11,Sunday,Mechanical,0
+10,0,Monday,Held By,0
+10,4,Monday,Mechanical,0
+10,8,Monday,Mechanical,0
+10,8,Monday,General Delay,0
+10,8,Monday,Mechanical,0
+10,9,Monday,Mechanical,0
+10,10,Monday,Mechanical,0
+10,3,Tuesday,Investigation,0
+10,3,Tuesday,Held By,0
+10,7,Tuesday,Held By,0
+10,10,Tuesday,Mechanical,0
+10,10,Tuesday,Mechanical,0
+10,0,Wednesday,Investigation,0
+10,0,Wednesday,Investigation,0
+10,3,Wednesday,Mechanical,0
+10,4,Wednesday,Utilized Off Route,0
+10,5,Wednesday,Mechanical,0
+10,7,Wednesday,Investigation,0
+10,10,Wednesday,Investigation,0
+10,0,Thursday,Held By,1
 10,2,Thursday,Mechanical,0
-10,2,Thursday,Mechanical,0
-10,3,Thursday,Cleaning,0
-10,2,Friday,Mechanical,0
-10,2,Friday,Operations,0
-11,1,Sunday,Operations,0
-11,2,Sunday,Utilized Off Route,0
-11,2,Monday,Operations,0
-11,0,Monday,Operations,0
-11,1,Tuesday,Held By,0
-11,1,Tuesday,Operations,0
-11,3,Tuesday,Emergency Services,1
-11,1,Wednesday,Held By,0
-11,1,Wednesday,Security,0
-11,1,Wednesday,Security,0
+10,2,Thursday,Held By,0
+10,2,Thursday,Held By,0
+10,7,Thursday,Mechanical,0
+10,8,Thursday,Emergency Services,0
+10,9,Thursday,Mechanical,0
+10,9,Thursday,Mechanical,0
+11,5,Friday,Emergency Services,0
+11,6,Friday,Mechanical,0
+11,9,Friday,Investigation,1
+11,3,Saturday,Investigation,0
+11,6,Saturday,Mechanical,0
+11,6,Saturday,Investigation,0
+11,6,Saturday,Mechanical,0
+11,7,Saturday,Investigation,0
+11,11,Saturday,Emergency Services,0
+11,4,Sunday,Investigation,0
+11,6,Sunday,Held By,0
+11,2,Monday,Investigation,0
+11,6,Monday,Mechanical,0
+11,8,Monday,Mechanical,0
+11,3,Tuesday,Mechanical,0
+11,5,Tuesday,General Delay,0
+11,6,Tuesday,Emergency Services,0
+11,9,Tuesday,Utilized Off Route,0
+11,11,Tuesday,Mechanical,0
+11,3,Wednesday,Mechanical,0
+11,3,Wednesday,Mechanical,0
+11,4,Wednesday,Mechanical,0
+11,5,Wednesday,Held By,0
+11,5,Wednesday,Held By,1
+11,9,Wednesday,Held By,0
+11,10,Wednesday,Mechanical,0
+11,3,Thursday,Utilized Off Route,0
+11,5,Thursday,Mechanical,0
+11,6,Thursday,Overhead - Pantograph,0
+11,6,Thursday,Diversion,0
+11,7,Thursday,Mechanical,0
+11,8,Thursday,Mechanical,0
+11,3,Friday,Mechanical,0
+11,5,Friday,Held By,1
+11,5,Friday,Utilized Off Route,0
+11,5,Friday,Utilized Off Route,0
+11,5,Friday,General Delay,1
+11,8,Friday,Emergency Services,0
+11,11,Friday,Investigation,0
+11,4,Saturday,Mechanical,0
+11,5,Saturday,Held By,0
+11,6,Saturday,Investigation,0
+11,8,Saturday,Mechanical,0
+11,10,Saturday,Mechanical,0
+11,2,Sunday,Investigation,0
+11,4,Sunday,Mechanical,0
+11,8,Sunday,Mechanical,0
+11,0,Monday,Mechanical,0
+11,6,Monday,Late Leaving Garage,0
+11,7,Monday,General Delay,0
+11,0,Tuesday,Mechanical,0
+11,2,Tuesday,Held By,1
+11,3,Tuesday,General Delay,0
+11,3,Tuesday,Mechanical,0
+11,3,Tuesday,Held By,0
+11,3,Tuesday,Mechanical,0
+11,3,Tuesday,Utilized Off Route,0
+11,4,Tuesday,Held By,1
+11,4,Tuesday,Utilized Off Route,0
+11,5,Tuesday,General Delay,0
+11,6,Tuesday,Mechanical,0
+11,6,Tuesday,Held By,1
+11,8,Tuesday,Utilized Off Route,0
+11,9,Tuesday,Emergency Services,0
+11,3,Wednesday,Mechanical,0
+11,5,Wednesday,General Delay,0
+11,7,Wednesday,Held By,0
+11,7,Wednesday,Mechanical,0
+11,8,Wednesday,Investigation,0
+11,8,Wednesday,Mechanical,0
+11,8,Wednesday,Mechanical,0
+11,9,Wednesday,Investigation,0
+11,9,Wednesday,Investigation,1
+11,9,Wednesday,Investigation,1
+11,3,Thursday,Late Leaving Garage,0
+11,7,Thursday,Mechanical,0
+11,7,Thursday,Mechanical,0
+11,8,Thursday,Mechanical,0
+11,9,Thursday,Mechanical,0
+11,10,Thursday,Mechanical,0
+11,1,Friday,Investigation,0
+11,3,Friday,Mechanical,0
+11,8,Friday,Mechanical,0
+11,10,Friday,Mechanical,0
+11,3,Saturday,Late Leaving Garage,0
+11,5,Saturday,Late Leaving Garage,0
+11,7,Saturday,Utilized Off Route,0
+11,0,Sunday,Investigation,0
+11,3,Sunday,Mechanical,0
+11,4,Sunday,Mechanical,0
+11,4,Sunday,Held By,0
+11,6,Sunday,Held By,0
+11,6,Sunday,Held By,0
+11,6,Sunday,Held By,0
+11,7,Sunday,Investigation,0
+11,3,Monday,Mechanical,0
+11,6,Monday,Mechanical,0
+11,9,Monday,Emergency Services,0
+11,5,Tuesday,Mechanical,0
+11,7,Tuesday,Mechanical,0
+11,8,Tuesday,Emergency Services,0
+11,10,Tuesday,Mechanical,0
 11,2,Wednesday,Mechanical,0
-11,3,Wednesday,Cleaning,0
-11,0,Thursday,Operations,0
-11,0,Thursday,Held By,0
-11,1,Thursday,Cleaning,0
-11,2,Friday,Cleaning,0
-11,2,Sunday,Cleaning,0
-11,2,Sunday,Emergency Services,0
-11,1,Monday,Operations,0
-11,2,Monday,Security,0
-11,3,Monday,Cleaning,0
-11,3,Monday,Operations,0
-11,3,Monday,Security,1
-11,1,Tuesday,Held By,0
-11,1,Tuesday,General Delay,0
-11,2,Tuesday,Cleaning,0
-11,3,Tuesday,Cleaning,0
-11,0,Wednesday,Emergency Services,0
-11,2,Thursday,Investigation,0
-11,1,Friday,Operations,0
-11,2,Friday,Collision - TTC Involved,0
-11,2,Friday,Security,0
-11,2,Friday,Operations,0
-11,0,Friday,Cleaning,0
-11,0,Friday,Operations,0
-11,1,Saturday,Mechanical,0
-11,2,Saturday,Cleaning,0
-11,3,Saturday,Mechanical,0
-11,3,Sunday,Emergency Services,0
-11,3,Sunday,Security,0
-11,0,Monday,Late,0
-11,2,Monday,Security,0
-11,3,Monday,Collision - TTC Involved,0
-11,1,Tuesday,Late,0
-11,1,Thursday,Security,0
-11,2,Thursday,General Delay,0
-11,2,Thursday,Operations,0
-11,3,Thursday,Cleaning,0
-11,1,Friday,Mechanical,0
-11,1,Saturday,Operations,0
-11,3,Saturday,Cleaning,0
-11,3,Saturday,General Delay,0
-11,0,Saturday,Mechanical,0
-11,1,Sunday,Mechanical,0
-11,3,Sunday,Security,0
-11,2,Monday,Utilized Off Route,0
-11,2,Monday,Mechanical,0
-11,2,Monday,Operations,0
-11,2,Monday,Security,0
-11,2,Monday,Mechanical,0
+11,2,Wednesday,Late Leaving Garage,0
+11,3,Wednesday,Diversion,0
+11,3,Wednesday,General Delay,1
+11,3,Wednesday,Held By,0
+11,9,Wednesday,Emergency Services,0
+11,0,Thursday,Mechanical,0
+11,1,Thursday,Investigation,0
+11,2,Thursday,Mechanical,0
+11,4,Thursday,Mechanical,0
+11,6,Thursday,Mechanical,0
+11,7,Thursday,Mechanical,0
+11,10,Thursday,Emergency Services,0
+11,10,Thursday,Emergency Services,0
+11,10,Thursday,Investigation,0
+11,11,Thursday,Investigation,1
+11,3,Friday,Held By,0
+11,3,Friday,Investigation,0
+11,3,Friday,Held By,0
+11,3,Friday,Mechanical,0
+11,8,Friday,Mechanical,0
+11,10,Friday,Mechanical,0
+11,1,Saturday,General Delay,0
+11,2,Saturday,Held By,0
+11,4,Saturday,Held By,0
+11,6,Saturday,Mechanical,0
+11,9,Saturday,Utilized Off Route,0
+11,0,Sunday,Mechanical,0
+11,0,Sunday,Mechanical,0
+11,0,Monday,Investigation,0
+11,0,Monday,Investigation,0
+11,2,Monday,Held By,0
+11,2,Monday,Held By,0
+11,3,Monday,Mechanical,1
+11,5,Monday,Mechanical,0
+11,6,Monday,Emergency Services,0
+11,10,Monday,Mechanical,0
 11,1,Tuesday,Mechanical,0
-11,2,Tuesday,Operations,0
-11,1,Wednesday,Mechanical,0
-11,1,Wednesday,Mechanical,0
-11,2,Wednesday,General Delay,0
-11,1,Thursday,Cleaning,0
-11,3,Thursday,Emergency Services,0
-11,0,Thursday,Security,0
-11,2,Friday,Operations,0
-11,2,Friday,Security,0
-11,0,Friday,Security,0
-11,1,Saturday,Operations,0
+11,4,Tuesday,Mechanical,0
+11,5,Tuesday,Investigation,0
+11,5,Tuesday,Mechanical,0
+11,5,Tuesday,Emergency Services,1
+11,6,Tuesday,Mechanical,0
+11,6,Tuesday,Held By,0
+11,8,Tuesday,Investigation,0
+11,3,Wednesday,Late Leaving Garage,0
+11,3,Wednesday,Late Leaving Garage,0
+11,4,Wednesday,General Delay,0
+11,7,Wednesday,Mechanical,0
+11,8,Wednesday,Mechanical,0
+11,11,Wednesday,Investigation,0
+11,0,Thursday,Investigation,0
+11,7,Thursday,Mechanical,0
+11,9,Thursday,Mechanical,0
+11,9,Thursday,Utilized Off Route,0
+11,3,Friday,Mechanical,0
+11,5,Friday,Diversion,1
+11,6,Friday,Held By,0
+11,7,Friday,Investigation,0
+11,8,Friday,Held By,0
+11,11,Friday,Mechanical,0
+11,0,Saturday,Held By,0
 11,2,Saturday,Mechanical,0
-11,3,Saturday,Cleaning,0
-11,3,Saturday,Cleaning,0
-11,3,Sunday,Cleaning,0
-11,3,Sunday,Cleaning,0
-11,1,Monday,Operations,0
-11,1,Monday,Mechanical,0
-11,2,Monday,Cleaning,0
-11,3,Monday,Cleaning,0
-12,2,Tuesday,Operations,0
-12,2,Tuesday,Security,1
-12,1,Wednesday,Mechanical,0
-12,1,Wednesday,Mechanical,0
-12,2,Wednesday,Mechanical,0
-12,2,Wednesday,Cleaning,0
-12,0,Wednesday,Security,0
-12,1,Thursday,Held By,0
-12,2,Thursday,Emergency Services,0
-12,2,Thursday,Cleaning,0
-12,3,Thursday,Mechanical,0
-12,3,Thursday,Emergency Services,0
-12,0,Friday,Emergency Services,0
-12,1,Friday,Emergency Services,1
-12,1,Friday,Held By,0
-12,2,Friday,Operations,0
-12,2,Friday,Investigation,0
-12,3,Friday,Rail/Switches,0
-12,3,Saturday,Held By,0
-12,3,Saturday,Security,0
-12,3,Saturday,Mechanical,1
-12,1,Sunday,Operations,0
-12,2,Sunday,Emergency Services,0
-12,3,Sunday,Cleaning,0
-12,3,Sunday,Mechanical,0
-12,0,Tuesday,Operations,0
-12,2,Tuesday,Mechanical,0
-12,3,Tuesday,Late,0
-12,1,Thursday,Operations,0
-12,1,Thursday,Operations,0
-12,2,Thursday,Operations,0
-12,1,Saturday,Utilized Off Route,0
+11,7,Saturday,Mechanical,0
+11,9,Saturday,Mechanical,0
+11,10,Saturday,Investigation,0
+12,0,Sunday,Mechanical,0
+12,0,Sunday,Emergency Services,0
 12,0,Sunday,Utilized Off Route,0
-12,3,Tuesday,Cleaning,0
-12,0,Wednesday,Security,0
-12,1,Wednesday,Held By,0
-12,1,Wednesday,Security,0
-12,2,Wednesday,Mechanical,0
-12,2,Wednesday,Operations,0
-12,1,Thursday,Operations,0
-12,1,Thursday,Utilized Off Route,0
-12,1,Thursday,Utilized Off Route,0
-12,2,Thursday,Late,0
-12,2,Friday,Operations,0
-12,2,Friday,Operations,0
-12,2,Friday,General Delay,0
-12,1,Saturday,Operations,0
-12,1,Saturday,Operations,0
-12,2,Sunday,Security,0
-12,0,Sunday,Security,0
-12,0,Sunday,Operations,0
-12,1,Monday,Cleaning,0
-12,2,Monday,General Delay,0
-12,0,Monday,Security,1
-12,0,Tuesday,Cleaning,0
-12,2,Tuesday,Operations,0
-12,2,Tuesday,Operations,0
-12,2,Tuesday,Cleaning,0
-12,2,Thursday,Utilized Off Route,0
-12,2,Thursday,Mechanical,0
-12,3,Thursday,Collision - TTC Involved,0
-12,0,Thursday,Operations,0
-12,0,Saturday,Operations,0
-12,1,Saturday,General Delay,0
-12,2,Saturday,Operations,0
-12,2,Saturday,Operations,0
-12,2,Saturday,Utilized Off Route,0
-12,2,Saturday,Operations,0
-12,3,Saturday,Utilized Off Route,0
-12,2,Sunday,Emergency Services,0
-12,2,Monday,Collision - TTC Involved,0
-12,3,Monday,Cleaning,0
+12,2,Sunday,Held By,0
+12,3,Sunday,Late Leaving Garage,0
+12,4,Sunday,General Delay,0
+12,5,Sunday,Overhead - Pantograph,0
+12,5,Sunday,General Delay,0
+12,6,Sunday,Overhead - Pantograph,0
+12,6,Sunday,General Delay,0
+12,10,Sunday,Mechanical,0
+12,10,Sunday,Mechanical,1
+12,0,Monday,Held By,0
+12,2,Monday,Mechanical,1
+12,3,Monday,Late Leaving Garage,0
+12,3,Monday,Late Leaving Garage,0
+12,2,Tuesday,Held By,0
 12,2,Tuesday,Mechanical,0
-12,0,Wednesday,Operations,0
+12,3,Tuesday,Held By,0
+12,3,Tuesday,Held By,0
+12,3,Tuesday,Held By,0
+12,3,Tuesday,Held By,0
+12,3,Tuesday,Held By,0
+12,7,Tuesday,Held By,0
+12,2,Wednesday,Mechanical,0
+12,3,Wednesday,Utilized Off Route,0
+12,3,Wednesday,Late Leaving Garage,0
+12,3,Wednesday,Mechanical,0
+12,3,Wednesday,Held By,0
+12,5,Wednesday,Investigation,0
+12,6,Wednesday,Emergency Services,0
+12,6,Wednesday,Utilized Off Route,0
+12,8,Wednesday,Investigation,0
+12,4,Thursday,Investigation,0
+12,4,Thursday,General Delay,0
+12,5,Thursday,Held By,0
+12,7,Thursday,Late Leaving Garage,0
+12,9,Thursday,Emergency Services,0
+12,2,Friday,Late Leaving Garage,0
+12,3,Friday,Investigation,0
+12,4,Friday,General Delay,0
+12,4,Friday,Mechanical,0
+12,4,Friday,Investigation,0
+12,4,Friday,Diversion,1
+12,9,Friday,Mechanical,0
+12,11,Friday,Diversion,1
+12,7,Saturday,Mechanical,0
+12,7,Saturday,Mechanical,0
+12,10,Saturday,Mechanical,0
+12,1,Sunday,Mechanical,0
+12,6,Sunday,Mechanical,0
+12,8,Sunday,Emergency Services,0
+12,9,Sunday,Mechanical,0
+12,11,Sunday,Emergency Services,0
+12,2,Monday,Held By,0
+12,2,Monday,Held By,0
+12,3,Monday,Mechanical,0
+12,3,Monday,Mechanical,0
+12,5,Monday,General Delay,0
+12,8,Monday,Investigation,0
+12,10,Monday,Emergency Services,0
+12,3,Tuesday,Mechanical,0
+12,3,Tuesday,Mechanical,0
+12,3,Tuesday,Held By,0
+12,4,Tuesday,Utilized Off Route,0
+12,9,Tuesday,Emergency Services,0
+12,10,Tuesday,Held By,0
+12,4,Wednesday,Held By,0
+12,7,Wednesday,Mechanical,0
+12,7,Wednesday,Emergency Services,0
+12,0,Thursday,Mechanical,0
+12,2,Thursday,Mechanical,0
+12,2,Thursday,Mechanical,0
+12,3,Thursday,Overhead - Pantograph,1
+12,5,Thursday,Mechanical,0
+12,10,Thursday,Mechanical,0
+12,11,Thursday,Utilized Off Route,0
+12,0,Friday,Mechanical,0
+12,2,Friday,Investigation,0
+12,5,Friday,Mechanical,0
+12,11,Friday,Investigation,1
+12,7,Saturday,Held By,1
+12,8,Saturday,Investigation,0
+12,8,Saturday,Investigation,0
+12,9,Saturday,Investigation,1
+12,7,Sunday,Mechanical,0
+12,4,Monday,General Delay,0
+12,6,Monday,Mechanical,0
+12,6,Monday,Diversion,1
+12,6,Monday,Mechanical,0
+12,7,Monday,Held By,0
+12,8,Monday,Mechanical,0
+12,2,Tuesday,Mechanical,0
+12,4,Tuesday,Mechanical,0
+12,4,Tuesday,Mechanical,0
+12,7,Tuesday,Investigation,0
 12,0,Wednesday,Mechanical,0
-12,0,Wednesday,Security,0
-12,1,Wednesday,Emergency Services,0
-12,0,Thursday,Operations,0
-12,1,Thursday,Mechanical,0
-12,1,Thursday,Utilized Off Route,0
+12,3,Wednesday,Mechanical,0
+12,7,Wednesday,Mechanical,0
+12,8,Wednesday,Mechanical,0
+12,9,Wednesday,Held By,0
+12,2,Thursday,Mechanical,0
+12,6,Thursday,Mechanical,0
+12,7,Thursday,Mechanical,0
+12,7,Thursday,Held By,0
+12,8,Thursday,Mechanical,0
+12,10,Thursday,Held By,0
+12,3,Friday,Mechanical,0
+12,4,Friday,Mechanical,0
+12,5,Friday,Investigation,0
+12,6,Friday,General Delay,0
+12,9,Friday,Mechanical,0
+12,10,Friday,Mechanical,0
+12,2,Saturday,Emergency Services,1
+12,6,Saturday,Mechanical,0
+12,8,Saturday,Held By,0
+12,9,Saturday,Held By,1
+12,10,Saturday,Mechanical,0
+12,3,Sunday,Late Leaving Garage,0
+12,3,Monday,Late Leaving Garage,0
+12,4,Monday,Mechanical,0
+12,5,Monday,Mechanical,0
+12,6,Monday,Held By,0
+12,6,Monday,Mechanical,0
+12,6,Monday,General Delay,0
+12,6,Monday,Emergency Services,0
+12,11,Monday,Emergency Services,0
+12,1,Tuesday,Investigation,0
+12,1,Tuesday,Held By,0
+12,2,Tuesday,Mechanical,0
+12,3,Tuesday,Diversion,0
+12,4,Tuesday,Investigation,0
+12,11,Tuesday,Mechanical,0
+12,0,Wednesday,Emergency Services,0
+12,8,Wednesday,Mechanical,0
+12,9,Thursday,Mechanical,0
+12,10,Thursday,Investigation,1
+12,11,Thursday,Mechanical,0
+12,5,Friday,Investigation,1
+12,8,Friday,Utilized Off Route,0
+12,10,Friday,Mechanical,0
+12,5,Saturday,Mechanical,0
+12,8,Saturday,General Delay,0
+12,9,Sunday,Mechanical,0
+12,2,Monday,Held By,0
+12,6,Monday,Mechanical,0
+12,8,Monday,Mechanical,0
+12,8,Monday,Investigation,0
+12,0,Tuesday,Held By,0
+12,2,Tuesday,Mechanical,0
+12,5,Tuesday,Mechanical,0
+12,5,Tuesday,Mechanical,0

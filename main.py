@@ -37,10 +37,10 @@ feature_num = data_with_station.feature_num
 
 
 print(f"graph feature num: {data_with_graph.graph_feature_num}, seq len: {seq_len}, feature num: {feature_num}")
-rf = RandomForest(data_with_graph, seq_len, batch_size, data_with_graph.feature_num)
-rf.fit()
-rf.validate()
-exit(11111)
+# rf = RandomForest(data_with_graph, seq_len, batch_size, data_with_graph.feature_num)
+# rf.fit()
+# rf.validate()
+# exit(11111)
 # model_STGCN = STGCN.STGCN(node_num=data_with_graph.node_num, feature_num=data_with_graph.feature_num
 #                           , seq_len=seq_len, adj_mat=data_with_graph.adj_mat, graph_feature_num=data_with_graph.graph_feature_num)
 # task_STGCN = ModelModule(model_STGCN, seq_len, pre_len, batch_size, nn.BCELoss(), max_delay=0, lr=0.001)
@@ -67,9 +67,9 @@ def validate(data, name=""):
 def run(model, data, name=""):
     # loss = nn.BCEWithLogitsLoss(pos_weight=torch.tensor([0.1]))
     ckpt_path = f"checkpoints/{name}.ckpt"
-    loss = nn.BCEWithLogitsLoss(pos_weight=torch.Tensor([data.np_ratio]).to('cuda'))
+    loss = nn.BCEWithLogitsLoss(pos_weight=torch.Tensor([data.np_ratio * 1.05]).to('cuda'))
     # loss = nn.BCEWithLogitsLoss()
-    task = ModelModule(model, seq_len, pre_len, batch_size, loss, max_delay=0, lr=0.01)
+    task = ModelModule(model, seq_len, pre_len, batch_size, loss, max_delay=0, lr=0.001)
     trainer = pl.Trainer(accelerator="gpu", devices="1", max_epochs=epoch, deterministic="warn")
     trainer.fit(task, datamodule=data)
     result = trainer.validate(ckpt_path="best", datamodule=data)
@@ -80,7 +80,7 @@ if __name__ == '__main__':
     model = STGCN.STGCN(node_num=data_with_graph.node_num, seq_len=seq_len,
                         feature_num=data_with_graph.feature_num,
                         adj_mat=data_with_graph.adj_mat, graph_feature_num=data_with_graph.graph_feature_num,
-                        fc_hidden_size=32, gcn_output_size=32)
+                        fc_hidden_size=64, gcn_output_size=32)
     # model = GCN.GCN(node_num=data_with_station.node_num, feature_num=data_with_station.feature_num,
     # fc_hidden_size=16, gcn_hidden_size=4,
     # seq_len=seq_len, adj_mat=data_with_station.adj_mat)
