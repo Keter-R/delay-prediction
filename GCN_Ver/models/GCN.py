@@ -84,8 +84,6 @@ class STD_M_GCN(nn.Module):
             feat = feat_list[2].reshape(self.node_num, self.graph_feature_num)
             x_neighbor = self.model_neighbor(feat, adj)
         x = torch.cat((x_spatial, x_temporal, x_neighbor), 1)
-
-        print(x.shape)
         x = self.fc(x)
         return x
 
@@ -106,15 +104,22 @@ class M_GCN(nn.Module):
         config = yaml.load(open('./GCN_Ver/config.yaml', 'r'), Loader=yaml.FullLoader)['self_enhance']
         self.lmb = [config['spatial_adj_lmb'], config['temporal_adj_lmb'], config['neighbor_adj_lmb']]
         if using_spatial:
-            self.model_spatial = GCN(node_num, graph_feature_num, gcn_hidden_size, fc_hidden_size, gcn_feature_num)
+            self.model_spatial = GCN(node_num, graph_feature_num, gcn_hidden_size, fc_hidden_size, gcn_feature_num).to('cuda')
         if using_temporal:
-            self.model_temporal = GCN(node_num, graph_feature_num, gcn_hidden_size, fc_hidden_size, gcn_feature_num)
+            self.model_temporal = GCN(node_num, graph_feature_num, gcn_hidden_size, fc_hidden_size, gcn_feature_num).to('cuda')
         if using_neighbor:
-            self.model_neighbor = GCN(node_num, graph_feature_num, gcn_hidden_size, fc_hidden_size, gcn_feature_num)
-        gcn_output_size = gcn_feature_num * (using_spatial + using_temporal + using_neighbor)
+            self.model_neighbor = GCN(node_num, graph_feature_num, gcn_hidden_size, fc_hidden_size, gcn_feature_num).to('cuda')
+        gcn_out_dim = gcn_feature_num * (using_spatial + using_temporal + using_neighbor)
+        # self.fc0 = nn.Sequential(
+        #     nn.BatchNorm1d(graph_feature_num),
+        #     # nn.Linear(graph_feature_num, fc_hidden_size),
+        #     # nn.BatchNorm1d(fc_hidden_size),
+        #     # nn.LeakyReLU(),
+        #     # nn.Linear(fc_hidden_size, 1)
+        # )
         self.fc = nn.Sequential(
-            nn.BatchNorm1d(gcn_output_size),
-            nn.Linear(gcn_output_size, fc_hidden_size),
+            nn.BatchNorm1d(gcn_out_dim),
+            nn.Linear(gcn_out_dim, fc_hidden_size),
             nn.BatchNorm1d(fc_hidden_size),
             nn.LeakyReLU(),
             nn.Linear(fc_hidden_size, 1)
@@ -125,12 +130,14 @@ class M_GCN(nn.Module):
         x_temporal = torch.zeros(0).to('cuda')
         x_neighbor = torch.zeros(0).to('cuda')
         if self.using_spatial and adj_list[0] is not None and feat_list[0] is not None:
-            x_spatial = self.model_spatial(adj_list[0], feat_list[0], self.lmb[0])
+            x_spatial = self.model_spatial(adj_list[0], feat_list[0], self.lmb[0]).to('cuda')
         if self.using_temporal and adj_list[1] is not None and feat_list[1] is not None:
-            x_temporal = self.model_temporal(adj_list[1], feat_list[1], self.lmb[1])
+            x_temporal = self.model_temporal(adj_list[1], feat_list[1], self.lmb[1]).to('cuda')
         if self.using_neighbor and adj_list[2] is not None and feat_list[2] is not None:
-            x_neighbor = self.model_neighbor(adj_list[2], feat_list[2], self.lmb[2])
+            x_neighbor = self.model_neighbor(adj_list[2], feat_list[2], self.lmb[2]).to('cuda')
+        # _x = self.fc0(feat_list[0].reshape(self.node_num, self.graph_feature_num))
         x = torch.cat((x_spatial, x_temporal, x_neighbor), 1)
+        # x = torch.cat((x, _x), 1)
         x = self.fc(x)
         return x
 
@@ -141,9 +148,9 @@ class GCN(nn.Module):
         self.node_num = node_num
         self.gcn_hidden_size = gcn_hidden_size
         self.out_feature_num = out_feature_num
-        self.gc1 = nn.Linear(graph_feature_num, gcn_hidden_size // 2, bias=True)
-        self.gc2 = nn.Linear(gcn_hidden_size // 2, gcn_hidden_size // 2, bias=True)
-        self.gc3 = nn.Linear(gcn_hidden_size // 2, gcn_hidden_size, bias=True)
+        self.gc1 = nn.Linear(graph_feature_num, gcn_hidden_size, bias=True)
+        self.gc2 = nn.Linear(gcn_hidden_size, out_feature_num, bias=True)
+        # self.gc3 = nn.Linear(gcn_hidden_size // 2, gcn_hidden_size, bias=True)
         self.A = None
         self.training = True
         self.fc = nn.Sequential(
@@ -169,7 +176,7 @@ class GCN(nn.Module):
         X = torch.nn.functional.relu(self.gc1(A @ X))
         X = torch.nn.functional.relu(self.gc2(A @ X))
         # X = self.gc3(A @ X)
-        X = torch.nn.functional.relu(self.gc3(A @ X))
-        X = self.fc(X)
+        # X = torch.nn.functional.relu(self.gc3(A @ X))
+        # X = self.fc(X)
         X = X.reshape(self.node_num, self.out_feature_num)
         return X
